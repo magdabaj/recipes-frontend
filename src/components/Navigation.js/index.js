@@ -17,16 +17,16 @@ function Navigation({ user, signOut }) {
                 {/*<div style={{width: "15px"}}/>*/}
 
                 <div className={'navigation-title'}>
-                    <NavLink to={'/home'} exact className={'navigation-title--item'}>
+                    <NavLink to={'/'} exact className={'navigation-title--item'}>
                         Recipes
                     </NavLink>
                 </div>
 
                 <div className={'navigation-links'}>
-                    <NavLink to={'/home'} exact className={'navigation-links--item'}>
+                    <NavLink to={'/'} exact className={'navigation-links--item'}>
                         Recipes
                     </NavLink>
-                    <NavLink to={'/home'} className={'navigation-links--item'}>
+                    <NavLink to={'/'} className={'navigation-links--item'}>
                         Home
                     </NavLink>
                     <NavLink to={'/user-recipes'} className={'navigation-links--item'}>

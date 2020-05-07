@@ -1,0 +1,120 @@
+[
+  {
+    "type": "dodatki",
+    "values": ["zelatyna", "zakwas", "oliwki", "majonez", "ciasto francuskie"]
+  },
+  {
+    "type": "alkohol",
+    "values": ["advocaat", "brandy", "cydr", "rum", "wino"]
+  },
+  {
+    "type": "herbata, kawa",
+    "values": ["kawa", "herbata", "matcha", "nesquik", "horlicks"]
+  },
+  {
+    "type": "przyprawy, ziola",
+    "values": ["anyz", "bazylia", "cynamon", "imbir", "przyprawy korzenne", "mieta"]
+  },
+  {
+    "type": "miody, syropy",
+    "values": ["golden syrup", "melasa", "miod", "syrop klonowy"]
+  },
+  {
+    "type": "bakalie",
+    "values": [
+      "mak",
+      "migdaly",
+      "orzechy",
+      "rodzynki",
+      "suszona zurawina",
+      "suszone daktyle",
+      "suszone figi",
+      "suszone morele",
+      "suszone sliwki",
+      "suszone wisnie",
+      "wiorki kokosowe"
+    ]
+  },
+  {
+    "type": "czekolada, znane slodycze",
+    "values": [
+      "amaretti",
+      "chalwa",
+      "czekolada",
+      "ferrero rocher",
+      "krakersy",
+      "michalki",
+      "milky way",
+      "oreo",
+      "rafaello",
+      "reese",
+      "snickers",
+      "toffifee"
+    ]
+  },
+  {
+    "type": "masla, kremy, curdy",
+    "values": ["maslo orzechowe", "nutella", "tahini"]
+  },
+  {
+    "type": "warzywa, grzyby",
+    "values": ["brokuly", "buraki", "cebula", "ciecierzyca", "czosnek", "marchewka", "pomidory"]
+  },
+  {
+    "type": "owoce",
+    "values": [
+      "agrest",
+      "ananasy",
+      "maliny",
+      "truskawki",
+      "banany",
+      "czeresnie",
+      "mango",
+      "pomarancze",
+      "wisnie",
+      "zurawina"
+    ]
+  },
+  {
+    "type": "smietany, jogurty, mleczka",
+    "values": [
+      "jogurt",
+      "kwasna smietana",
+      "mleko kokosowe",
+      "mleko skondenowane",
+      "mleko w proszku",
+      "smietana kremowka"
+    ]
+  },
+  {
+    "type": "twarogi, serki, sery",
+    "values": [
+      "feta",
+      "mascarpone",
+      "mozarella",
+      "parmezan",
+      "ricotta",
+      "ser zolty",
+      "serek wiejski",
+      "twarog"
+    ]
+  },
+  {
+    "type": "maki, platki, ziarna",
+    "values": [
+      "chia",
+      "granola",
+      "kakao",
+      "maka grahama",
+      "maka razowa",
+      "maka orkiszowa",
+      "maka zytnia",
+      "muesli",
+      "platki owsiane",
+      "ryz",
+      "sezam",
+      "siemie lniane",
+      "slonecznik"
+    ]
+  }
+]
