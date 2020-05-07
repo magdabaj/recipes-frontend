@@ -1,0 +1,99 @@
+@media only screen and (max-width: 768px) {
+    .navigation-container {
+        padding-bottom: 70px;
+    }
+
+    .navigation {
+        padding: 20px;
+    }
+
+    .navigation-links--item,
+    .navigation-login--item {
+        font-size: 2vw;
+    }
+
+    .navigation-title--item {
+        font-size: 3vw;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .navigation-container {
+        padding-bottom: 120px;
+    }
+
+    .navigation {
+        padding: 50px;
+    }
+
+    .navigation-links--item,
+    .navigation-login--item {
+        font-size: 1.5vw;
+    }
+
+    .navigation-title--item {
+        font-size: 2.5vw;
+    }
+}
+
+.navigation {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 70px;
+    border-bottom: 1px solid black;
+}
+
+.navigation-title {
+    display: flex;
+    width: 15%;
+    align-items: center;
+    font-weight: bold;
+    justify-content: center;
+}
+
+.navigation-login {
+    /*font-size: 1.5vw;*/
+    display: flex;
+    align-items: center;
+    width: 15%;
+    justify-content: center;
+}
+
+.navigation-links {
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    justify-content: space-evenly;
+    align-items: center;
+    max-width: 1170px;
+}
+
+.navigation-links--item,
+.navigation-login--item {
+    /*font-size: 1.5vw;*/
+    font-weight: bold;
+}
+
+.navigation-title--item {
+    color: #ee4c7c;
+    /*font-size: 2.5vw;*/
+}
+
+.navigation-title:hover {
+    font-size: 10vw;
+    color: #ee4c7c;
+    transition-delay: 2s;
+}
+
+.navigation-links:hover,
+.navigation-login:hover {
+    font-size: 2vw;
+    color: #ee4c7c;
+    transition-delay: 2s;
+}

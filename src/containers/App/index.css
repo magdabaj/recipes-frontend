@@ -1,0 +1,155 @@
+body {
+    box-sizing: border-box;
+    margin: 0 auto;
+    /*margin-left: 0;*/
+
+    text-align: center;
+    width: 100%;
+    max-width: 1170px;
+
+    font-size: 16px;
+    font-family: Open Sans, sans-serif;
+    font-weight: 400;
+    line-height: 30px;
+    color: #303030;
+    display: flex;
+    flex-direction: column;
+}
+
+#app {
+}
+
+h1 {
+    font-size: 4vw;
+}
+
+h2 {
+    font-size: 2vw;
+}
+
+h3 {
+    font-size: 1.5vw;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+    /*max-height: 400px;*/
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.footer {
+    color: white;
+    background-color: #ee4c7c;
+    padding: 65px 0 60px;
+    background-size: cover;
+    width: 100%;
+    margin-top: 20px;
+    min-height: 500px;
+    flex-shrink: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.footer-container {
+    /*opacity: 0.5;*/
+}
+
+.input {
+    border-bottom-color: rgba(0, 0, 0, 0.2);
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    padding: 5px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    width: 100%;
+    font-size: 18px;
+}
+
+.input:focus {
+    outline: none;
+    border-bottom-color: #ee4c7c;
+    border-bottom-width: 2px;
+}
+
+
+.input-error {
+    border-bottom-color: #ee4c7c;
+}
+
+.error-message {
+    color: #ee4c7c;
+    line-height: 16px;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.label {
+    min-width: 150px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.form-empty-div-1 {
+    width: 15%;
+}
+.form-empty-div-2 {
+    width: 15%;
+}
+
+.form-container {
+    max-width: 1170px;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+    border-radius: 2px;
+    padding: 20px;
+    /*width: 70%;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sign-up {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-label {
+    text-align: center;
+    padding: 0;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.input-data {
+    margin: 5px 0;
+}
+
+@media only screen and (max-width: 768px) {
+    .form {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .input-data {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+}
