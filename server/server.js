@@ -1,5 +1,5 @@
 // const express = require('express');
-// const path = require('path');
+const path = require('path');
 const port = process.env.PORT || 8080;
 // const app = express();
 const app = require('../server/app')
@@ -14,6 +14,6 @@ app.get('/ping', function (req, res) {
 });
 
 app.get('/*', function (req, res) {
-    res.sendFile(path.join(__dirname, '/dist', 'index.html'));
+    res.sendFile(path.join(__dirname, '../../dist', 'index.html'));
 });
 app.listen(port);

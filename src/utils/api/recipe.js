@@ -1,4 +1,4 @@
-const api = 'http://localhost:9000/recipe';
+const api = 'http://localhost:5000/recipe';
 
 export const fetchAllRecipes = async page => {
     const response = await fetch(`${api}?page=${page}&limit=8`);

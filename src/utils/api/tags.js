@@ -1,6 +1,6 @@
 import "babel-polyfill"
 
-const api = 'http://localhost:9000/tags';
+const api = 'http://localhost:5000/tags';
 
 export const fetchAllTags = async () => {
     const response = await fetch(api);
