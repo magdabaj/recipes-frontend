@@ -7,21 +7,21 @@ const userRouter = require('./api/user');
 const tagRouter = require('./api/tag');
 const ratingRouter = require('./api/rating');
 const commentRouter = require('./api/comment');
-const path = require('path');
+// const path = require('path');
 
 const app = express();
 
-app.use(express.static(__dirname));
-app.use(express.static(path.join(__dirname, '../../dist')));
+// app.use(express.static(__dirname));
+// app.use(express.static(path.join(__dirname, '../../dist')));
 
 // adding the frontend origin
 app.use(bodyParser.json());
 app.use(cors({ origin: 'http://localhost:5000', credentials: true }));
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "https://afternoon-plateau-23579.herokuapp.com/"); // update to match the domain you will make the request from
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
+// app.use(function(req, res, next) {
+//   res.header("Access-Control-Allow-Origin", "https://afternoon-plateau-23579.herokuapp.com/"); // update to match the domain you will make the request from
+//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//   next();
+// });
 app.use(cookieParser());
 
 app.use('/recipe', recipeRouter);
