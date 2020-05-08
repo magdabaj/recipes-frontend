@@ -6,5 +6,5 @@ CREATE TABLE recipe(
     image VARCHAR,
     website VARCHAR,
     "userId" INTEGER,
-    FOREIGN KEY ("userId") REFERENCES user(id),
+    FOREIGN KEY ("userId") REFERENCES "user"(id)
 );

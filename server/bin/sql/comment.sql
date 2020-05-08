@@ -6,5 +6,5 @@ CREATE TABLE comment(
     "addedDate" TIMESTAMP NOT NULL,
     FOREIGN KEY ("recipeId") REFERENCES recipe(id),
     "userId" INTEGER,
-    FOREIGN KEY ("userId") REFERENCES user(id)
+    FOREIGN KEY ("userId") REFERENCES "user"(id)
 );

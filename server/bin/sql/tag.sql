@@ -2,4 +2,4 @@ CREATE TABLE tag(
 id SERIAL PRIMARY KEY,
 "tagType" VARCHAR NOT NULL,
 "tagValue" VARCHAR NOT NULL
-)
+);
