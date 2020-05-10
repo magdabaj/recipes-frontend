@@ -149,9 +149,6 @@ a {
     /*    width: 100%;*/
     /*}*/
 
-    .footer-container {
-        width: 50%
-    }
 
     .sign-up {
         justify-content: center;
@@ -176,5 +173,10 @@ a {
         justify-content: space-between;
         /*width: 100%;*/
     }
+
+    .footer-container {
+        width: 50%
+    }
+
 
 }
