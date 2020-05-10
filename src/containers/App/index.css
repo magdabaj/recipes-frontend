@@ -156,6 +156,11 @@ a {
     .sign-up {
         justify-content: center;
     }
+
+
+    .form-container {
+        margin-top: 50%;
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -171,4 +176,5 @@ a {
         justify-content: space-between;
         /*width: 100%;*/
     }
+
 }

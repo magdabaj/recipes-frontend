@@ -9,8 +9,16 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
-  min-height: 800px;
+  margin: 70px;
+  // margin-top: 50%;
+  // min-height: 800px;
+  
+  @media (min-width: 768px) {
+    margin-top: 50%
+  }
+  // @media (max-width: 769px) {
+  //   margin-top: 90px
+  // }
 `;
 
 const Spinner = ({ color, width, height }) => {
@@ -19,8 +27,8 @@ const Spinner = ({ color, width, height }) => {
             <ReactLoading
                 color={color ? color : colorStyles.darkPink}
                 type={'spinningBubbles'}
-                height={height ? height : '20%'}
-                width={width ? width : '20%'}
+                height={height ? height : '50%'}
+                width={width ? width : '50%'}
             />
         </Wrapper>
     );
