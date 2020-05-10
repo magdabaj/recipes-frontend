@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import HomePage from "../HomePage";
 import NavigationContainer from "../NavigationContainer";
+import LoginContainer from "../LoginContainer";
 import './index.css'
 
 
@@ -21,7 +22,7 @@ export default function App() {
                 {/*<Route path={'/recipe/add/:userId'} component={RecipesFormContainer} />*/}
                 {/*<Route path={'/user-recipes/page/:page'} component={UserRecipesContainer} />*/}
                 {/*<Route path={'/user-recipes'} component={UserRecipesContainer} />*/}
-                {/*<Route path="/login" component={LoginFormContainer} />*/}
+                <Route path="/login" component={LoginContainer} />
                 {/*<Route component={NotFoundPage} />*/}
             </Switch>
             {/*<ToastContainer />*/}

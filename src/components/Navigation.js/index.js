@@ -35,16 +35,16 @@ function Navigation({ user, signOut }) {
                 </div>
 
                 <div className={'navigation-login'}>
-                    {/*{user.loggedIn ? (*/}
-                    {/*    <div className={'navigation-login--item'}>*/}
-                    {/*        <div>{user.email}</div>*/}
-                    {/*        <div onClick={signOut}>Log Out</div>*/}
-                    {/*    </div>*/}
-                    {/*) : (*/}
-                    {/*    <NavLink to={'/login'} className={'navigation-login--item'}>*/}
-                    {/*        Log In*/}
-                    {/*    </NavLink>*/}
-                    {/*)}*/}
+                    {user.loggedIn ? (
+                        <div className={'navigation-login--item'}>
+                            <div>{user.email}</div>
+                            <div onClick={signOut}>Log Out</div>
+                        </div>
+                    ) : (
+                        <NavLink to={'/login'} className={'navigation-login--item'}>
+                            Log In
+                        </NavLink>
+                    )}
                 </div>
             </div>
         </div>

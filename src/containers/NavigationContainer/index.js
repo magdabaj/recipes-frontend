@@ -12,6 +12,7 @@ import { compose } from 'redux';
 // import { makeSelectUser } from '../LoginFormContainer/selectors';
 import Navigation from '../../components/Navigation.js'
 import './index.css';
+import {makeSelectUser} from "../LoginContainer/selectors";
 // import { signOut } from '../LoginFormContainer/actions';
 
 export function NavigationContainer({ ...props }) {
@@ -24,7 +25,7 @@ NavigationContainer.propTypes = {
 
 const mapStateToProps = createStructuredSelector({
     // navigationContainer: makeSelectNavigationContainer(),
-    // user: makeSelectUser(),
+    user: makeSelectUser(),
     // isOpen: makeSelectIsOpen(),
 });
 
