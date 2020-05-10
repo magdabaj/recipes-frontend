@@ -18,7 +18,7 @@ const Button = styled.button`
     color: #9a1750;
   }
   
-  @media (max-width: 768px) {
+  @media (min-width: 768px) {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -28,11 +28,11 @@ const Button = styled.button`
 export const ButtonSmall = styled(Button)`
   padding: 5px 8px;
 
-  @media (max-width: 768px) {
+  @media (min-width: 768px) {
     font-size: 10px;
     margin-left: 5px;
     margin: 0;
-    width: 80%
+    width: 50%
   }
 `;
 

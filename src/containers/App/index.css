@@ -116,7 +116,6 @@ a {
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
     border-radius: 2px;
     padding: 20px;
-    /*width: 70%;*/
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -125,7 +124,7 @@ a {
 
 .sign-up {
     display: flex;
-    justify-content: center;
+    /*justify-content: center;*/
     align-items: center;
 }
 
@@ -141,15 +140,35 @@ a {
 }
 
 @media only screen and (max-width: 768px) {
+    /*.form {*/
+    /*    width: 100%;*/
+    /*    padding: 20px;*/
+    /*}*/
+
+    /*.input-data {*/
+    /*    width: 100%;*/
+    /*}*/
+
+    .footer-container {
+        width: 50%
+    }
+
+    .sign-up {
+        justify-content: center;
+    }
+}
+
+@media only screen and (min-width: 768px) {
     .form {
-        width: 100%;
-        padding: 20px;
+        width: 100%
     }
 
     .input-data {
         width: 100%;
     }
-}
 
-@media only screen and (min-width: 768px) {
+    .sign-up {
+        justify-content: space-between;
+        /*width: 100%;*/
+    }
 }
