@@ -14,11 +14,11 @@ const Wrapper = styled.div`
   // min-height: 800px;
   
   @media (min-width: 768px) {
-    margin-top: 90px;
+    margin-top: 50%;
   }
-  @media (max-width: 769px) {
-    margin-top: 50%
-  }
+  // @media (max-width: 769px) {
+  //   margin-top: 90px
+  // }
 `;
 
 const Spinner = ({ color, width, height }) => {
