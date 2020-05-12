@@ -1,6 +1,6 @@
 import "babel-polyfill"
 
-const api = 'http://localhost:5000/tags';
+const api = 'https://afternoon-plateau-23579.herokuapp.com/tags';
 
 export const fetchAllTags = async () => {
     const response = await fetch(api);

@@ -1,4 +1,4 @@
-const api = 'http://localhost:5000/recipe';
+const api = 'https://afternoon-plateau-23579.herokuapp.com/recipe';
 
 export const fetchAllRecipes = async page => {
     const response = await fetch(`${api}?page=${page}&limit=8`);
