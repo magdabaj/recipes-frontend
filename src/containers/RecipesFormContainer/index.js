@@ -18,7 +18,7 @@ import makeSelectRecipesFormContainer, {
 } from './selectors';
 import RecipesForm from '../../components/RecipesForm';
 import { makeSelectUser } from '../LoginContainer/selectors';
-import LoginFormContainer from '../LoginContainer/Loadable';
+import LoginContainer from '../LoginContainer/Loadable';
 import { addRecipe, cancelAdding, loadTags } from './actions';
 import { makeSelectUserRecipes } from '../UserRecipesContainer/selectors';
 
@@ -27,7 +27,8 @@ export function RecipesFormContainer({ ...props }) {
         if (props.tags.length === 0) props.loadTags();
     }, []);
 
-    return props.user.loggedIn ? <RecipesForm {...props} /> : <LoginFormContainer />;
+    console.log("tags ", props.tags)
+    return props.user.loggedIn ? <RecipesForm {...props} /> : <LoginContainer />;
 }
 
 RecipesFormContainer.propTypes = {};
@@ -55,4 +56,4 @@ const withConnect = connect(
     mapDispatchToProps,
 );
 
-export default compose(withConnect)(RecipesFormContainer);
+export default (withConnect)(RecipesFormContainer);

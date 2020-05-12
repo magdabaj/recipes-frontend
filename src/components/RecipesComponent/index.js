@@ -41,7 +41,7 @@ function AllRecipesComponent({ recipes, ...props }) {
                     {recipes.length > 0 ? (
                         <Timeline
                             target={recipes.map(recipe => (
-                                <div className={'recipe-container'}>
+                                <div key={recipe.id} className={'recipe-container'}>
                                     <Link to={`/recipes/${recipe.id}`}>
                                         <img className={'recipeImg'} src={recipe.image} alt={recipe.title} />
                                     </Link>

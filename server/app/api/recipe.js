@@ -137,7 +137,7 @@ router.delete('/delete/:recipeId', async (req, res, next) => {
         CommentTable.deleteComments({ recipeId }),
         RecipeTable.deleteRecipe({ recipeId }),
       ]);
-      res.send({ message: 'Recipe deleted successfully' });
+      res.send({ message: 'RecipeWrapper deleted successfully' });
     } else {
       const error = new Error('Invalid session');
 

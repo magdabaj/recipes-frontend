@@ -1,0 +1,9 @@
+.heart-icon {
+    margin-right: 3px;
+    size: 2vw;
+    /*color: black;*/
+}
+
+.heart-icon:hover {
+    cursor: pointer;
+}

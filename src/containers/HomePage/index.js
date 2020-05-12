@@ -66,6 +66,9 @@ const withConnect = connect(
     mapDispatchToProps,
 );
 
+// export default (withConnect)(RecipesHomePage)
+
+
 export default compose(
     withConnect,
     memo,

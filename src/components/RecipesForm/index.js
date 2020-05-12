@@ -49,7 +49,7 @@ const RecipesForm = ({ ...props }) => {
         if (!url) errors.url = 'Url is required';
         if (!image) errors.image = 'Image url is required';
         if (!userId) errors.authorization = 'You must login first';
-        if (!tagId) errors.category = 'Recipe category is required';
+        if (!tagId) errors.category = 'RecipeWrapper category is required';
 
         setErrors(errors);
 

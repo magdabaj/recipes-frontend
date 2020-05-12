@@ -1,6 +1,11 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const path = require('path');
 
 module.exports = {
+    // output: {
+    //     path: path.resolve(__dirname, 'dist'),
+    //     publicPath: "dist"
+    // },
     module: {
         rules: [
             {
@@ -26,6 +31,9 @@ module.exports = {
     },
     devServer: {
         historyApiFallback: true,
+        // open: true,
+        contentBase: path.join(__dirname, 'dist'),
+        port: 5000
     },
     plugins: [
         new HtmlWebPackPlugin({

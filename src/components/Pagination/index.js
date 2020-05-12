@@ -38,7 +38,7 @@ function Pagination({ totalPages, previousPage, nextPage, ...props }) {
                     </Link>
                 </li>
                 {totalPagesArray.map(page => (
-                    <li id={page}>
+                    <li key={page}>
                         <Link to={`${path}/${page}`} id={page} className={'pagination-link'}>
                             {page}
                         </Link>

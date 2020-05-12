@@ -3,6 +3,7 @@ import { watchRecipesByTagLoad, watchRecipesLoad, watchTagsLoad } from "../conta
 import { watchAuthenticate, watchSignIn, watchSignOut, watchSignUp } from "../containers/LoginContainer/saga";
 import {watchRecipeDelete, watchUserRecipesLoad, watchUserTagsLoad} from "../containers/UserRecipesContainer/saga";
 import  { watchRecipeFormTagsLoad, watchAddCancel, watchRecipeAdd } from "../containers/RecipesFormContainer/saga";
+import {watchCommentAdd, watchCommentDelete, watchCommentsLoad, watchRatingSend, watchRecipeContainerTagsLoad, watchRecipeLoad, watchRecipeRatingsLoad} from "../containers/RecipeContainer/saga";
 
 export default function* rootSaga() {
     yield all([
@@ -19,5 +20,12 @@ export default function* rootSaga() {
         watchAddCancel(),
         watchRecipeAdd(),
         watchRecipeFormTagsLoad(),
+        watchRecipeLoad(),
+        watchCommentsLoad(),
+        watchCommentDelete(),
+        watchCommentAdd(),
+        watchRatingSend(),
+        watchRecipeContainerTagsLoad(),
+        watchRecipeRatingsLoad(),
     ]);
 }

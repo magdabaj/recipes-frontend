@@ -40,7 +40,7 @@ const UserRecipesComponent = ({ recipes, user, ...props }) => {
                                             </IconContext.Provider>
 
                                             <IconContext.Provider value={{ className: 'img-icon-hover', size: '80px' }}>
-                                                <Link to={`/recipe-add/add/${user.userId}/recipe/${recipe.id}`}>
+                                                <Link to={`/add/${user.userId}/recipe/${recipe.id}`}>
                                                     <FiEdit />
                                                 </Link>
                                             </IconContext.Provider>
@@ -65,7 +65,7 @@ const UserRecipesComponent = ({ recipes, user, ...props }) => {
             <div>
                 {user ? (
                     <IconContext.Provider value={{ className: 'add-icon', size: '80px' }}>
-                        <Link to={`/recipe-add/add/${user.userId}`}>
+                        <Link to={`/add/${user.userId}`}>
                             <IoIosAddCircle />
                         </Link>
                     </IconContext.Provider>
