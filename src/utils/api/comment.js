@@ -1,4 +1,4 @@
-const api = 'http://localhost:5000/comment';
+const api = 'https://afternoon-plateau-23579.herokuapp.com/comment';
 
 export const fetchComments = async recipeId => {
     const response = await fetch(`${api}/${recipeId}`);

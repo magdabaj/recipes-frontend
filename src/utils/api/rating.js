@@ -1,4 +1,4 @@
-const api = 'http://localhost:5000/rating';
+const api = 'https://afternoon-plateau-23579.herokuapp.com/rating';
 
 export const createRating = async (rate, userId, recipeId) => {
     return fetch(`${api}/new`, {
