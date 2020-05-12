@@ -18,7 +18,6 @@ app.use(cors({ origin: 'http://localhost:5000', credentials: true }));
 app.use(cookieParser());
 app.use(bodyParser.json());
 
-
 app.use('/recipe', recipeRouter);
 app.use('/user', userRouter);
 app.use('/tags', tagRouter);
