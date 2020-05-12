@@ -1,6 +1,6 @@
 import { handleError, handleResponse } from './apiUtils';
 
-const api = 'http://localhost:9000/user';
+const api = 'http://localhost:5000/user';
 
 export const signUpUser = async (email, password) => {
     return fetch(`${api}/signup`, {

@@ -1,4 +1,4 @@
-const api = 'http://localhost:9000/rating';
+const api = 'http://localhost:5000/rating';
 
 export const createRating = async (rate, userId, recipeId) => {
     return fetch(`${api}/new`, {
