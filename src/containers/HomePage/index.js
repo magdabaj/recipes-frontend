@@ -1,8 +1,8 @@
 import React, { memo, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import {compose} from "redux";
 import { createStructuredSelector } from 'reselect';
-import ReactLoading from 'react-loading';
 import makeSelectRecipesHomePage, {
     makeSelectNextPage,
     makeSelectPreviousPage,
@@ -28,6 +28,9 @@ export function RecipesHomePage({ status, ...props }) {
 
     // todo add list of rated recipes
     // todo add recipes to favourites
+
+    console.log("tags", props.tags)
+    console.log(status)
 
     return status === fetchStates.fetching /*|| status === fetchStates.error*/ ? (
         <Spinner />
@@ -58,12 +61,12 @@ function mapDispatchToProps(dispatch) {
     };
 }
 
-export default connect(
+const withConnect = connect(
     mapStateToProps,
     mapDispatchToProps,
-)(RecipesHomePage);
+);
 
-// export default compose(
-//     withConnect,
-//     memo,
-// )(RecipesHomePage);
+export default compose(
+    withConnect,
+    memo,
+)(RecipesHomePage);

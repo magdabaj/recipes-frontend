@@ -11,5 +11,7 @@ module.exports = {
   database: 'd345ig2ibrppp0',
   password: 'ffd888d8baae6f461de2d0ce845ea04fced01a4da4178a33acf19680b1f2e729',
   port: 5432,
-  sslmode: require
+  ssl: true,
+  // connectionString: process.env.DATABASE_URL || 'postgresql://oxeqqwsqiafyww:ffd888d8baae6f461de2d0ce845ea04fced01a4da4178a33acf19680b1f2e729@ec2-54-86-170-8.compute-1.amazonaws.com:5432/d345ig2ibrppp0',
+  // ssl: !!process.env.DATABASE_URL,
 };

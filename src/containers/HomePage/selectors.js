@@ -5,7 +5,7 @@ import { initialState } from './reducer';
  * Direct selector to the recipesHomePage state domain
  */
 
-const selectRecipesHomePageDomain = state => state.recipesHomePage || initialState;
+const selectRecipesHomePageDomain = state => state.homePageReducer || initialState;
 
 const selectHomePageRoute = (state, props) => props.match.params.tagId;
 

@@ -5,7 +5,7 @@ import { initialState } from './reducer';
  * Direct selector to the loginFormContainer state domain
  */
 
-const selectLoginFormContainerDomain = state => state.loginFormContainer || initialState;
+const selectLoginFormContainerDomain = state => state.loginContainerReducer || initialState;
 
 /**
  * Other specific selectors

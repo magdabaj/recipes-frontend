@@ -7,8 +7,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Container from './Container';
-// import '../../containers/RecipeContainer/index.css';
 import { matchPath } from 'react-router';
+import './index.css';
 // import PropTypes from 'prop-types';
 // import styled from 'styled-components';
 
