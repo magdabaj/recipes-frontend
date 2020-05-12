@@ -1,5 +1,5 @@
 import { take, call, put, select, takeLatest, all } from 'redux-saga/effects';
-import { ADD_RECIPE, CANCEL, DELETE_RECIPE } from './constants';
+import { ADD_RECIPE, CANCEL } from './constants';
 import { goBack } from 'react-router-redux';
 import { editRecipe, storeRecipe } from '../../utils/api/recipe';
 import { addRecipeError, addRecipeSuccess } from './actions';
