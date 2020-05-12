@@ -5,7 +5,7 @@
  */
 
 import React from 'react';
-import colorStyles from '../../containers/App/colorStyles';
+import colorStyles from '../../utils/colorStyles';
 import styled from 'styled-components';
 
 const Button = styled.button`

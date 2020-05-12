@@ -1,5 +1,5 @@
-// const api = 'https://afternoon-plateau-23579.herokuapp.com/recipe';
-const api = 'https://localhost:5000/recipe'
+const api = 'https://afternoon-plateau-23579.herokuapp.com/recipe';
+// const api = 'https://localhost:5000/recipe'
 
 export const fetchAllRecipes = async page => {
     const response = await fetch(`${api}?page=${page}&limit=8`);

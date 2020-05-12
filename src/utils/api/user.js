@@ -1,7 +1,7 @@
 import { handleError, handleResponse } from './apiUtils';
 
-// const api = 'https://afternoon-plateau-23579.herokuapp.com/user';
-const api = 'https://localhost:5000/user'
+const api = 'https://afternoon-plateau-23579.herokuapp.com/user';
+// const api = 'https://localhost:5000/user'
 
 export const signUpUser = async (email, password) => {
     return fetch(`${api}/signup`, {
