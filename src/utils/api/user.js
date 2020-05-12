@@ -1,5 +1,3 @@
-import { handleError, handleResponse } from './apiUtils';
-
 const api = 'https://afternoon-plateau-23579.herokuapp.com/user';
 // const api = 'http://localhost:5000/user'
 

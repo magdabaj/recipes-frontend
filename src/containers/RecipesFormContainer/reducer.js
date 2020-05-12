@@ -10,7 +10,6 @@ import {
     ADD_RECIPE,
     CANCEL,
     LOAD_TAGS_SUCCESS,
-    LOAD_TAGS,
     LOAD_TAGS_ERROR,
 } from './constants';
 import fetchStates from '../../utils/fetchStates';

@@ -6,14 +6,13 @@ import LoginContainer from "../LoginContainer";
 import UserRecipesContainer from "../UserRecipesContainer/Loadable";
 import RecipesFormContainer from "../RecipesFormContainer/Loadable";
 import './index.css'
-
+// todo add button go to all recipes
 
 export default function App() {
     return (
         <div>
             <NavigationContainer />
             <Switch>
-                // todo add button go to all recipes
                 <Route exact path="/" component={HomePage} />
                 <Route path={'/home/tag/:tagId/page/:page'} component={HomePage} />
                 <Route path={'/home/page/:page'} component={HomePage} />
