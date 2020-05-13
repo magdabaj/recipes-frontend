@@ -14,7 +14,7 @@ const commentRouter = require('./server/app/api/comment');
 
 const allowedOrigins = [
     'https://afternoon-plateau-23579.herokuapp.com/',
-    'http://localhost:5000/'
+    'http://localhost:5000'
 ]
 
 app.use(express.static(__dirname));
