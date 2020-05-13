@@ -12,10 +12,6 @@ export const GET_RECIPE = 'app/RecipeContainer/GET_RECIPE';
 export const GET_RECIPE_SUCCESS = 'app/RecipeContainer/GET_RECIPE_SUCCESS';
 export const GET_RECIPE_ERROR = 'app/RecipeContainer/GET_RECIPE_ERROR';
 
-export const LOAD_TAGS = 'app/RecipeContainer/LOAD_TAGS';
-export const LOAD_TAGS_SUCCESS = 'app/RecipeContainer/LOAD_TAGS_SUCCESS';
-export const LOAD_TAGS_ERROR = 'app/RecipeContainer/LOAD_TAGS_ERROR';
-
 export const SEND_RATING = 'app/RecipeContainer/SEND_RATING';
 export const SEND_RATING_SUCCESS = 'app/RecipeContainer/SEND_RATING_SUCCESS';
 export const SEND_RATING_ERROR = 'app/RecipeContainer/SEND_RATING_ERROR';

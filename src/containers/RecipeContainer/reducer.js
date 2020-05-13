@@ -34,7 +34,6 @@ export const initialState = {
     ratingsMean: null,
     getRatingsStatus: fetchStates.fetching,
     recipe: [],
-    tags: [],
     recipeId: null,
     comments: [],
     addCommentStatus: null,
@@ -72,17 +71,6 @@ const recipeContainerReducer = (state = initialState, action) =>
             // case GET_COMMENTS || GET_RATINGS:
             //   draft.status = fetchStates.fetching;
             //   break;
-            case LOAD_TAGS:
-                draft.status = fetchStates.fetching;
-                break;
-            case LOAD_TAGS_SUCCESS:
-                draft.tags = action.tags;
-                draft.status = fetchStates.success;
-                break;
-            case LOAD_TAGS_ERROR:
-                draft.error = action.error;
-                draft.status = fetchStates.error;
-                break;
             case SEND_RATING_ERROR:
                 draft.getRatingsStatus = fetchStates.error;
                 break;

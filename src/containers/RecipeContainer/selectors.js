@@ -47,12 +47,6 @@ const makeSelectGetRatingsStatus = () =>
         substate => substate.getRatingsStatus,
     );
 
-const makeSelectTags = () =>
-    createSelector(
-        selectRecipeContainerDomain,
-        substate => substate.tags,
-    );
-
 const makeSelectComments = () =>
     createSelector(
         selectRecipeContainerDomain,
@@ -95,7 +89,6 @@ export {
     makeSelectRatingsMean,
     makeSelectRecipe,
     makeSelectGetRatingsStatus,
-    makeSelectTags,
     selectSlug,
     makeSelectComments,
     makeSelectAddCommentStatus,

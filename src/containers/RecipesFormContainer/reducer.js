@@ -40,12 +40,6 @@ const recipesFormContainerReducer = (state = initialState, action) =>
             case CANCEL:
                 draft.status = null;
                 break;
-            case LOAD_TAGS_SUCCESS:
-                draft.tags = action.tags;
-                break;
-            case LOAD_TAGS_ERROR:
-                draft.error = action.error;
-                break;
         }
     });
 

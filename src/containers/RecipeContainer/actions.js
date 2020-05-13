@@ -63,19 +63,6 @@ export const getRecipeError = error => ({
     error,
 });
 
-export const loadTags = () => ({
-    type: LOAD_TAGS,
-});
-
-export const loadTagsSuccess = tags => ({
-    type: LOAD_TAGS_SUCCESS,
-    tags,
-});
-
-export const loadTagsError = error => ({
-    type: LOAD_TAGS_ERROR,
-    error,
-});
 
 export const sendRating = (rate, userId, recipeId) => ({
     type: SEND_RATING,

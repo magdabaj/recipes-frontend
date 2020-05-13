@@ -45,17 +45,10 @@ const makeSelectRecipesAddStatus = () =>
         substate => substate.status,
     );
 
-const makeSelectTags = () =>
-    createSelector(
-        selectRecipesFormContainerDomain,
-        substate => substate.tags,
-    );
-
 export default makeSelectRecipesFormContainer;
 export {
     selectRecipesFormContainerDomain,
     selectUserId,
     makeSelectRecipesAddStatus,
-    makeSelectTags,
     selectRecipeId,
 };

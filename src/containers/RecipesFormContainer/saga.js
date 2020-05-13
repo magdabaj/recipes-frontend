@@ -3,9 +3,6 @@ import { ADD_RECIPE, CANCEL } from './constants';
 import { goBack } from 'react-router-redux';
 import { editRecipe, storeRecipe } from '../../utils/api/recipe';
 import { addRecipeError, addRecipeSuccess } from './actions';
-import { fetchAllTags } from '../../utils/api/tags';
-import { loadTagsError, loadTagsSuccess } from './actions';
-import { LOAD_TAGS } from './constants';
 import { selectUserId } from './selectors';
 
 export function* addRecipeSaga(action) {
@@ -39,17 +36,3 @@ export function* handleDoneSaga() {
 export function* watchAddCancel() {
     yield takeLatest(CANCEL, handleDoneSaga);
 }
-
-export function* loadTagsSaga() {
-    try {
-        const tags = yield call(fetchAllTags);
-        yield put(loadTagsSuccess(tags));
-    } catch (error) {
-        yield put(loadTagsError(error.message));
-    }
-}
-
-export function* watchRecipeFormTagsLoad() {
-    yield takeLatest(LOAD_TAGS, loadTagsSaga);
-}
-

@@ -13,6 +13,7 @@ import { compose } from 'redux';
 import Navigation from '../../components/Navigation.js'
 import './index.css';
 import {makeSelectUser} from "../LoginContainer/selectors";
+import {signOut} from "../LoginContainer/actions";
 // import { signOut } from '../LoginFormContainer/actions';
 
 export function NavigationContainer({ ...props }) {
@@ -32,7 +33,7 @@ const mapStateToProps = createStructuredSelector({
 function mapDispatchToProps(dispatch) {
     return {
         // toggleNavigation: () => dispatch(toggleNavigation()),
-        // signOut: () => dispatch(signOut()),
+        signOut: () => dispatch(signOut()),
     };
 }
 

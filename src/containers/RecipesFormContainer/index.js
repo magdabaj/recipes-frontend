@@ -14,14 +14,15 @@ import { compose } from 'redux';
 
 import makeSelectRecipesFormContainer, {
     makeSelectRecipesAddStatus,
-    makeSelectTags,
     selectRecipeId,
     selectUserId,
 } from './selectors';
+import { makeSelectTags } from "../App/selectors";
 import RecipesForm from '../../components/RecipesForm';
 import { makeSelectUser } from '../LoginContainer/selectors';
 import LoginContainer from '../LoginContainer/Loadable';
-import { addRecipe, cancelAdding, loadTags } from './actions';
+import { addRecipe, cancelAdding } from './actions';
+import { loadTags } from "../App/actions";
 import { makeSelectUserRecipes } from '../UserRecipesContainer/selectors';
 
 export function RecipesFormContainer({ ...props }) {

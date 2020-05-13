@@ -35,20 +35,6 @@ export const cancelAdding = () => ({
     type: CANCEL,
 });
 
-export const loadTags = () => ({
-    type: LOAD_TAGS,
-});
-
-export const loadTagsSuccess = tags => ({
-    type: LOAD_TAGS_SUCCESS,
-    tags,
-});
-
-export const loadTagsError = error => ({
-    type: LOAD_TAGS_ERROR,
-    error,
-});
-
 // todo route authentication
 // todo styled components
 // todo material ui

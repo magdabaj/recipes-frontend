@@ -1,6 +1,4 @@
 import { take, call, put, select, takeLatest, all } from 'redux-saga/effects';
-
-import { fetchAllTags } from '../../utils/api/tags';
 import {
     loadRecipesByTagError,
     loadRecipesByTagSuccess,

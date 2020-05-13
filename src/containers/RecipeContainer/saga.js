@@ -6,8 +6,6 @@ import {
     getRecipeRatingsError,
     getRecipeRatingsSuccess,
     getRecipeSuccess,
-    loadTagsError,
-    loadTagsSuccess,
     sendRatingSuccess,
     sendRatingError,
     getCommentsError,
@@ -23,12 +21,10 @@ import {
     GET_COMMENTS,
     GET_RATINGS,
     GET_RECIPE,
-    LOAD_TAGS,
     REMOVE_COMMENT,
     SEND_RATING,
 } from './constants';
 import { fetchRecipe } from '../../utils/api/recipe';
-import { fetchAllTags } from '../../utils/api/tags';
 import { deleteComment, fetchComments, storeComment } from '../../utils/api/comment';
 import { makeSelectUser } from '../LoginContainer/selectors';
 
@@ -77,19 +73,6 @@ function* handleRecipeLoad(action) {
 
 export function* watchRecipeLoad() {
     yield takeLatest(GET_RECIPE, handleRecipeLoad);
-}
-
-export function* loadTagsSaga() {
-    try {
-        const tags = yield call(fetchAllTags);
-        yield put(loadTagsSuccess(tags));
-    } catch (error) {
-        yield put(loadTagsError(error.message));
-    }
-}
-
-export function* watchRecipeContainerTagsLoad() {
-    yield takeLatest(LOAD_TAGS, loadTagsSaga);
 }
 
 export function* loadCommentsSaga({ recipeId }) {
