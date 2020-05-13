@@ -2,7 +2,6 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const path = require('path');
 
 module.exports = {
-    mode: process.env.development ? 'development' : 'production',
     entry: path.resolve(__dirname, './src/index.js'),
     output: {
         publicPath: /*process.env.development ? '/' : */'/',
