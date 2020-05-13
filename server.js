@@ -14,7 +14,7 @@ const commentRouter = require('./server/app/api/comment');
 
 app.use(express.static(__dirname));
 app.use(express.static(path.join(__dirname, 'dist')));
-app.use(cors({ origin: 'http://localhost:5000', credentials: true }));
+app.use(cors({ origin: 'https://afternoon-plateau-23579.herokuapp.com/', credentials: true }));
 app.use(cookieParser());
 app.use(bodyParser.json());
 
