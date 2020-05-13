@@ -2,10 +2,12 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const path = require('path');
 
 module.exports = {
-    // output: {
-    //     path: path.resolve(__dirname, 'dist'),
-    //     publicPath: "dist"
-    // },
+    output: {
+        publicPath: '/',
+        filename: 'static/bundle.[hash].js',
+        chunkFilename: 'static/chunk.[chunkhash].js',
+        path: path.resolve(__dirname, 'dist'),
+    },
     module: {
         rules: [
             {
@@ -31,7 +33,8 @@ module.exports = {
     },
     devServer: {
         historyApiFallback: true,
-        // open: true,
+        open: false,
+        hot: true,
         contentBase: path.join(__dirname, 'dist'),
         port: 5000
     },

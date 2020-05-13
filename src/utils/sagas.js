@@ -1,5 +1,6 @@
 import { all } from 'redux-saga/effects';
-import { watchRecipesByTagLoad, watchRecipesLoad, watchTagsLoad } from "../containers/HomePage/saga";
+import { watchTagsLoad } from "../containers/App/saga";
+import { watchRecipesByTagLoad, watchRecipesLoad } from "../containers/HomePage/saga";
 import { watchAuthenticate, watchSignIn, watchSignOut, watchSignUp } from "../containers/LoginContainer/saga";
 import {watchRecipeDelete, watchUserRecipesLoad, watchUserTagsLoad} from "../containers/UserRecipesContainer/saga";
 import  { watchRecipeFormTagsLoad, watchAddCancel, watchRecipeAdd } from "../containers/RecipesFormContainer/saga";

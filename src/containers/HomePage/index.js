@@ -8,12 +8,13 @@ import makeSelectRecipesHomePage, {
     makeSelectPreviousPage,
     makeSelectRecipes,
     makeSelectStatus,
-    makeSelectTags,
     makeSelectTotalPages,
     selectPage,
     selectTagId,
 } from './selectors';
-import { loadRecipes, loadRecipesByTag, loadTags } from './actions';
+import { makeSelectTags } from "../App/selectors";
+import { loadRecipes, loadRecipesByTag } from './actions';
+import { loadTags } from "../App/actions";
 import AllRecipesComponent from '../../components/RecipesComponent';
 import fetchStates from '../../utils/fetchStates';
 import Spinner from '../../components/Spinner';

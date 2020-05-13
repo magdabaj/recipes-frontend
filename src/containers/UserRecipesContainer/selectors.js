@@ -6,7 +6,7 @@ import makeSelectRecipesHomePage from '../HomePage/selectors';
  * Direct selector to the userRecipesContainer state domain
  */
 
-const selectUserRecipesContainerDomain = state => state.userRecipesContainer || initialState;
+const selectUserRecipesContainerDomain = state => state.userRecipesContainerReducer || initialState;
 
 /**
  * Other specific selectors

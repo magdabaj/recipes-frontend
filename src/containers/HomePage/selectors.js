@@ -44,12 +44,6 @@ const makeSelectRecipes = () =>
         substate => substate.recipes,
     );
 
-const makeSelectTags = () =>
-    createSelector(
-        selectRecipesHomePageDomain,
-        substate => substate.tags,
-    );
-
 const makeSelectTotalPages = () =>
     createSelector(
         selectRecipesHomePageDomain,
@@ -77,7 +71,6 @@ const makeSelectStatus = () =>
 export default makeSelectRecipesHomePage;
 export {
     selectRecipesHomePageDomain,
-    makeSelectTags,
     makeSelectRecipes,
     selectTagId,
     selectPage,

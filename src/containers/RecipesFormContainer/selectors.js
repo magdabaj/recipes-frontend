@@ -6,7 +6,7 @@ import makeSelectUserRecipesContainer from '../UserRecipesContainer/selectors';
  * Direct selector to the recipesFormContainer state domain
  */
 
-const selectRecipesFormContainerDomain = state => state.recipesFormContainer || initialState;
+const selectRecipesFormContainerDomain = state => state.recipesFormContainerReducer || initialState;
 
 const selectUserIdRoute = (state, props) => props.match.params.userId;
 

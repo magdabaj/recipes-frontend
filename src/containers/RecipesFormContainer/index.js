@@ -4,6 +4,8 @@
  *
  */
 
+// todo logout
+
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -25,6 +27,7 @@ import { makeSelectUserRecipes } from '../UserRecipesContainer/selectors';
 export function RecipesFormContainer({ ...props }) {
     useEffect(() => {
         if (props.tags.length === 0) props.loadTags();
+        else props.loadTags()
     }, []);
 
     console.log("tags ", props.tags)
@@ -56,4 +59,4 @@ const withConnect = connect(
     mapDispatchToProps,
 );
 
-export default (withConnect)(RecipesFormContainer);
+export default compose(withConnect)(RecipesFormContainer);

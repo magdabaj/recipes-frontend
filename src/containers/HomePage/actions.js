@@ -34,20 +34,6 @@ export const loadRecipesError = error => ({
     error,
 });
 
-export const loadTags = () => ({
-    type: LOAD_TAGS,
-});
-
-export const loadTagsSuccess = tags => ({
-    type: LOAD_TAGS_SUCCESS,
-    tags,
-});
-
-export const loadTagsError = error => ({
-    type: LOAD_TAGS_ERROR,
-    error,
-});
-
 export const loadRecipesByTag = (tagId, page) => ({
     type: LOAD_RECIPES_BY_TAG,
     tagId,

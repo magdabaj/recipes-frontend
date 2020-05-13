@@ -12,9 +12,6 @@ import {
     LOAD_RECIPES_BY_TAG_SUCCESS,
     LOAD_RECIPES_ERROR,
     LOAD_RECIPES_SUCCESS,
-    LOAD_TAGS,
-    LOAD_TAGS_ERROR,
-    LOAD_TAGS_SUCCESS,
 } from './constants';
 
 export const initialState = {
@@ -32,7 +29,7 @@ export const initialState = {
 const homePageReducer = (state = initialState, action) =>
     produce(state, draft => {
         switch (action.type) {
-            case LOAD_TAGS || LOAD_RECIPES:
+            case LOAD_RECIPES:
                 draft.status = fetchStates.fetching;
                 break;
             case LOAD_RECIPES_SUCCESS:
@@ -42,13 +39,9 @@ const homePageReducer = (state = initialState, action) =>
                 draft.previousPage = action.response.previousPage;
                 draft.nextPage = action.response.nextPage;
                 break;
-            case LOAD_RECIPES_ERROR || LOAD_TAGS_ERROR:
+            case LOAD_RECIPES_ERROR :
                 draft.status = fetchStates.error;
                 draft.error = action.error;
-                break;
-            case LOAD_TAGS_SUCCESS:
-                draft.status = fetchStates.success;
-                draft.tags = action.tags;
                 break;
             case LOAD_RECIPES_BY_TAG:
                 draft.status = fetchStates.fetching;

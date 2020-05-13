@@ -5,7 +5,7 @@ import { initialState } from './reducer';
  * Direct selector to the recipeContainer state domain
  */
 
-const selectRecipeContainerDomain = state => state.recipeContainer || initialState;
+const selectRecipeContainerDomain = state => state.recipeContainerReducer || initialState;
 
 const selectRecipeIdRoute = (state, props) => props.match.params.recipeId;
 
