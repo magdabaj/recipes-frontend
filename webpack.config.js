@@ -2,8 +2,10 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const path = require('path');
 
 module.exports = {
+    mode: process.env.development ? 'development' : 'production',
+    entry: path.resolve(__dirname, './src/index.js'),
     output: {
-        publicPath: '/',
+        publicPath: process.env.development ? '/' : '',
         filename: 'static/bundle.[hash].js',
         chunkFilename: 'static/chunk.[chunkhash].js',
         path: path.resolve(__dirname, 'dist'),
@@ -35,7 +37,10 @@ module.exports = {
         historyApiFallback: true,
         open: false,
         hot: true,
-        contentBase: path.join(__dirname, 'dist'),
+        contentBase: [
+            path.join(__dirname, 'public'),
+            path.join(__dirname, 'dist'),
+        ],
         port: 5000
     },
     plugins: [
