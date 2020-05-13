@@ -12,9 +12,14 @@ const tagRouter = require('./server/app/api/tag');
 const ratingRouter = require('./server/app/api/rating');
 const commentRouter = require('./server/app/api/comment');
 
+const allowedOrigins = [
+    'https://afternoon-plateau-23579.herokuapp.com/',
+    'http://localhost:5000/'
+]
+
 app.use(express.static(__dirname));
 app.use(express.static(path.join(__dirname, 'dist')));
-app.use(cors({ origin: 'https://afternoon-plateau-23579.herokuapp.com/', credentials: true }));
+app.use(cors({ origin: allowedOrigins, credentials: true }));
 app.use(cookieParser());
 app.use(bodyParser.json());
 

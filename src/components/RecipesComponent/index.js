@@ -6,6 +6,7 @@
 
 // todo configure prettier, babel, eslint
 // todo animated todo list
+//
 
 import React, { memo } from 'react';
 import '../../containers/HomePage/index.css';
@@ -19,7 +20,7 @@ function AllRecipesComponent({ recipes, ...props }) {
     return (
         <section className={'latest-recipes'}>
             {/*<Carousel recipes={recipes} {...props} />*/}
-            <Tween staggerFrom={{ x: '1000px' }} stagger={0.2} duration={0.8} ease="Power4.inOut">
+            <Tween staggerFrom={{ x: '100px' }} stagger={0.2} duration={0.8} ease="Power4.inOut">
                 <div className={'recipes-header'}>
                     <p>Najnowsze wpisy</p>
                 </div>

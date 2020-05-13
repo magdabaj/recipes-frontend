@@ -26,19 +26,6 @@ export function* watchUserRecipesLoad() {
     yield takeLatest(LOAD_USER_RECIPES, handleUserRecipesLoad);
 }
 
-export function* loadTagsSaga() {
-    try {
-        const tags = yield call(fetchAllTags);
-        yield put(loadTagsSuccess(tags));
-    } catch (error) {
-        yield put(loadTagsError(error.message));
-    }
-}
-
-export function* watchUserTagsLoad() {
-    yield takeLatest(LOAD_TAGS, loadTagsSaga);
-}
-
 export function* handleRecipeDelete(action) {
     const { recipeId } = action;
     const { userId } = yield select(makeSelectUser());
@@ -54,6 +41,3 @@ export function* handleRecipeDelete(action) {
 export function* watchRecipeDelete() {
     yield takeLatest(DELETE_RECIPE, handleRecipeDelete);
 }
-
-// Individual exports for testing
-

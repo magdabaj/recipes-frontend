@@ -37,7 +37,6 @@ function Navigation({ user, signOut }) {
                 <div className={'navigation-login'}>
                     {user.loggedIn ? (
                         <div className={'navigation-login--item'}>
-                            <div>{user.email}</div>
                             <div onClick={signOut}>Log Out</div>
                         </div>
                     ) : (

@@ -24,7 +24,6 @@ export const initialState = {
     nextPage: null,
     deletingRecipe: null,
     deleteRecipeError: null,
-    tags: []
 };
 
 /* eslint-disable default-case, no-param-reassign */
@@ -60,12 +59,6 @@ const userRecipesContainerReducer = (state = initialState, action) =>
             case DELETE_RECIPE_ERROR:
                 draft.deletingRecipe = fetchStates.error;
                 draft.deleteRecipeError = action.error;
-                break;
-            case LOAD_TAGS_SUCCESS:
-                draft.tags = action.tags;
-                break;
-            case LOAD_TAGS_ERROR:
-                draft.eroor = action.error;
                 break;
         }
     });

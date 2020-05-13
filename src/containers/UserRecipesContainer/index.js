@@ -19,11 +19,12 @@ import makeSelectUserRecipesContainer, {
     makeSelectTotalPages,
     makeSelectUserRecipes,
     selectPage,
-    makeSelectTags,
 } from './selectors';
+import { makeSelectTags } from "../App/selectors";
 import { makeSelectUser } from '../LoginContainer/selectors';
 import LoginFormContainer from '../LoginContainer';
-import { loadTags, loadUserRecipes, deleteRecipe } from './actions';
+import { loadUserRecipes, deleteRecipe } from './actions';
+import { loadTags } from "../App/actions";
 import fetchStates from '../../utils/fetchStates';
 import Spinner from '../../components/Spinner';
 import UserRecipesComponent from "../../components/UserRecipesComponent";
