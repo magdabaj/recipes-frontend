@@ -55,7 +55,7 @@
 //
 // export default memo(Navigation);
 
-import React, {useState} from 'react';
+import React, {memo, useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -96,7 +96,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function Navigation({user, signOut}) {
+const Navigation = ({user, signOut}) => {
     const [state, setState] = useState({
         left: false,
     });
@@ -173,4 +173,6 @@ export default function Navigation({user, signOut}) {
         </div>
     );
 }
+
+export default memo(Navigation)
 
