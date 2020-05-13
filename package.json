@@ -47,6 +47,8 @@
     "webpack-hot-middleware": "^2.25.0"
   },
   "dependencies": {
+    "@material-ui/core": "^4.9.14",
+    "@material-ui/icons": "^4.9.1",
     "babel-polyfill": "^6.26.0",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.5",
@@ -62,8 +64,6 @@
     "react-dom": "^16.13.1",
     "react-router": "^5.1.2",
     "react-router-redux": "^4.0.8",
-    "uuid": "^7.0.2",
-    "@material-ui/core": "^4.9.14",
-    "@material-ui/icons": "^4.9.1"
+    "uuid": "^7.0.2"
   }
 }
