@@ -5,9 +5,9 @@
  */
 
 import React, { useState } from 'react';
-import { Redirect } from 'react-router';
 import fetchStates from '../../utils/fetchStates';
 import { toast } from 'react-toastify';
+import '../../containers/RecipeContainer/index.css'
 // import PropTypes from 'prop-types';
 // import styled from 'styled-components';
 

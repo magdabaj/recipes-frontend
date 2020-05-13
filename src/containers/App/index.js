@@ -6,7 +6,7 @@ import LoginContainer from "../LoginContainer";
 import UserRecipesContainer from "../UserRecipesContainer/Loadable";
 import RecipesFormContainer from "../RecipesFormContainer/Loadable";
 import './index.css'
-import {RecipeContainer} from "../RecipeContainer";
+import RecipeContainer from "../RecipeContainer/Loadable";
 import {ToastContainer} from "react-toastify";
 // todo add button go to all recipes
 

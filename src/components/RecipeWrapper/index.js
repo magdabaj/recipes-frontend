@@ -8,6 +8,7 @@ import React, { memo, useEffect, useState } from 'react';
 import TagsListComponent from '../TagListComponent';
 import PropTypes from 'prop-types';
 import CommentsComponent from '../CommentsComponent';
+import '../../containers/RecipeContainer/index.css';
 import Recipe from '../Recipe';
 import { Tween, Timeline } from 'react-gsap';
 // import styled from 'styled-components';

@@ -20,9 +20,9 @@ import makeSelectRecipeContainer, {
     makeSelectRecipe,
     makeSelectRemoveCommentStatus,
     makeSelectStatus,
-    makeSelectTags,
     selectSlug,
 } from './selectors';
+import { makeSelectTags } from "../App/selectors";
 import { makeSelectUser } from '../LoginContainer/selectors';
 import {
     addComment,
@@ -30,10 +30,10 @@ import {
     getComments,
     getRecipe,
     getRecipeRatings,
-    loadTags,
     removeComment,
     sendRating,
 } from './actions';
+import { loadTags } from "../App/actions";
 import RecipeWrapper from '../../components/RecipeWrapper';
 import fetchStates from '../../utils/fetchStates';
 import Spinner from '../../components/Spinner';

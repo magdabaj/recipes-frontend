@@ -5,7 +5,7 @@
  */
 
 import React from 'react';
-import { matchPath, Redirect } from 'react-router';
+import { Redirect } from 'react-router';
 import RecipeContainer from './RecipeContainer';
 import Image from '../Image';
 import RecipeRating from '../RecipeRating';
