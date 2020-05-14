@@ -40,15 +40,11 @@ export function UserRecipesContainer({ status, ...props }) {
         if (props.user.loggedIn === true) props.loadUserRecipes(props.user.email, props.page);
     }, [props.page])
 
-    return props.user.loggedIn === true ? (
-        status === fetchStates.fetching ? (
+    return status === fetchStates.fetching ? (
             <Spinner />
         ) : (
             <UserRecipesComponent {...props} />
         )
-    ) : (
-        <LoginFormContainer />
-    );
 }
 
 UserRecipesContainer.propTypes = {};
