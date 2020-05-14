@@ -12,8 +12,12 @@ import RecipeTextInput from '../RecipeTextInput';
 import tagTypes from '../../utils/tagTypes';
 import Select from '../Select';
 import Button from '../Button';
+import {Redirect} from "react-router";
+import fetchStates from "../../utils/fetchStates";
+import {toast} from "react-toastify";
 
-const RecipesForm = ({ ...props }) => {
+const RecipesForm = ({ status, ...props }) => {
+    const [cancel, setCancel] = useState(false)
     const [recipe, setRecipe] = useState({
         title: '',
         website: '',
@@ -115,19 +119,24 @@ const RecipesForm = ({ ...props }) => {
                     <Button
                         type={'submit'}
                         onSubmit={handleSave}
-                        // className={"recipe-form-button"}
                     >
                         {recipe.id ? 'Edit' : 'Save'} Recipe
                     </Button>
                     <Button
-                        type={'button'}
-                        // className={"recipe-form-button"}
-                        onClick={() => props.cancelAdding()}
+                       type={'button'}
+                       onClick={() => setCancel(true)}
                     >
                         Cancel
                     </Button>
+                    {cancel && <Redirect to={'/user-recipes'}/>}
                 </div>
             </form>
+            {status === fetchStates.success ?
+                (
+                    toast.success("Recipe added successfully"),
+                    <Redirect to={'/user-recipes'}/>
+                )
+                : null}
         </div>
     );
 };

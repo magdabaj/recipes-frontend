@@ -20,6 +20,9 @@ function Pagination({ totalPages, previousPage, nextPage, ...props }) {
 
     const isTagPathActive = !!matchPath(props.match.path, '/home/tag/:tagId');
 
+    console.log('home path', isHomePathActive);
+    console.log('tag path', isTagPathActive)
+
     let path = isHomePathActive
         ? '/home/page'
         : isTagPathActive

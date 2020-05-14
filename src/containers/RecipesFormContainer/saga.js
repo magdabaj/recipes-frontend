@@ -1,9 +1,9 @@
 import { take, call, put, select, takeLatest, all } from 'redux-saga/effects';
-import { ADD_RECIPE, CANCEL } from './constants';
-import { goBack } from 'react-router-redux';
+import { ADD_RECIPE } from './constants';
+import { push } from 'react-router-redux';
 import { editRecipe, storeRecipe } from '../../utils/api/recipe';
 import { addRecipeError, addRecipeSuccess } from './actions';
-import { selectUserId } from './selectors';
+import { browserHistory } from "../../utils/history";
 
 export function* addRecipeSaga(action) {
     const { title, url, website, image, tagId, id } = action.recipe.recipe;
@@ -18,7 +18,7 @@ export function* addRecipeSaga(action) {
             yield put(addRecipeError(json.message));
         } else {
             yield put(addRecipeSuccess(json.message));
-            yield put(goBack());
+            yield put(push('/user-recipes'));
         }
     } catch (e) {
         yield put(addRecipeError(e.message));
@@ -27,12 +27,4 @@ export function* addRecipeSaga(action) {
 
 export function* watchRecipeAdd() {
     yield takeLatest(ADD_RECIPE, addRecipeSaga);
-}
-
-export function* handleDoneSaga() {
-    yield put(goBack());
-}
-
-export function* watchAddCancel() {
-    yield takeLatest(CANCEL, handleDoneSaga);
 }

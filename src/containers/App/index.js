@@ -1,5 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+import 'react-toastify/dist/ReactToastify.css';
 import HomePage from "../HomePage/Loadable";
 import NavigationContainer from "../NavigationContainer";
 import LoginContainer from "../LoginContainer";

@@ -37,9 +37,6 @@ const recipesFormContainerReducer = (state = initialState, action) =>
                 draft.status = fetchStates.error;
                 draft.error = action.error;
                 break;
-            case CANCEL:
-                draft.status = null;
-                break;
         }
     });
 

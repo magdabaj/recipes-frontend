@@ -1,5 +1,5 @@
 import { take, call, put, select, all, takeLatest } from 'redux-saga/effects';
-import { goBack } from 'react-router-redux';
+import { push } from 'react-router-redux';
 import { AUTHENTICATE, SIGN_IN, SIGN_OUT, SIGN_UP_USER } from './constants';
 import { signInUser, signUpUser, signOutUser, authenticateUser } from '../../utils/api/user';
 import {
@@ -13,6 +13,13 @@ import {
     signUpSuccess,
 } from './actions';
 
+import { browserHistory } from "../../utils/history";
+
+function goTo(location) {
+    browserHistory.push(location)
+}
+
+
 export function* handleSignUp(action) {
     const { email, password } = action;
     try {
@@ -21,7 +28,7 @@ export function* handleSignUp(action) {
             yield put(signUpError(json.message));
         } else {
             yield put(signUpSuccess(json, email));
-            yield put(goBack());
+            yield call(goTo,'/user-recipes');
         }
     } catch (e) {
         yield put(signUpError(e.message));
@@ -40,7 +47,7 @@ export function* handleSignIn(action) {
             yield put(signInError(json.message));
         } else {
             yield put(signInSuccess(json, email));
-            yield put(goBack());
+            yield call(goTo,'/user-recipes');
         }
     } catch (e) {
         yield put(signInError(e.message));
@@ -58,7 +65,7 @@ export function* handleSignOut() {
             yield put(signOutError(json.message));
         } else {
             yield put(signOutSuccess(json));
-            yield put(goBack());
+            yield put(push('/'))
         }
     } catch (e) {
         yield put(signOutSuccess(e.message));

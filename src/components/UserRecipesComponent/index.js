@@ -53,7 +53,7 @@ const UserRecipesComponent = ({ recipes, user, ...props }) => {
                                     </div>
                                 ))
                             ) : (
-                                <h1>Loading...</h1>
+                                <h1>You have no recipes yet</h1>
                             )}
                         </div>
                     </div>
@@ -68,6 +68,7 @@ const UserRecipesComponent = ({ recipes, user, ...props }) => {
                         <Link to={`/add/${user.userId}`}>
                             <IoIosAddCircle />
                         </Link>
+                        <div className={'button-text'}>Click to add recipe</div>
                     </IconContext.Provider>
                 ) : null}
             </div>

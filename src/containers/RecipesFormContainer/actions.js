@@ -31,10 +31,6 @@ export const addRecipeError = error => ({
     error,
 });
 
-export const cancelAdding = () => ({
-    type: CANCEL,
-});
-
 // todo route authentication
 // todo styled components
 // todo material ui

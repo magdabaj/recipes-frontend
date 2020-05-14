@@ -113,6 +113,18 @@
     cursor: pointer;
 }
 
+.add-icon:hover .button-text {
+    display: block
+}
+
+.button-text {
+    position: relative;
+    border: 2px solid black;
+    bottom: 30px;
+    left:0;
+    display: none;
+}
+
 .recipe-img-hover {
     /*display: none;*/
     opacity: 0;
@@ -164,3 +176,4 @@
     /*transform: translate(-50%,-50%);*/
     /*transition: left .4s ease-in-out;*/
 }
+

@@ -24,20 +24,21 @@ function Navigation({ user, signOut }) {
 
                 <div className={'navigation-links'}>
                     <NavLink to={'/'} exact className={'navigation-links--item'}>
-                        Recipes
-                    </NavLink>
-                    <NavLink to={'/'} className={'navigation-links--item'}>
                         Home
                     </NavLink>
-                    <NavLink to={'/user-recipes'} className={'navigation-links--item'}>
-                        Your Profile
-                    </NavLink>
+                    {/*<NavLink to={'/'} className={'navigation-links--item'}>*/}
+                    {/*    Home*/}
+                    {/*</NavLink>*/}
+                    {user.loggedIn ?
+                        <NavLink to={'/user-recipes'} className={'navigation-links--item'}>
+                            Your Profile
+                        </NavLink> : null}
                 </div>
 
                 <div className={'navigation-login'}>
                     {user.loggedIn ? (
                         <div className={'navigation-login--item'}>
-                            <div onClick={signOut}>Log Out</div>
+                            <div onClick={signOut} className={'logout'}>Log Out</div>
                         </div>
                     ) : (
                         <NavLink to={'/login'} className={'navigation-login--item'}>

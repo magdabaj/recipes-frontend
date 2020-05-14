@@ -36,6 +36,10 @@ export function UserRecipesContainer({ status, ...props }) {
         if (props.tags.length === 0) props.loadTags();
     }, [props.user.status, props.user.email]);
 
+    useEffect(() =>  {
+        if (props.user.loggedIn === true) props.loadUserRecipes(props.user.email, props.page);
+    }, [props.page])
+
     return props.user.loggedIn === true ? (
         status === fetchStates.fetching ? (
             <Spinner />

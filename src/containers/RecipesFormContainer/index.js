@@ -50,7 +50,6 @@ const mapStateToProps = createStructuredSelector({
 function mapDispatchToProps(dispatch) {
     return {
         addRecipe: (recipe, userId, tagId) => dispatch(addRecipe(recipe, userId, tagId)),
-        cancelAdding: () => dispatch(cancelAdding()),
         loadTags: () => dispatch(loadTags()),
     };
 }
