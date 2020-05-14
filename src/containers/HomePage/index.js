@@ -30,9 +30,6 @@ export function RecipesHomePage({ status, ...props }) {
     // todo add list of rated recipes
     // todo add recipes to favourites
 
-    console.log("tags", props.tags)
-    console.log(status)
-
     return status === fetchStates.fetching /*|| status === fetchStates.error*/ ? (
         <Spinner />
     ) : (

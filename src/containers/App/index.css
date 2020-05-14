@@ -139,7 +139,7 @@ a {
     margin: 5px 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 768px) {
     /*.form {*/
     /*    width: 100%;*/
     /*    padding: 20px;*/
@@ -155,12 +155,12 @@ a {
     }
 
 
-    .form-container {
-        margin-top: 50%;
-    }
+    /*.form-container {*/
+    /*    margin-top: 50%;*/
+    /*}*/
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 768px) {
     .form {
         width: 100%
     }

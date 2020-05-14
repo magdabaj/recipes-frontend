@@ -23,7 +23,7 @@ function RecipeWrapper({ recipe, user, sendRating, ratingsMean, getRecipeRatings
         <section className={'container'}>
             <Timeline
                 target={
-                    <div className={'wrapper'}>
+                    <div className={'recipe-wrapper'}>
                         <div className={'recipes-container'}>
                             {recipe ? (
                                 <Recipe

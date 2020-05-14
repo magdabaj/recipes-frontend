@@ -174,7 +174,7 @@
         flex-direction: column;
         align-items: center;
     }
-    .wrapper {
+    .recipe-wrapper {
         flex-direction: column;
         align-items: center;
         justify-content: center;
@@ -206,7 +206,7 @@
     }
 }
 
-.wrapper {
+.recipe-wrapper {
     display: flex;
     max-width: 1170px;
 }

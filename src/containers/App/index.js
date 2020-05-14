@@ -17,10 +17,9 @@ export default function App() {
             <NavigationContainer />
             <Switch>
                 <Route exact path="/" component={HomePage} />
-                <Route path={'/home/tag/:tagId/page/:page'} component={HomePage} />
-                <Route path={'/home/page/:page'} component={HomePage} />
-                <Route path={'/home/tag/:tagId'} component={HomePage} />
-                <Route path="/home" component={HomePage} />
+                <Route path={'/tag/:tagId/page/:page'} component={HomePage} />
+                <Route path={'/page/:page'} component={HomePage} />
+                <Route path={'/tag/:tagId'} component={HomePage} />
                 <Route path="/recipes/:recipeId" component={RecipeContainer} />
                 <Route path={'/add/:userId/recipe/:recipeId'} component={RecipesFormContainer} />
                 <Route path={'/add/:userId'} component={RecipesFormContainer} />

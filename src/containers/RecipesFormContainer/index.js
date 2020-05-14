@@ -21,7 +21,7 @@ import { makeSelectTags } from "../App/selectors";
 import RecipesForm from '../../components/RecipesForm';
 import { makeSelectUser } from '../LoginContainer/selectors';
 import LoginContainer from '../LoginContainer/Loadable';
-import { addRecipe, cancelAdding } from './actions';
+import { addRecipe } from './actions';
 import { loadTags } from "../App/actions";
 import { makeSelectUserRecipes } from '../UserRecipesContainer/selectors';
 
@@ -31,7 +31,6 @@ export function RecipesFormContainer({ ...props }) {
         else props.loadTags()
     }, []);
 
-    console.log("tags ", props.tags)
     return props.user.loggedIn ? <RecipesForm {...props} /> : <LoginContainer />;
 }
 
