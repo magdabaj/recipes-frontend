@@ -1,8 +1,6 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const path = require('path');
 
-console.log("mode", process.env)
-
 module.exports = {
     entry: path.resolve(__dirname, './src/index.js'),
     output: {

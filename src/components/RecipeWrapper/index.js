@@ -11,6 +11,7 @@ import CommentsComponent from '../CommentsComponent';
 import '../../containers/RecipeContainer/index.css';
 import Recipe from '../Recipe';
 import { Tween, Timeline } from 'react-gsap';
+import Spinner from "../Spinner";
 // import styled from 'styled-components';
 
 function RecipeWrapper({ recipe, user, sendRating, ratingsMean, getRecipeRatings, tags, ...props }) {
@@ -34,7 +35,7 @@ function RecipeWrapper({ recipe, user, sendRating, ratingsMean, getRecipeRatings
                                     {...props}
                                 />
                             ) : (
-                                <h1>There are no recipes yet</h1>
+                                <Spinner/>
                             )}
 
                             <CommentsComponent
