@@ -4,7 +4,7 @@ const path = require('path');
 module.exports = {
     entry: path.resolve(__dirname, './src/index.js'),
     output: {
-        publicPath: /*process.env.development ? '/' : */'/',
+        publicPath: /*process.env.development ? '/' : */'',
         filename: 'static/bundle.[hash].js',
         chunkFilename: 'static/chunk.[chunkhash].js',
         path: path.resolve(__dirname, 'dist'),
