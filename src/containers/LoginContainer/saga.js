@@ -13,10 +13,10 @@ import {
     signUpSuccess,
 } from './actions';
 
-import { browserHistory } from "../../utils/history";
+import history from "../../utils/history";
 
 function goTo(location) {
-    browserHistory.push(location)
+    history.push(location)
 }
 
 

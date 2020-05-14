@@ -3,7 +3,7 @@ import { ADD_RECIPE } from './constants';
 import { push } from 'react-router-redux';
 import { editRecipe, storeRecipe } from '../../utils/api/recipe';
 import { addRecipeError, addRecipeSuccess } from './actions';
-import { browserHistory } from "../../utils/history";
+import history from "../../utils/history";
 
 export function* addRecipeSaga(action) {
     const { title, url, website, image, tagId, id } = action.recipe.recipe;
