@@ -16,13 +16,15 @@ function Pagination({ totalPages, previousPage, nextPage, ...props }) {
     let i = 1;
     let totalPagesArray = new Array(totalPages).fill(0).map(_ => i++);
 
-    const isHomePathActive = !!matchPath(props.match.isExact,'/') /*|| !matchPath(props.match.path, '/page/:page');*/
+    const isHomePathActive = !!matchPath(props.match.path,'/') /*|| !matchPath(props.match.path, '/page/:page');*/
 
     const isTagPathActive = !!matchPath(props.match.path, '/tag/:tagId');
 
+    console.log("match ", props.match)
+
     // console.log('home path', isHomePathActive);
     // console.log('tag path', isTagPathActive);
-    // console.log('/', !!matchPath(props.match.isExact,'/'))
+    console.log('/', isHomePathActive)
     // console.log('/page',!!matchPath(props.match.path,'/page/:page'))
 
     let path = isHomePathActive

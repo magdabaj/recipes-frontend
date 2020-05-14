@@ -9,6 +9,8 @@ import TextInput from '../TextInput';
 import '../../containers/App/index.css';
 import Button, { ButtonSmall } from './Button';
 import fetchStates from '../../utils/fetchStates'
+import {Redirect} from "react-router";
+import {toast} from "react-toastify";
 
 function Login({ user, signIn, signUp, error, setError, status }) {
     const [userSubmit, setUser] = useState({
@@ -97,6 +99,8 @@ function Login({ user, signIn, signUp, error, setError, status }) {
                     </ButtonSmall>
                 </div>
             </form>
+            {status === fetchStates.success && <Redirect to={'/user-recipes'}/>}
+            {/*{status === fetchStates.error && toast.error(error)}*/}
         </div>
     );
 }

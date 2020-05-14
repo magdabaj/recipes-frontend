@@ -172,4 +172,8 @@ label:hover:before {
     .input-data-recipe {
         width: 450px;
     }
+
+    .select-container {
+        width: 100%;
+    }
 }
