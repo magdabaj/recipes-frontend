@@ -23,6 +23,7 @@
     background-color: #fff;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
     border-radius: 2px;
+    width: 70%;
 }
 
 .select-container {
@@ -144,14 +145,15 @@ label:hover:before {
 .recipe-input-container {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     margin: 1.5vw 0;
+    width: 100%;
 }
 
 @media only screen and (max-width: 768px) {
     .recipe-input-container {
         flex-direction: column;
-        width: 100%;
+        justify-content: center;
     }
     .form {
         width: 100%;
