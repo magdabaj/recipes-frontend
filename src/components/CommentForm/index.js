@@ -53,8 +53,6 @@ function CommentFormComponent({ addComment, recipeId, user, getComments, ...prop
                 email: comment.email,
             });
             comment.content = '';
-            if (props.addCommentStatus === fetchStates.success)
-                toast.success('Comment added successfully');
         } catch (error) {
             setErrors({ handleSave: error.message });
         }

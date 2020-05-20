@@ -28,7 +28,7 @@ import {
     EDIT_COMMENT_ERROR,
     REMOVE_COMMENT,
     REMOVE_COMMENT_SUCCESS,
-    REMOVE_COMMENT_ERROR, CLEAR_STATUS,
+    REMOVE_COMMENT_ERROR, CLEAR_STATUS, CLEAR_DELETE_COMMENTS_STATUS,
 } from './constants';
 
 export const getRecipeRatings = recipeId => ({
@@ -149,4 +149,8 @@ export const removeCommentError = error => ({
 
 export const clearStatus = () => ({
     type: CLEAR_STATUS
+})
+
+export const clearDeleteCommentsStatus = () => ({
+    type: CLEAR_DELETE_COMMENTS_STATUS
 })

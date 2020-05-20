@@ -100,7 +100,6 @@
 
 .navigation-links--active {
     border-bottom: 2px solid #ee4c7c;
-    box-shadow: 2px -3px 22px 1px grey;
 }
 
 .logout {

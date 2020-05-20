@@ -21,7 +21,6 @@ function CommentsComponent({
                                getComments,
                                editComment,
                                removeComment,
-                               commentStatus,
                                ...props
                            }) {
     return (
@@ -69,7 +68,6 @@ function CommentsComponent({
                     </ol>
                 ))}
             </div>
-            {commentStatus === fetchStates.success && toast.success("Komentarz usunięty pomyślnie")}
         </section>
     );
 }

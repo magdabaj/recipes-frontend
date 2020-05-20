@@ -53,10 +53,16 @@ const makeSelectComments = () =>
         substate => substate.comments,
     );
 
-const makeSelectCommentStatus = () =>
+const makeSelectAddCommentStatus = () =>
     createSelector(
         selectRecipeContainerDomain,
-        substate => substate.commentStatus,
+        substate => substate.addCommentStatus,
+    );
+
+const makeSelectDeleteCommentStatus = () =>
+    createSelector(
+        selectRecipeContainerDomain,
+        substate => substate.deleteCommentStatus,
     );
 
 const makeSelectAddCommentError = () =>
@@ -85,8 +91,9 @@ export {
     makeSelectGetRatingsStatus,
     selectSlug,
     makeSelectComments,
-    makeSelectCommentStatus,
     makeSelectAddCommentError,
     makeSelectCommentsNumber,
     makeSelectStatus,
+    makeSelectDeleteCommentStatus,
+    makeSelectAddCommentStatus
 };

@@ -133,7 +133,7 @@ const RecipesForm = ({ status, ...props }) => {
             </form>
             {status === fetchStates.success ?
                 (
-                    toast.success(recipe.id ? `Recipe edited successfully` : `Recipe added successfully`),
+                    toast.success(recipe.id ? `Przepis edytowany pomyślnie` : `Przepis dodany pomyślnie`),
                     <Redirect to={'/user-recipes'}/>
                 )
                 : null}

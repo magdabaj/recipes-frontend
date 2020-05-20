@@ -12,9 +12,11 @@ import '../../containers/RecipeContainer/index.css';
 import Recipe from '../Recipe';
 import { Tween, Timeline } from 'react-gsap';
 import Spinner from "../Spinner";
+import fetchStates from "../../utils/fetchStates";
+import {toast} from "react-toastify";
 // import styled from 'styled-components';
 
-function RecipeWrapper({ recipe, user, sendRating, ratingsMean, getRecipeRatings, tags, commentStatus, ...props }) {
+function RecipeWrapper({ recipe, user, sendRating, ratingsMean, getRecipeRatings, tags, addCommentStatus, deleteCommentStatus, ...props }) {
     useEffect(() => {
         getRecipeRatings(props.recipeId);
         props.getRecipe(props.recipeId);
@@ -44,7 +46,7 @@ function RecipeWrapper({ recipe, user, sendRating, ratingsMean, getRecipeRatings
                                 user={user}
                                 recipeId={props.recipeId}
                                 getComments={props.getComments}
-                                commentStatus={commentStatus}
+                                addCommentStatus={addCommentStatus}
                                 {...props}
                             />
                         </div>
@@ -56,6 +58,8 @@ function RecipeWrapper({ recipe, user, sendRating, ratingsMean, getRecipeRatings
             >
                 <Tween from={{ opacity: 0 }} to={{ opacity: 1 }} />
             </Timeline>
+            {deleteCommentStatus === fetchStates.success && toast.success("Komentarz usunięty pomyślnie")}
+            {addCommentStatus === fetchStates.success && toast.success("Komentarz został dodany")}
         </section>
     );
 }

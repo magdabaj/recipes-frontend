@@ -26,7 +26,7 @@ import {
     EDIT_COMMENT,
     REMOVE_COMMENT,
     REMOVE_COMMENT_SUCCESS,
-    REMOVE_COMMENT_ERROR, CLEAR_STATUS,
+    REMOVE_COMMENT_ERROR, CLEAR_STATUS, CLEAR_DELETE_COMMENTS_STATUS,
 } from './constants';
 import fetchStates from '../../utils/fetchStates';
 
@@ -36,7 +36,8 @@ export const initialState = {
     recipe: [],
     recipeId: null,
     comments: [],
-    commentStatus: null,
+    addCommentStatus: null,
+    deleteCommentStatus: null,
     commentsError: null,
     commentsNumber: 0,
     status: null,
@@ -90,28 +91,32 @@ const recipeContainerReducer = (state = initialState, action) =>
                 draft.error = action.error;
                 break;
             case ADD_COMMENT:
-                draft.commentStatus = fetchStates.fetching;
+                draft.addCommentStatus = fetchStates.fetching;
                 draft.commentsError = '';
                 break;
             case ADD_COMMENT_SUCCESS:
-                draft.commentStatus = fetchStates.success;
+                draft.addCommentStatus = fetchStates.success;
                 break;
             case ADD_COMMENT_ERROR:
-                draft.commentStatus = fetchStates.error;
+                draft.addCommentStatus = fetchStates.error;
                 draft.commentsError = action.error;
                 break;
             case REMOVE_COMMENT:
-                draft.commentStatus = fetchStates.fetching;
+                draft.deleteCommentStatus = fetchStates.fetching;
                 break;
             case REMOVE_COMMENT_SUCCESS:
-                draft.commentStatus = fetchStates.success;
+                draft.deleteCommentStatus = fetchStates.success;
                 break;
             case REMOVE_COMMENT_ERROR:
-                draft.commentStatus = fetchStates.error;
+                draft.deleteCommentStatus = fetchStates.error;
                 draft.commentsError = action.error;
                 break;
             case CLEAR_STATUS:
-                draft.commentStatus = null;
+                draft.addCommentStatus = null;
+                break;
+            case CLEAR_DELETE_COMMENTS_STATUS:
+                draft.deleteCommentStatus = null;
+                break;
         }
     });
 
