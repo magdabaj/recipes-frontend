@@ -75,7 +75,7 @@ function CommentFormComponent({ addComment, recipeId, user, getComments, ...prop
                     className={'comment-text-area'}
                 />
                 <button type={'submit'} onSubmit={handleSave} className={'comment-button'}>
-                    {props.addCommentStatus === fetchStates.fetching ? '...' : 'Add comment'}
+                    {props.addCommentStatus === fetchStates.fetching ? 'Adding...' : 'Add comment'}
                 </button>
             </form>
         </div>

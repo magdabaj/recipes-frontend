@@ -11,6 +11,7 @@ const AddRatingButton = styled.div`
   font-size: 1.5vw;
   border-bottom: 1px solid ${colorStyles.mediumPink};
   line-height: 1.15;
+  align-items: center;
 
   &:hover {
     cursor: pointer;

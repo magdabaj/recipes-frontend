@@ -32,13 +32,12 @@ import UserRecipesComponent from "../../components/UserRecipesComponent";
 export function UserRecipesContainer({ status, ...props }) {
 
     useEffect(() => {
-        if (props.user.loggedIn === true) props.loadUserRecipes(props.user.email, props.page);
         if (props.tags.length === 0) props.loadTags();
-    }, [props.user.status, props.user.email]);
+    }, []);
 
     useEffect(() =>  {
         if (props.user.loggedIn === true) props.loadUserRecipes(props.user.email, props.page);
-    }, [props.page])
+    }, [props.page, props.user.status, props.user.email])
 
     return status === fetchStates.fetching ? (
             <Spinner />

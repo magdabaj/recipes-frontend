@@ -77,8 +77,8 @@ const RecipesForm = ({ status, ...props }) => {
                     name={'title'}
                     type={'text'}
                     value={recipe.title}
-                    label={'Title'}
-                    placeholder={'Write recipe title'}
+                    label={'Tytuł'}
+                    placeholder={'Wpisz tytuł przepisu'}
                     onChange={handleChange}
                     error={errors.title}
                 />
@@ -86,8 +86,8 @@ const RecipesForm = ({ status, ...props }) => {
                     name={'website'}
                     type={'text'}
                     value={recipe.website}
-                    label={'Website'}
-                    placeholder={'Write source website'}
+                    label={'Strona'}
+                    placeholder={'Wpisz stronę źródłową'}
                     onChange={handleChange}
                     error={errors.website}
                 />
@@ -96,7 +96,7 @@ const RecipesForm = ({ status, ...props }) => {
                     type={'text'}
                     value={recipe.url}
                     label={'Url'}
-                    placeholder={'Write recipe url'}
+                    placeholder={'Wpisz adres przepisu'}
                     onChange={handleChange}
                     error={errors.url}
                 />
@@ -104,8 +104,8 @@ const RecipesForm = ({ status, ...props }) => {
                     name={'image'}
                     type={'text'}
                     value={recipe.image}
-                    label={'Image url'}
-                    placeholder={'Write image url'}
+                    label={'Url zdjęcia'}
+                    placeholder={'Wpisz url zdjęcia'}
                     onChange={handleChange}
                     error={errors.image}
                 />
@@ -120,13 +120,13 @@ const RecipesForm = ({ status, ...props }) => {
                         type={'submit'}
                         onSubmit={handleSave}
                     >
-                        {recipe.id ? 'Edit' : 'Save'} Recipe
+                        {recipe.id ? 'Edytuj' : 'Zapisz'} Przepis
                     </Button>
                     <Button
                        type={'button'}
                        onClick={() => setCancel(true)}
                     >
-                        Cancel
+                        Cofnij
                     </Button>
                     {cancel && <Redirect to={'/user-recipes'}/>}
                 </div>

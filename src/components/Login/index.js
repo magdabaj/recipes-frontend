@@ -79,23 +79,23 @@ function Login({ user, signIn, signUp, error, setError, status }) {
                 <TextInput
                     type={'password'}
                     name={'password'}
-                    label={'Password'}
+                    label={'Hasło'}
                     value={userSubmit.password}
                     onChange={handleChange}
                     error={errors.password}
-                    placeholder={"Password"}
+                    placeholder={"Hasło"}
                 />
                 <Button type={'submit'} onSubmit={handleSignIn}>
                     {status === fetchStates.fetching
-                        ? 'Loading...'
-                        : 'Sign In'}
+                        ? 'Ladowanie...'
+                        : 'Zaloguj się'}
                 </Button>
                 <div className={'sign-up'}>
-                    <div>Don't have an account?</div>
+                    <div>Nie masz jeszcze konta?</div>
                     <ButtonSmall type={'button'} onClick={handleSave}>
                         {status === fetchStates.fetching
-                            ? 'Loading...'
-                            : 'Sign up'}
+                            ? 'Ladowanie...'
+                            : 'Zarejestruj się'}
                     </ButtonSmall>
                 </div>
             </form>
