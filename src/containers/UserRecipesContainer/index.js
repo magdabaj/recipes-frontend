@@ -37,12 +37,14 @@ export function UserRecipesContainer({ status, ...props }) {
 
     useEffect(() =>  {
         if (props.user.loggedIn === true) props.loadUserRecipes(props.user.email, props.page);
-    }, [props.page, props.user.status, props.user.email])
+    }, [props.page, props.user.status, props.user.email]);
+
+    const route = props.history.location.pathname;
 
     return status === fetchStates.fetching ? (
             <Spinner />
         ) : (
-            <UserRecipesComponent {...props} />
+            <UserRecipesComponent route={route} {...props} />
         )
 }
 

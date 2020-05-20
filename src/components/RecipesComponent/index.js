@@ -14,7 +14,7 @@ import { Tween, Timeline } from 'react-gsap';
 import Spinner from '../Spinner';
 // import Carousel from '../Carousel';
 
-function AllRecipesComponent({ recipes, ...props }) {
+function AllRecipesComponent({ recipes, route, ...props }) {
     return (
         <section className={'latest-recipes'}>
             {/*<Carousel recipes={recipes} {...props} />*/}
@@ -60,7 +60,7 @@ function AllRecipesComponent({ recipes, ...props }) {
                     )}
                 </div>
             </div>
-            <Pagination {...props} />
+            <Pagination route={route} {...props} />
         </section>
     );
 }

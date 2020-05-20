@@ -14,7 +14,7 @@ import { Timeline, Tween } from 'react-gsap';
 import Pagination from '../Pagination';
 import '../../containers/HomePage/index.css';
 
-const UserRecipesComponent = ({ recipes, user, ...props }) => {
+const UserRecipesComponent = ({ recipes, user, route, ...props }) => {
     return (
         <section>
             <div className={'recipes-header'}>
@@ -70,7 +70,7 @@ const UserRecipesComponent = ({ recipes, user, ...props }) => {
                     <div className={'button-text'}>Click to add recipe</div>
                 </IconContext.Provider>
             </div>
-            <Pagination {...props} />
+            <Pagination route={route} {...props} />
         </section>
     );
 };

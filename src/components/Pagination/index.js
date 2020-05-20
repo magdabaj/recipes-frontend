@@ -12,26 +12,18 @@ import './index.css';
 // import PropTypes from 'prop-types';
 // import styled from 'styled-components';
 
-function Pagination({ totalPages, previousPage, nextPage, ...props }) {
+function Pagination({ totalPages, previousPage, nextPage, route, ...props }) {
     let i = 1;
     let totalPagesArray = new Array(totalPages).fill(0).map(_ => i++);
 
-    const isHomePathActive = !!matchPath(props.match.path,'/') /*|| !matchPath(props.match.path, '/page/:page');*/
-
-    const isTagPathActive = !!matchPath(props.match.path, '/tag/:tagId');
-
-    let path = isHomePathActive
-        ? '/page'
-        : isTagPathActive
-            ? `/tag/${props.tagId}/page`
-            : '/user-recipes/page';
+    console.log('route', route)
 
     return (
         <Container>
             <ul className={'pagination-list'}>
                 <li>
                     <Link
-                        to={previousPage ? `${path}/${previousPage.page}` : '#'}
+                        to={previousPage ? `${route}/${previousPage.page}` : '#'}
                         className={'pagination-link'}
                     >
                         {'<<'}
@@ -39,13 +31,13 @@ function Pagination({ totalPages, previousPage, nextPage, ...props }) {
                 </li>
                 {totalPagesArray.map(page => (
                     <li key={page}>
-                        <Link to={`${path}/${page}`} id={page} className={'pagination-link'}>
+                        <Link to={`${route}/${page}`} id={page} className={'pagination-link'}>
                             {page}
                         </Link>
                     </li>
                 ))}
                 <li>
-                    <Link to={nextPage ? `${path}/${nextPage.page}` : '#'} className={'pagination-link'}>
+                    <Link to={nextPage ? `${route}/${nextPage.page}` : '#'} className={'pagination-link'}>
                         {'>>'}
                     </Link>
                 </li>
