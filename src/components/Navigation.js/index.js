@@ -10,6 +10,7 @@ import PropTypes from 'prop-types'
 import '../../containers/NavigationContainer/index.css'
 import fetchStates from "../../utils/fetchStates";
 import {toast} from "react-toastify";
+import { GiCupcake } from 'react-icons/gi'
 // import styled from 'styled-components';
 
 function Navigation({ user, signOut, logoutStatus, ...props }) {
@@ -17,7 +18,6 @@ function Navigation({ user, signOut, logoutStatus, ...props }) {
     return (
         <div className={'navigation-container'}>
             <div className={'navigation'}>
-                {/*<div style={{width: "15px"}}/>*/}
 
                 <div className={'navigation-title'}>
                     <NavLink to={'/'} exact className={'navigation-title--item'}>
@@ -29,9 +29,6 @@ function Navigation({ user, signOut, logoutStatus, ...props }) {
                     <NavLink to={'/'} exact activeClassName={"navigation-links--active"} className={'navigation-links--item'}>
                         Strona główna
                     </NavLink>
-                    {/*<NavLink to={'/'} className={'navigation-links--item'}>*/}
-                    {/*    Home*/}
-                    {/*</NavLink>*/}
                     {user.loggedIn ?
                         <NavLink to={'/user-recipes'} activeClassName={"navigation-links--active"} className={'navigation-links--item'}>
                             Twój profil
@@ -41,16 +38,16 @@ function Navigation({ user, signOut, logoutStatus, ...props }) {
                 <div className={'navigation-login'}>
                     {user.loggedIn ? (
                         <div className={'navigation-login--item'}>
-                            <div onClick={signOut} className={'logout'}>Wyloguj się</div>
+                            <div onClick={signOut} className={'logout'}>Wyloguj</div>
                         </div>
                     ) : (
                         <NavLink to={'/login'} className={'navigation-login--item'} activeClassName={"navigation-links--active"}>
-                            Zaloguj się
+                            Zaloguj
                         </NavLink>
                     )}
                 </div>
             </div>
-            {logoutStatus === fetchStates.success && toast.success("Wylogowałeś się pomyślnie")}
+            {logoutStatus === fetchStates.success && toast.info("Wylogowałeś się pomyślnie")}
         </div>
     );
 }
