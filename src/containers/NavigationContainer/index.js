@@ -14,6 +14,7 @@ import {makeSelectUser} from "../LoginContainer/selectors";
 import {signOut} from "../LoginContainer/actions";
 
 export function NavigationContainer({ ...props }) {
+    console.log('props', props)
     return <Navigation {...props} />;
 }
 

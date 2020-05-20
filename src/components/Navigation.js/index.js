@@ -10,7 +10,11 @@ import PropTypes from 'prop-types'
 import '../../containers/NavigationContainer/index.css'
 // import styled from 'styled-components';
 
-function Navigation({ user, signOut }) {
+function Navigation({ user, signOut, ...props }) {
+    // let isActive = props.context.router.location.pathname === props.to;
+    //
+    // console.log('is active', isActive);
+    console.log('context', props.router)
     return (
         <div className={'navigation-container'}>
             <div className={'navigation'}>
@@ -23,14 +27,14 @@ function Navigation({ user, signOut }) {
                 </div>
 
                 <div className={'navigation-links'}>
-                    <NavLink to={'/'} exact className={'navigation-links--item'}>
+                    <NavLink to={'/'} exact activeClassName={"navigation-links--active"} className={'navigation-links--item'}>
                         Home
                     </NavLink>
                     {/*<NavLink to={'/'} className={'navigation-links--item'}>*/}
                     {/*    Home*/}
                     {/*</NavLink>*/}
                     {user.loggedIn ?
-                        <NavLink to={'/user-recipes'} className={'navigation-links--item'}>
+                        <NavLink to={'/user-recipes'} activeClassName={"navigation-links--active"} className={'navigation-links--item'}>
                             Your Profile
                         </NavLink> : null}
                 </div>
@@ -41,7 +45,7 @@ function Navigation({ user, signOut }) {
                             <div onClick={signOut} className={'logout'}>Log Out</div>
                         </div>
                     ) : (
-                        <NavLink to={'/login'} className={'navigation-login--item'}>
+                        <NavLink to={'/login'} className={'navigation-login--item'} activeClassName={"navigation-links--active"}>
                             Log In
                         </NavLink>
                     )}

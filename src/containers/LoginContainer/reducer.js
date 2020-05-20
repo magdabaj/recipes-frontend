@@ -27,6 +27,7 @@ export const initialState = {
         email: '',
         userId: null,
         status: null,
+        logoutStatus: null,
     },
 };
 
@@ -68,32 +69,32 @@ const loginContainerReducer = (state = initialState, action) =>
                 draft.user.userId = action.userId;
                 break;
             case SIGN_OUT:
-                draft.user.status = fetchStates.fetching;
+                draft.user.logoutStatus = fetchStates.fetching;
                 break;
             case SIGN_OUT_SUCCESS:
-                draft.user.status = fetchStates.success;
+                draft.user.logoutStatus = fetchStates.success;
                 draft.user.loggedIn = false;
                 draft.user.message = action.message;
                 draft.user.email = '';
                 draft.user.userId = '';
                 break;
             case SIGN_OUT_ERROR:
-                draft.user.status = fetchStates.error;
+                draft.user.logoutStatus = fetchStates.error;
                 draft.user.error = action.error;
                 break;
             case AUTHENTICATE:
-                // draft.user.status = fetchStates.fetching;
+                draft.user.status = fetchStates.fetching;
                 break;
             case AUTHENTICATE_SUCCESS:
-                // draft.user.status = fetchStates.success;
+                draft.user.status = fetchStates.success;
                 draft.user.loggedIn = action.authenticated;
                 draft.user.message = action.message;
                 draft.user.email = action.email;
                 draft.user.userId = action.userId;
                 break;
             case AUTHENTICATE_ERROR:
-                // draft.user.status = fetchStates.error;
-                // draft.user.error = action.error;
+                draft.user.status = fetchStates.error;
+                draft.user.error = action.error;
                 break;
             case SET_ERROR:
                 draft.user.error = null;

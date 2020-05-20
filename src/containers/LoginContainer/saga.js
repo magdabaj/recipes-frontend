@@ -65,7 +65,6 @@ export function* handleSignOut() {
             yield put(signOutError(json.message));
         } else {
             yield put(signOutSuccess(json));
-            yield put(push('/'))
         }
     } catch (e) {
         yield put(signOutSuccess(e.message));
@@ -83,7 +82,6 @@ export function* handleAuthenticate() {
             yield put(authenticateError(json.message));
         } else {
             yield put(authenticateSuccess(json));
-            yield put(goBack());
         }
     } catch (e) {
         yield put(authenticateError(e.message));

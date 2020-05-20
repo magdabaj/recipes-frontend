@@ -13,6 +13,9 @@ import { compose } from 'redux';
 import makeSelectLoginFormContainer, { makeSelectError, makeSelectStatus, makeSelectUser } from './selectors'
 import { signUp, signIn, authenticate, setError } from './actions'
 import Login from '../../components/Login';
+import {Redirect} from "react-router";
+
+// todo setError function, display errors
 
 export function LoginContainer({ ...props }) {
     useEffect(() => {
@@ -21,7 +24,7 @@ export function LoginContainer({ ...props }) {
         }
     }, []);
 
-    return props.user.loggedIn ? null : <Login {...props} />;
+    return props.user.loggedIn ? <Redirect to={'/user-recipes'}/> : <Login {...props} />;
 }
 
 LoginContainer.propTypes = {
