@@ -8,6 +8,8 @@ import React from 'react';
 import '../../containers/RecipeContainer/index.css';
 import CommentForm from '../CommentForm';
 import { Link } from 'react-router-dom';
+import fetchStates from "../../utils/fetchStates";
+import { toast } from "react-toastify";
 // import PropTypes from 'prop-types';
 // import styled from 'styled-components';
 
@@ -19,6 +21,7 @@ function CommentsComponent({
                                getComments,
                                editComment,
                                removeComment,
+                               commentStatus,
                                ...props
                            }) {
     return (
@@ -66,6 +69,7 @@ function CommentsComponent({
                     </ol>
                 ))}
             </div>
+            {commentStatus === fetchStates.success && toast.success("Komentarz usunięty pomyślnie")}
         </section>
     );
 }

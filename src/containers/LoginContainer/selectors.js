@@ -39,5 +39,11 @@ const makeSelectStatus = () =>
         substate => substate.user.status,
     )
 
+const makeSelectLogoutStatus = () =>
+    createSelector(
+        selectLoginFormContainerDomain,
+        substate => substate.user.logoutStatus,
+    )
+
 export default makeSelectLoginFormContainer;
-export { selectLoginFormContainerDomain, makeSelectUser, makeSelectError, makeSelectStatus };
+export { selectLoginFormContainerDomain, makeSelectUser, makeSelectError, makeSelectStatus, makeSelectLogoutStatus };

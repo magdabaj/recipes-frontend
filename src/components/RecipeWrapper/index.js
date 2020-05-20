@@ -14,7 +14,7 @@ import { Tween, Timeline } from 'react-gsap';
 import Spinner from "../Spinner";
 // import styled from 'styled-components';
 
-function RecipeWrapper({ recipe, user, sendRating, ratingsMean, getRecipeRatings, tags, ...props }) {
+function RecipeWrapper({ recipe, user, sendRating, ratingsMean, getRecipeRatings, tags, commentStatus, ...props }) {
     useEffect(() => {
         getRecipeRatings(props.recipeId);
         props.getRecipe(props.recipeId);
@@ -44,6 +44,7 @@ function RecipeWrapper({ recipe, user, sendRating, ratingsMean, getRecipeRatings
                                 user={user}
                                 recipeId={props.recipeId}
                                 getComments={props.getComments}
+                                commentStatus={commentStatus}
                                 {...props}
                             />
                         </div>

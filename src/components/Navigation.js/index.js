@@ -8,12 +8,11 @@ import React, { memo } from 'react';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types'
 import '../../containers/NavigationContainer/index.css'
+import fetchStates from "../../utils/fetchStates";
+import {toast} from "react-toastify";
 // import styled from 'styled-components';
 
-function Navigation({ user, signOut, ...props }) {
-    // let isActive = props.context.router.location.pathname === props.to;
-    //
-    // console.log('is active', isActive);
+function Navigation({ user, signOut, logoutStatus, ...props }) {
     console.log('context', props.router)
     return (
         <div className={'navigation-container'}>
@@ -51,6 +50,7 @@ function Navigation({ user, signOut, ...props }) {
                     )}
                 </div>
             </div>
+            {logoutStatus === fetchStates.success && toast.success("Wylogowałeś się pomyślnie")}
         </div>
     );
 }

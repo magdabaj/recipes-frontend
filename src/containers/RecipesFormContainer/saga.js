@@ -2,7 +2,7 @@ import { take, call, put, select, takeLatest, all } from 'redux-saga/effects';
 import { ADD_RECIPE } from './constants';
 import { push } from 'react-router-redux';
 import { editRecipe, storeRecipe } from '../../utils/api/recipe';
-import { addRecipeError, addRecipeSuccess } from './actions';
+import {addRecipeError, addRecipeSuccess, changeStatus} from './actions';
 import history from "../../utils/history";
 
 export function* addRecipeSaga(action) {
@@ -16,9 +16,10 @@ export function* addRecipeSaga(action) {
 
         if (json.type === 'error') {
             yield put(addRecipeError(json.message));
+            yield put(changeStatus());
         } else {
             yield put(addRecipeSuccess(json.message));
-            yield put(push('/user-recipes'));
+            yield put(changeStatus());
         }
     } catch (e) {
         yield put(addRecipeError(e.message));

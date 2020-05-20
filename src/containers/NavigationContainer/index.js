@@ -10,11 +10,10 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 import Navigation from '../../components/Navigation.js'
-import {makeSelectUser} from "../LoginContainer/selectors";
+import {makeSelectLogoutStatus, makeSelectUser} from "../LoginContainer/selectors";
 import {signOut} from "../LoginContainer/actions";
 
 export function NavigationContainer({ ...props }) {
-    console.log('props', props)
     return <Navigation {...props} />;
 }
 
@@ -24,6 +23,7 @@ NavigationContainer.propTypes = {
 
 const mapStateToProps = createStructuredSelector({
     user: makeSelectUser(),
+    logoutStatus: makeSelectLogoutStatus(),
 });
 
 function mapDispatchToProps(dispatch) {

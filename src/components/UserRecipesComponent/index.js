@@ -63,14 +63,12 @@ const UserRecipesComponent = ({ recipes, user, ...props }) => {
             </Timeline>
 
             <div>
-                {user ? (
-                    <IconContext.Provider value={{ className: 'add-icon', size: '80px' }}>
-                        <Link to={`/add/${user.userId}`}>
-                            <IoIosAddCircle />
-                        </Link>
-                        <div className={'button-text'}>Click to add recipe</div>
-                    </IconContext.Provider>
-                ) : null}
+                <IconContext.Provider value={{ className: 'add-icon', size: '80px' }}>
+                    <Link to={`/add/${user.userId}`}>
+                        <IoIosAddCircle />
+                    </Link>
+                    <div className={'button-text'}>Click to add recipe</div>
+                </IconContext.Provider>
             </div>
             <Pagination {...props} />
         </section>

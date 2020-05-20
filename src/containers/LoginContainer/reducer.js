@@ -16,7 +16,7 @@ import {
     SIGN_IN_ERROR,
     AUTHENTICATE,
     AUTHENTICATE_SUCCESS,
-    AUTHENTICATE_ERROR, SET_ERROR
+    AUTHENTICATE_ERROR, CLEAR_STATUS, CLEAR_LOGOUT_STATUS
 } from './constants'
 import fetchStates from '../../utils/fetchStates';
 
@@ -90,22 +90,25 @@ const loginContainerReducer = (state = initialState, action) =>
                 draft.user.error = action.error;
                 break;
             case AUTHENTICATE:
-                draft.user.status = fetchStates.fetching;
+                // draft.user.status = fetchStates.fetching;
                 break;
             case AUTHENTICATE_SUCCESS:
-                draft.user.status = fetchStates.success;
+                // draft.user.status = fetchStates.success;
                 draft.user.loggedIn = action.authenticated;
                 draft.user.message = action.message;
                 draft.user.email = action.email;
                 draft.user.userId = action.userId;
                 break;
             case AUTHENTICATE_ERROR:
-                draft.user.status = fetchStates.error;
+                // draft.user.status = fetchStates.error;
                 draft.user.error = action.error;
                 break;
-            case SET_ERROR:
-                draft.user.error = null;
-            // draft.user.status = null;
+            case CLEAR_STATUS:
+                draft.user.status = null;
+                break;
+            case CLEAR_LOGOUT_STATUS:
+                draft.user.logoutStatus = null;
+                break;
         }
     });
 

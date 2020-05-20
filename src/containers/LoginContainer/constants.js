@@ -20,5 +20,5 @@ export const AUTHENTICATE = 'app/LoginFormContainer/AUTHENTICATE';
 export const AUTHENTICATE_SUCCESS = 'app/LoginFormContainer/AUTHENTICATE_SUCCESS';
 export const AUTHENTICATE_ERROR = 'app/LoginFormContainer/AUTHENTICATE_ERROR';
 
-export const SET_ERROR = 'app/LoginFormContainer/SET_ERROR';
-
+export const CLEAR_STATUS = 'app/LoginFormContainer/CLEAR_STATUS';
+export const CLEAR_LOGOUT_STATUS = 'app/LoginFormContainer/CLEAR_LOGOUT_STATUS';

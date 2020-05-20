@@ -1,10 +1,9 @@
-import { take, call, put, select, all, takeLatest } from 'redux-saga/effects';
-import { push } from 'react-router-redux';
+import { call, put, takeLatest } from 'redux-saga/effects';
 import { AUTHENTICATE, SIGN_IN, SIGN_OUT, SIGN_UP_USER } from './constants';
 import { signInUser, signUpUser, signOutUser, authenticateUser } from '../../utils/api/user';
 import {
     authenticateError,
-    authenticateSuccess,
+    authenticateSuccess, clearLogoutStatus, clearStatus,
     signInError,
     signInSuccess,
     signOutError,
@@ -13,25 +12,20 @@ import {
     signUpSuccess,
 } from './actions';
 
-import history from "../../utils/history";
-
-function goTo(location) {
-    history.push(location)
-}
-
-
 export function* handleSignUp(action) {
     const { email, password } = action;
     try {
         const json = yield call(signUpUser, email, password);
         if (json.type === 'error') {
             yield put(signUpError(json.message));
+            yield put(clearStatus());
         } else {
             yield put(signUpSuccess(json, email));
-            yield call(goTo,'/user-recipes');
+            yield put(clearStatus());
         }
     } catch (e) {
         yield put(signUpError(e.message));
+        yield put(clearStatus());
     }
 }
 
@@ -45,9 +39,10 @@ export function* handleSignIn(action) {
         const json = yield call(signInUser, email, password);
         if (json.type === 'error') {
             yield put(signInError(json.message));
+            yield put(clearStatus());
         } else {
             yield put(signInSuccess(json, email));
-            yield call(goTo,'/user-recipes');
+            yield put(clearStatus())
         }
     } catch (e) {
         yield put(signInError(e.message));
@@ -63,11 +58,14 @@ export function* handleSignOut() {
         const json = yield call(signOutUser);
         if (json.type === 'error') {
             yield put(signOutError(json.message));
+            yield put(clearLogoutStatus());
         } else {
             yield put(signOutSuccess(json));
+            yield put(clearLogoutStatus());
         }
     } catch (e) {
         yield put(signOutSuccess(e.message));
+        yield put(clearLogoutStatus());
     }
 }
 
@@ -82,9 +80,11 @@ export function* handleAuthenticate() {
             yield put(authenticateError(json.message));
         } else {
             yield put(authenticateSuccess(json));
+            yield put(clearStatus());
         }
     } catch (e) {
         yield put(authenticateError(e.message));
+        yield put(clearStatus());
     }
 }
 

@@ -8,7 +8,7 @@ import {
     ADD_RECIPE,
     ADD_RECIPE_ERROR,
     ADD_RECIPE_SUCCESS,
-    CANCEL,
+    CANCEL, CHANGE_STATUS,
     LOAD_TAGS,
     LOAD_TAGS_ERROR,
     LOAD_TAGS_SUCCESS,
@@ -31,6 +31,9 @@ export const addRecipeError = error => ({
     error,
 });
 
-// todo route authentication
+export const changeStatus = () => ({
+    type: CHANGE_STATUS,
+});
+
 // todo styled components
 // todo material ui

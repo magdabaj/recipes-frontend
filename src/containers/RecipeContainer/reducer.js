@@ -26,7 +26,7 @@ import {
     EDIT_COMMENT,
     REMOVE_COMMENT,
     REMOVE_COMMENT_SUCCESS,
-    REMOVE_COMMENT_ERROR,
+    REMOVE_COMMENT_ERROR, CLEAR_STATUS,
 } from './constants';
 import fetchStates from '../../utils/fetchStates';
 
@@ -36,8 +36,7 @@ export const initialState = {
     recipe: [],
     recipeId: null,
     comments: [],
-    addCommentStatus: null,
-    removeCommentStatus: null,
+    commentStatus: null,
     commentsError: null,
     commentsNumber: 0,
     status: null,
@@ -91,26 +90,28 @@ const recipeContainerReducer = (state = initialState, action) =>
                 draft.error = action.error;
                 break;
             case ADD_COMMENT:
-                draft.addCommentStatus = fetchStates.fetching;
+                draft.commentStatus = fetchStates.fetching;
                 draft.commentsError = '';
                 break;
             case ADD_COMMENT_SUCCESS:
-                draft.addCommentStatus = fetchStates.success;
+                draft.commentStatus = fetchStates.success;
                 break;
             case ADD_COMMENT_ERROR:
-                draft.addCommentStatus = fetchStates.error;
+                draft.commentStatus = fetchStates.error;
                 draft.commentsError = action.error;
                 break;
             case REMOVE_COMMENT:
-                draft.removeCommentStatus = fetchStates.fetching;
+                draft.commentStatus = fetchStates.fetching;
                 break;
             case REMOVE_COMMENT_SUCCESS:
-                draft.removeCommentStatus = fetchStates.success;
+                draft.commentStatus = fetchStates.success;
                 break;
             case REMOVE_COMMENT_ERROR:
-                draft.removeCommentStatus = fetchStates.error;
+                draft.commentStatus = fetchStates.error;
                 draft.commentsError = action.error;
                 break;
+            case CLEAR_STATUS:
+                draft.commentStatus = null;
         }
     });
 

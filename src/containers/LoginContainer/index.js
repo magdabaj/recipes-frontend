@@ -11,11 +11,9 @@ import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 
 import makeSelectLoginFormContainer, { makeSelectError, makeSelectStatus, makeSelectUser } from './selectors'
-import { signUp, signIn, authenticate, setError } from './actions'
+import { signUp, signIn, authenticate } from './actions'
 import Login from '../../components/Login';
 import {Redirect} from "react-router";
-
-// todo setError function, display errors
 
 export function LoginContainer({ ...props }) {
     useEffect(() => {

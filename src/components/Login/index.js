@@ -12,7 +12,7 @@ import fetchStates from '../../utils/fetchStates'
 import {Redirect} from "react-router";
 import {toast} from "react-toastify";
 
-function Login({ user, signIn, signUp, error, setError, status }) {
+function Login({ user, signIn, signUp, error, status }) {
     const [userSubmit, setUser] = useState({
         email: '',
         password: '',
@@ -100,7 +100,8 @@ function Login({ user, signIn, signUp, error, setError, status }) {
                 </div>
             </form>
             {status === fetchStates.success && <Redirect to={'/user-recipes'}/>}
-            {/*{status === fetchStates.error && toast.error(error)}*/}
+            {status === fetchStates.error && toast.error(error)}
+            {status === fetchStates.success && toast.success('Poprawne logowanie')}
         </div>
     );
 }

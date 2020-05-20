@@ -12,13 +12,11 @@ import { compose } from 'redux';
 
 import makeSelectRecipeContainer, {
     makeSelectAddCommentError,
-    makeSelectAddCommentStatus,
     makeSelectComments,
-    makeSelectCommentsNumber,
+    makeSelectCommentsNumber, makeSelectCommentStatus,
     makeSelectGetRatingsStatus,
     makeSelectRatingsMean,
     makeSelectRecipe,
-    makeSelectRemoveCommentStatus,
     makeSelectStatus,
     selectSlug,
 } from './selectors';
@@ -52,11 +50,11 @@ export function RecipeContainer({ status, ...props }) {
 
     useEffect(() => {
         if (props.recipeId) props.getRecipe(props.recipeId);
-    }, []);
+    }, [props.recipeId]);
 
     useEffect(() => {
         props.getComments(props.recipeId);
-    }, [props.addCommentStatus, props.removeCommentStatus]);
+    }, [props.commentStatus]);
 
     return status === fetchStates.fetching ? <Spinner /> : <RecipeWrapper {...props} />;
 }
@@ -72,10 +70,9 @@ const mapStateToProps = createStructuredSelector({
     tags: makeSelectTags(),
     recipeId: selectSlug(),
     comments: makeSelectComments(),
-    addCommentStatus: makeSelectAddCommentStatus(),
+    commentStatus: makeSelectCommentStatus(),
     addCommentError: makeSelectAddCommentError(),
     commentsNumber: makeSelectCommentsNumber(),
-    removeCommentStatus: makeSelectRemoveCommentStatus(),
     status: makeSelectStatus(),
 });
 

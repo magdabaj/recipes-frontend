@@ -7,7 +7,7 @@
 import {
     AUTHENTICATE,
     AUTHENTICATE_ERROR,
-    AUTHENTICATE_SUCCESS, SET_ERROR,
+    AUTHENTICATE_SUCCESS, CLEAR_LOGOUT_STATUS, CLEAR_STATUS,
     SIGN_IN,
     SIGN_IN_ERROR,
     SIGN_IN_SUCCESS,
@@ -18,10 +18,6 @@ import {
     SIGN_UP_USER_ERROR,
     SIGN_UP_USER_SUCCESS
 } from './constants'
-
-export const setError = () => ({
-    type: SET_ERROR
-})
 
 export const signUp = ({ email, password }) => ({
     type: SIGN_UP_USER,
@@ -83,4 +79,12 @@ export const authenticateSuccess = json => ({
 export const authenticateError = error => ({
     type: AUTHENTICATE_ERROR,
     error,
+});
+
+export const clearStatus = () => ({
+    type: CLEAR_STATUS
+});
+
+export const clearLogoutStatus = () => ({
+    type: CLEAR_LOGOUT_STATUS,
 });

@@ -14,7 +14,7 @@ import {
     addCommentSuccess,
     getComments,
     removeCommentSuccess,
-    removeCommentError,
+    removeCommentError, clearStatus,
 } from './actions';
 import {
     ADD_COMMENT,
@@ -93,8 +93,10 @@ export function* addCommentSaga({ recipeId }) {
     try {
         const message = yield call(storeComment, recipeId.recipeId, recipeId.content, userId);
         yield put(addCommentSuccess(message));
+        yield put(clearStatus());
     } catch (e) {
         yield put(addCommentError(e.message));
+        yield put(clearStatus());
     }
 }
 
@@ -109,8 +111,10 @@ export function* deleteCommentSaga(action) {
     try {
         const message = yield call(deleteComment, commentId, userId);
         yield put(removeCommentSuccess(message));
+        yield put(clearStatus());
     } catch (e) {
         yield put(removeCommentError(e.message));
+        yield put(clearStatus());
     }
 }
 

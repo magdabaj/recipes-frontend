@@ -10,7 +10,7 @@ import {
     ADD_RECIPE,
     CANCEL,
     LOAD_TAGS_SUCCESS,
-    LOAD_TAGS_ERROR,
+    LOAD_TAGS_ERROR, CHANGE_STATUS,
 } from './constants';
 import fetchStates from '../../utils/fetchStates';
 
@@ -37,6 +37,8 @@ const recipesFormContainerReducer = (state = initialState, action) =>
                 draft.status = fetchStates.error;
                 draft.error = action.error;
                 break;
+            case CHANGE_STATUS:
+                draft.status = null;
         }
     });
 

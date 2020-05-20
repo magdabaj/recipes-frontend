@@ -31,3 +31,5 @@ export const EDIT_COMMENT_ERROR = 'app/RecipeContainer/EDIT_COMMENT_ERROR';
 export const REMOVE_COMMENT = 'app/RecipeContainer/REMOVE_COMMENT';
 export const REMOVE_COMMENT_SUCCESS = 'app/RecipeContainer/REMOVE_COMMENT_SUCCESS';
 export const REMOVE_COMMENT_ERROR = 'app/RecipeContainer/REMOVE_COMMENT_ERROR';
+
+export const CLEAR_STATUS = 'app/RecipeContainer/CLEAR_STATUS';
