@@ -12,6 +12,9 @@ import './index.css';
 // import PropTypes from 'prop-types';
 // import styled from 'styled-components';
 
+// todo rating
+// todo hover div over icons
+
 function Pagination({ totalPages, previousPage, nextPage, ...props }) {
     let i = 1;
     let totalPagesArray = new Array(totalPages).fill(0).map(_ => i++);

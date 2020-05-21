@@ -54,12 +54,12 @@ function CommentsComponent({
                                 </div>
                                 {comment.email.trim() === user.email ? (
                                     <div className={'comment-edit'}>
-                                        <div className={'comment-edit--button'}>Edit</div>
+                                        <div className={'comment-edit--button'}>Edytuj</div>
                                         <div
                                             className={'comment-edit--button'}
                                             onClick={() => removeComment(comment.id)}
                                         >
-                                            Remove
+                                            Usuń
                                         </div>
                                     </div>
                                 ) : null}

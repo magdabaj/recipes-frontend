@@ -34,5 +34,4 @@ const Spinner = ({ color, width, height }) => {
     );
 };
 
-// todo add react memo
 export default Spinner;

@@ -11,7 +11,12 @@ import Image from '../Image';
 import RecipeRating from '../RecipeRating';
 import RecipeTitle from './RecipeTitle';
 // import PropTypes from 'prop-types';
-// import styled from 'styled-components';
+import styled from 'styled-components';
+const Img = styled.img`
+    max-width: 100%;
+    width: 600px;
+    height: auto;
+`;
 
 function Recipes({ recipes, user, sendRating, ratingsMean, ...props }) {
     return recipes.map(recipe => (
@@ -31,7 +36,7 @@ function Recipes({ recipes, user, sendRating, ratingsMean, ...props }) {
                 />
                 <div>
                     <a href={recipe.url} target={'_blank'}>
-                        <img src={recipe.image} alt={recipe.title} />
+                        <Img src={recipe.image} alt={recipe.title} />
                     </a>
                 </div>
                 <div className={'source-website'}> Pobrano z: {recipe.website}</div>

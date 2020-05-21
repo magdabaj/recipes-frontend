@@ -26,6 +26,9 @@ import fetchStates from '../../utils/fetchStates';
 // todo pagination routes
 // todo menu styles
 // todo edit comment
+// todo add props
+// todo add tests
+// todo order css files and styled components
 
 export const initialState = {
     user: {
