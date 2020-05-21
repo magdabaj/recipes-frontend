@@ -32,6 +32,15 @@ module.exports = {
                 test: /\.css$/i,
                 use: ['style-loader', 'css-loader'],
             },
+            {
+                test: /\.(png|jpg)$/,
+                loader: 'url-loader',
+                // options: {
+                //     name: '[name].[ext]',
+                //     useRelativePath: true,
+                //     outputPath: './src/images',
+                // },
+            }
         ]
     },
     devServer: {
@@ -48,7 +57,8 @@ module.exports = {
         new HtmlWebPackPlugin({
             inject: true,
             template: "./src/index.html",
-            filename: "./index.html"
+            filename: "./index.html",
+            favicon: "./src/images/favicon.ico"
         }),
         new CircularDependencyPlugin({
             exclude: /a\.js|node_modules/, // exclude node_modules
