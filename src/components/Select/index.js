@@ -4,7 +4,7 @@
  *
  */
 
-import React, { useState } from 'react';
+import React, {memo, useState} from 'react';
 import _ from 'lodash';
 import '../../containers/RecipesFormContainer/index.css';
 // import PropTypes from 'prop-types';
@@ -52,4 +52,4 @@ function Select({ tags, tagType, onChange, error }) {
 
 Select.propTypes = {};
 
-export default Select;
+export default memo(Select);

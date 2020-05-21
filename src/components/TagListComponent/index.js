@@ -4,7 +4,7 @@
  *
  */
 
-import React from 'react';
+import React, {memo} from 'react';
 import PropTypes from 'prop-types';
 // import styled from 'styled-components';
 import Tag from '../Tag';
@@ -19,4 +19,4 @@ TagsListComponent.propTypes = {
     tags: PropTypes.array.isRequired,
 };
 
-export default TagsListComponent;
+export default memo(TagsListComponent);

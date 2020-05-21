@@ -9,9 +9,9 @@ import colorStyles from '../../utils/colorStyles';
 import styled from 'styled-components';
 
 const Button = styled.button`
-  background-color: #fff;
-  color: black;
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+  background-color: ${colorStyles.darkPink};
+  color: #fff;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
   text-transform: uppercase;
   font-size: 15px;
   font-weight: 600;
@@ -22,8 +22,8 @@ const Button = styled.button`
   border-radius: 5px;
 
   &:hover {
-    background-color: ${colorStyles.darkPink};
-    color: white;
+    background-color: #fff;
+    color: ${colorStyles.darkPink};
   }
   
   @media(max-width: 768px) {

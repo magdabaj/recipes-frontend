@@ -34,4 +34,4 @@ const Spinner = ({ color, width, height }) => {
     );
 };
 
-export default Spinner;
+export default memo(Spinner);
