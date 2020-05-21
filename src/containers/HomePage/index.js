@@ -30,7 +30,7 @@ export function RecipesHomePage({ status, ...props }) {
     // todo add list of rated recipes
     // todo add recipes to favourites
 
-    const route = props.history.location.pathname;
+    const route = props.match.path;
     return status === fetchStates.fetching /*|| status === fetchStates.error*/ ? (
         <Spinner />
     ) : (
