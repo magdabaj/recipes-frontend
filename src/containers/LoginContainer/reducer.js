@@ -20,7 +20,6 @@ import {
 } from './constants'
 import fetchStates from '../../utils/fetchStates';
 
-// todo edit checkbox styles
 // todo edit login form styles
 // todo edit comment
 // todo add props

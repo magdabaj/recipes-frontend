@@ -1,5 +1,6 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const CircularDependencyPlugin = require("circular-dependency-plugin");
+const WebpackPwaManifest = require('webpack-pwa-manifest');
 const path = require('path');
 
 module.exports = {
@@ -53,5 +54,25 @@ module.exports = {
             exclude: /a\.js|node_modules/, // exclude node_modules
             failOnError: false, // show a warning when there is a circular dependency
         }),
+        // new WebpackPwaManifest({
+        //     name: 'Recipes',
+        //     short_name: 'Rc',
+        //     description: 'My React recipes project!',
+        //     background_color: '#fafafa',
+        //     theme_color: '#EE4C7C',
+        //     inject: true,
+        //     ios: true,
+        //     icons: [
+        //         {
+        //             src: path.resolve('./src/images/android-chrome-512x512.png'),
+        //             sizes: [512],
+        //         },
+        //         // {
+        //         //     src: path.resolve('app/images/icon-512x512.png'),
+        //         //     sizes: [120, 152, 167, 180],
+        //         //     ios: true,
+        //         // },
+        //     ],
+        // }),
     ]
 };

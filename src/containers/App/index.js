@@ -15,13 +15,13 @@ import {authenticate} from "../LoginContainer/actions";
 import {connect} from "react-redux";
 import {compose} from "redux";
 import ProtectedRoute from "../../components/ProtectedRoute";
-// todo add button go to all recipes
+
+// todo create not found page
 
 const App = ({authenticate, user}) => {
     useEffect(() => {
         if(!user.loggedIn) authenticate()
     }, [user.loggedIn]);
-    console.log("user", user)
     return (
         <div>
             <NavigationContainer />
@@ -40,7 +40,6 @@ const App = ({authenticate, user}) => {
             </Switch>
             <ToastContainer />
             {/*<FooterContainer />*/}
-            {/*<GlobalStyle />*/}
         </div>
     );
 }
