@@ -13,8 +13,7 @@ import {toast} from "react-toastify";
 import { GiCupcake } from 'react-icons/gi'
 // import styled from 'styled-components';
 
-function Navigation({ user, signOut, logoutStatus, ...props }) {
-    console.log('context', props.router)
+function Navigation({ user, signOut, logoutStatus }) {
     return (
         <div className={'navigation-container'}>
             <div className={'navigation'}>
@@ -47,7 +46,7 @@ function Navigation({ user, signOut, logoutStatus, ...props }) {
                     )}
                 </div>
             </div>
-            {logoutStatus === fetchStates.success && toast.info("Wylogowałeś się pomyślnie")}
+            {logoutStatus === fetchStates.success && toast.success("Wylogowałeś się pomyślnie")}
         </div>
     );
 }
