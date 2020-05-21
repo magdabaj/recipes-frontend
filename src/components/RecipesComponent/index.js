@@ -9,7 +9,7 @@
 import React, { memo } from 'react';
 import '../../containers/HomePage/index.css';
 import { Link } from 'react-router-dom';
-import Pagination from '../Pagination';
+import Pagination from '../Pagination/Loadable';
 import { Tween, Timeline } from 'react-gsap';
 import Spinner from '../Spinner';
 // import Carousel from '../Carousel';

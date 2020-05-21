@@ -11,7 +11,7 @@ import { IoIosAddCircle } from 'react-icons/io';
 import { TiDeleteOutline } from 'react-icons/all';
 import { FiEdit } from 'react-icons/all';
 import { Timeline, Tween } from 'react-gsap';
-import Pagination from '../Pagination';
+import Pagination from '../Pagination/Loadable';
 import '../../containers/HomePage/index.css';
 
 const UserRecipesComponent = ({ recipes, user, route, ...props }) => {
