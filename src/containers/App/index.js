@@ -31,8 +31,8 @@ const App = ({authenticate, user}) => {
                 <Route path={'/page/:page'} component={HomePage} />
                 <Route path={'/tag/:tagId'} component={HomePage} />
                 <Route path="/recipes/:recipeId" component={RecipeContainer} />
-                <Route path={'/add/:userId/recipe/:recipeId'} component={RecipesFormContainer} />
-                <Route path={'/add/:userId'} component={RecipesFormContainer} />
+                <ProtectedRoute path={'/add/:userId/recipe/:recipeId'} user={user} component={RecipesFormContainer} />
+                <ProtectedRoute path={'/add/:userId'} user={user} component={RecipesFormContainer} />
                 <ProtectedRoute path={'/user-recipes/page/:page'} user={user} component={UserRecipesContainer} />
                 <ProtectedRoute path={'/user-recipes'} user={user} component={UserRecipesContainer} />
                 <Route path="/login" component={LoginContainer} />

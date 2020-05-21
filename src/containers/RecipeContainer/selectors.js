@@ -83,6 +83,12 @@ const makeSelectStatus = () =>
         substate => substate.status,
     );
 
+const makeSelectSendRatingStatus = () =>
+    createSelector(
+        selectRecipeContainerDomain,
+        substate => substate.sendRatingStatus,
+    );
+
 export default makeSelectRecipeContainer;
 export {
     selectRecipeContainerDomain,
@@ -95,5 +101,6 @@ export {
     makeSelectCommentsNumber,
     makeSelectStatus,
     makeSelectDeleteCommentStatus,
-    makeSelectAddCommentStatus
+    makeSelectAddCommentStatus,
+    makeSelectSendRatingStatus,
 };

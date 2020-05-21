@@ -34,3 +34,4 @@ export const REMOVE_COMMENT_ERROR = 'app/RecipeContainer/REMOVE_COMMENT_ERROR';
 
 export const CLEAR_STATUS = 'app/RecipeContainer/CLEAR_STATUS';
 export const CLEAR_DELETE_COMMENTS_STATUS = 'app/RecipeContainer/CLEAR_DELETE_COMMENTS_STATUS';
+export const CLEAR_SEND_RATING_STATUS = 'app/RecipeContainer/CLEAR_SEND_RATING_STATUS';

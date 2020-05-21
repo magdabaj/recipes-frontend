@@ -16,7 +16,7 @@ import fetchStates from "../../utils/fetchStates";
 import {toast} from "react-toastify";
 // import styled from 'styled-components';
 
-function RecipeWrapper({ recipe, user, sendRating, ratingsMean, getRecipeRatings, tags, addCommentStatus, deleteCommentStatus, ...props }) {
+function RecipeWrapper({ recipe, user, sendRating, ratingsMean, getRecipeRatings, tags, addCommentStatus, deleteCommentStatus, sendRatingStatus, ...props }) {
     useEffect(() => {
         getRecipeRatings(props.recipeId);
         props.getRecipe(props.recipeId);
@@ -60,6 +60,7 @@ function RecipeWrapper({ recipe, user, sendRating, ratingsMean, getRecipeRatings
             </Timeline>
             {deleteCommentStatus === fetchStates.success && toast.success("Komentarz usunięty pomyślnie")}
             {addCommentStatus === fetchStates.success && toast.success("Komentarz został dodany")}
+            {sendRatingStatus === fetchStates.success && toast.success("Twoja ocena została zapisana")}
         </section>
     );
 }

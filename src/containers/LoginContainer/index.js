@@ -16,6 +16,8 @@ import Login from '../../components/Login';
 import {Redirect} from "react-router";
 
 export function LoginContainer({ ...props }) {
+
+    console.log("props", props)
     useEffect(() => {
         if (props.user.loggedIn === false) {
             props.authenticate();

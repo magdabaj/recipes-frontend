@@ -48,12 +48,12 @@ const RecipesForm = ({ status, ...props }) => {
         const { userId } = props;
         const errors = {};
 
-        if (!title) errors.title = 'Title is required';
-        if (!website) errors.website = 'Website is required';
-        if (!url) errors.url = 'Url is required';
-        if (!image) errors.image = 'Image url is required';
-        if (!userId) errors.authorization = 'You must login first';
-        if (!tagId) errors.category = 'RecipeWrapper category is required';
+        if (!title) errors.title = 'Tytuł jest wymagany';
+        if (!website) errors.website = 'Strona źródłowa jest wymagana';
+        if (!url) errors.url = 'Adres przepisu jest wymagany';
+        if (!image) errors.image = 'Adres zdjęcia jest wymagany';
+        if (!userId) errors.authorization = 'Musisz się zalogować';
+        if (!tagId) errors.category = 'Kategoria jest wymagana';
 
         setErrors(errors);
 

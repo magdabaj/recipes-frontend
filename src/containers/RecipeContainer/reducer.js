@@ -26,27 +26,31 @@ import {
     EDIT_COMMENT,
     REMOVE_COMMENT,
     REMOVE_COMMENT_SUCCESS,
-    REMOVE_COMMENT_ERROR, CLEAR_STATUS, CLEAR_DELETE_COMMENTS_STATUS,
+    REMOVE_COMMENT_ERROR, CLEAR_STATUS, CLEAR_DELETE_COMMENTS_STATUS, CLEAR_SEND_RATING_STATUS,
 } from './constants';
 import fetchStates from '../../utils/fetchStates';
 
 export const initialState = {
     ratingsMean: null,
-    getRatingsStatus: fetchStates.fetching,
     recipe: [],
     recipeId: null,
     comments: [],
-    addCommentStatus: null,
-    deleteCommentStatus: null,
     commentsError: null,
     commentsNumber: 0,
+    addCommentStatus: null,
+    deleteCommentStatus: null,
     status: null,
+    sendRatingStatus: null,
+    getRatingsStatus: null,
 };
 
 /* eslint-disable default-case, no-param-reassign */
 const recipeContainerReducer = (state = initialState, action) =>
     produce(state, draft => {
         switch (action.type) {
+            case GET_RATINGS:
+                draft.getRatingsStatus = fetchStates.fetching;
+                break;
             case GET_RATINGS_SUCCESS:
                 draft.ratingsMean = action.ratingsMean;
                 draft.message = action.message;
@@ -72,13 +76,13 @@ const recipeContainerReducer = (state = initialState, action) =>
             //   draft.status = fetchStates.fetching;
             //   break;
             case SEND_RATING_ERROR:
-                draft.getRatingsStatus = fetchStates.error;
+                draft.sendRatingStatus = fetchStates.error;
                 break;
             case SEND_RATING:
-                draft.getRatingsStatus = fetchStates.fetching;
+                draft.sendRatingStatus = fetchStates.fetching;
                 break;
             case SEND_RATING_SUCCESS:
-                draft.getRatingsStatus = fetchStates.success;
+                draft.sendRatingStatus = fetchStates.success;
                 draft.ratingsMean = action.ratingsMean;
                 break;
             case GET_COMMENTS_SUCCESS:
@@ -116,6 +120,9 @@ const recipeContainerReducer = (state = initialState, action) =>
                 break;
             case CLEAR_DELETE_COMMENTS_STATUS:
                 draft.deleteCommentStatus = null;
+                break;
+            case CLEAR_SEND_RATING_STATUS:
+                draft.sendRatingStatus = null;
                 break;
         }
     });

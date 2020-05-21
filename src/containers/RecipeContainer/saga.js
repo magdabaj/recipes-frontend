@@ -14,7 +14,7 @@ import {
     addCommentSuccess,
     getComments,
     removeCommentSuccess,
-    removeCommentError, clearStatus, clearDeleteCommentsStatus,
+    removeCommentError, clearStatus, clearDeleteCommentsStatus, clearSendRatingStatus,
 } from './actions';
 import {
     ADD_COMMENT,
@@ -49,8 +49,10 @@ export function* handleRatingSend(action) {
         const json = yield call(createRating, rate, userId, recipeId);
         if (json.type === 'error') {
             yield put(sendRatingError(json.message));
+            yield put(clearSendRatingStatus());
         } else {
             yield put(sendRatingSuccess(json, recipeId, json.ratingsMean));
+            yield put(clearSendRatingStatus());
         }
     } catch (e) {
         yield put(sendRatingError(e.message));

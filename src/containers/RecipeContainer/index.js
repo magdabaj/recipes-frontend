@@ -16,7 +16,7 @@ import makeSelectRecipeContainer, {
     makeSelectCommentsNumber, makeSelectDeleteCommentStatus,
     makeSelectGetRatingsStatus,
     makeSelectRatingsMean,
-    makeSelectRecipe,
+    makeSelectRecipe, makeSelectSendRatingStatus,
     makeSelectStatus,
     selectSlug,
 } from './selectors';
@@ -75,6 +75,7 @@ const mapStateToProps = createStructuredSelector({
     addCommentError: makeSelectAddCommentError(),
     commentsNumber: makeSelectCommentsNumber(),
     status: makeSelectStatus(),
+    sendRatingStatus: makeSelectSendRatingStatus(),
 });
 
 function mapDispatchToProps(dispatch) {

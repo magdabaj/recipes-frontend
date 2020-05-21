@@ -20,7 +20,7 @@ export const fetchRecipe = async recipeId => {
 };
 
 export const fetchUserRecipes = async (email, page) => {
-    const response = await fetch(`${api}/user/${email}?page=${page}&limit=3`);
+    const response = await fetch(`${api}/user/${email}?page=${page}&limit=8`);
     const data = await response.json();
     if (response.status >= 400) {
         throw new Error(data.errors);
@@ -29,7 +29,7 @@ export const fetchUserRecipes = async (email, page) => {
 };
 
 export const fetchRecipesByTag = async (tagId, page) => {
-    const response = await fetch(`${api}/tag/${tagId}?page=${page}&limit=3`);
+    const response = await fetch(`${api}/tag/${tagId}?page=${page}&limit=8`);
     const data = await response.json();
     if (response.status >= 400) {
         throw new Error(data.errors);

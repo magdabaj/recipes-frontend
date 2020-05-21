@@ -10,15 +10,16 @@ import RecipeContainer from './RecipeContainer';
 import Image from '../Image';
 import RecipeRating from '../RecipeRating';
 import RecipeTitle from './RecipeTitle';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
+
 const Img = styled.img`
     max-width: 100%;
     width: 600px;
     height: auto;
 `;
 
-function Recipes({ recipes, user, sendRating, ratingsMean, ...props }) {
+function Recipes({ recipes, user, sendRating, ratingsMean, commentsNumber }) {
     return recipes.map(recipe => (
         <RecipeContainer key={recipe.id}>
             <Image>
@@ -32,7 +33,7 @@ function Recipes({ recipes, user, sendRating, ratingsMean, ...props }) {
                     sendRating={user.loggedIn ? sendRating : <Redirect to={'/login'} />}
                     recipeId={recipe.id}
                     ratingsMean={ratingsMean}
-                    commentsNumber={props.commentsNumber}
+                    commentsNumber={commentsNumber}
                 />
                 <div>
                     <a href={recipe.url} target={'_blank'}>
@@ -50,6 +51,12 @@ function Recipes({ recipes, user, sendRating, ratingsMean, ...props }) {
     ));
 }
 
-Recipes.propTypes = {};
+Recipes.propTypes = {
+    commentsNumber: PropTypes.number.isRequired,
+    recipe: PropTypes.object.isRequired,
+    user: PropTypes.object.isRequired,
+    sendRating: PropTypes.func.isRequired,
+    ratingsMean: PropTypes.number,
+};
 
 export default Recipes;
