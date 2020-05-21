@@ -22,8 +22,6 @@ import fetchStates from '../../utils/fetchStates';
 
 // todo edit checkbox styles
 // todo edit login form styles
-// todo pagination routes
-// todo menu styles
 // todo edit comment
 // todo add props
 // todo add tests

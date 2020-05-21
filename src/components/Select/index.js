@@ -6,6 +6,7 @@
 
 import React, { useState } from 'react';
 import _ from 'lodash';
+import '../../containers/RecipesFormContainer/index.css';
 // import PropTypes from 'prop-types';
 // import styled from 'styled-components';
 
