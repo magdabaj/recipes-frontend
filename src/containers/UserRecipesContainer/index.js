@@ -22,7 +22,6 @@ import makeSelectUserRecipesContainer, {
 } from './selectors';
 import { makeSelectTags } from "../App/selectors";
 import { makeSelectUser } from '../LoginContainer/selectors';
-import LoginFormContainer from '../LoginContainer';
 import { loadUserRecipes, deleteRecipe } from './actions';
 import { loadTags } from "../App/actions";
 import fetchStates from '../../utils/fetchStates';

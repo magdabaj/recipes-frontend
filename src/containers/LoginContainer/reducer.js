@@ -25,6 +25,8 @@ import fetchStates from '../../utils/fetchStates';
 // todo add props
 // todo add tests
 // todo order css files and styled components
+// todo restore password functionality
+// todo different hash
 
 export const initialState = {
     user: {

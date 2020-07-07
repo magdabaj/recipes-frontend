@@ -1,4 +1,4 @@
-import { take, call, put, select, all, takeLatest } from 'redux-saga/effects';
+import { call, put, select, takeLatest } from 'redux-saga/effects';
 import { LOAD_USER_RECIPES, DELETE_RECIPE, LOAD_TAGS } from './constants';
 import { deleteRecipe, fetchUserRecipes } from '../../utils/api/recipe';
 import {
@@ -6,10 +6,7 @@ import {
     deleteRecipeSuccess,
     loadUserRecipesError,
     loadUserRecipesSuccess,
-    loadTagsError, loadTagsSuccess
 } from './actions';
-import { fetchAllTags } from '../../utils/api/tags';
-import { selectUserId } from '../RecipesFormContainer/selectors';
 import { makeSelectUser } from '../LoginContainer/selectors';
 
 export function* handleUserRecipesLoad(action) {
@@ -31,7 +28,7 @@ export function* handleRecipeDelete(action) {
     const { userId } = yield select(makeSelectUser());
 
     try {
-        const json = yield call(deleteRecipe, recipeId, userId);
+        yield call(deleteRecipe, recipeId, userId);
         yield put(deleteRecipeSuccess(recipeId));
     } catch (e) {
         yield put(deleteRecipeError(e.message));

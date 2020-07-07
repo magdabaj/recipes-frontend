@@ -1,7 +1,5 @@
 import { createSelector } from 'reselect';
 import { initialState } from './reducer';
-import makeSelectRecipesHomePage from '../HomePage/selectors';
-
 /**
  * Direct selector to the userRecipesContainer state domain
  */
