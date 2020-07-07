@@ -5,6 +5,7 @@
  */
 
 import React, { memo } from 'react';
+import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import RecipeRatingContainer from './RecipeRatingContainer';
 import AddRatingButton from './AddRatingButton';
@@ -57,6 +58,13 @@ const RecipeRating = ({ user, sendRating, recipeId, ratingsMean, ...props }) => 
     );
 };
 
-RecipeRating.propTypes = {};
+RecipeRating.propTypes = {
+    user: PropTypes.object.isRequired,
+    sendRating: PropTypes.func.isRequired,
+    recipeId: PropTypes.string.isRequired,
+    ratingsMean: PropTypes.number,
+    history: PropTypes.object,
+    commentsNumber: PropTypes.number,
+};
 
 export default memo(withRouter(RecipeRating));

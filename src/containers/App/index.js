@@ -15,6 +15,7 @@ import {authenticate} from "../LoginContainer/actions";
 import {connect} from "react-redux";
 import {compose} from "redux";
 import ProtectedRoute from "../../components/ProtectedRoute";
+import PropTypes from "prop-types";
 
 // todo create not found page
 
@@ -43,6 +44,11 @@ const App = ({authenticate, user}) => {
         </div>
     );
 }
+
+App.propTypes = {
+    authenticate: PropTypes.func,
+    user: PropTypes.object.isRequired,
+};
 
 const mapStateToProps = createStructuredSelector({
     user: makeSelectUser(),

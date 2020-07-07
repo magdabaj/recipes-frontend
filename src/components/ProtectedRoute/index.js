@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Route, Redirect } from 'react-router-dom';
 
 const ProtectedRoute = ({ component: Component, user, ...rest }) => {
@@ -20,6 +21,12 @@ const ProtectedRoute = ({ component: Component, user, ...rest }) => {
             }
         } />
     )
+}
+
+ProtectedRoute.propTypes = {
+    component: PropTypes.elementType.isRequired,
+    user: PropTypes.object.isRequired,
+    location: PropTypes.string
 }
 
 export default ProtectedRoute;

@@ -4,7 +4,7 @@
  *
  */
 
-import React, { memo, useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import TagsListComponent from '../TagListComponent';
 import PropTypes from 'prop-types';
 import CommentsComponent from '../CommentsComponent';
@@ -65,6 +65,21 @@ function RecipeWrapper({ recipe, user, sendRating, ratingsMean, getRecipeRatings
     );
 }
 
-RecipeWrapper.propTypes = {};
+RecipeWrapper.propTypes = {
+    recipe: PropTypes.object.isRequired,
+    user: PropTypes.object,
+    sendRating: PropTypes.func.isRequired,
+    getRecipeRatings: PropTypes.func.isRequired,
+    tags: PropTypes.array.isRequired,
+    addCommentStatus: PropTypes.string,
+    deleteCommentStatus: PropTypes.string,
+    sendRatingStatus: PropTypes.string,
+    recipeId: PropTypes.string.isRequired,
+    getRecipe: PropTypes.func.isRequired,
+    comments: PropTypes.array.isRequired,
+    addComment: PropTypes.func.isRequired,
+    getComments: PropTypes.func.isRequired,
+    ratingsMean: PropTypes.number,
+};
 
 export default RecipeWrapper;

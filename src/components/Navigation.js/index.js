@@ -10,7 +10,6 @@ import PropTypes from 'prop-types'
 import '../../containers/NavigationContainer/index.css'
 import fetchStates from "../../utils/fetchStates";
 import {toast} from "react-toastify";
-import { GiCupcake } from 'react-icons/gi'
 // import styled from 'styled-components';
 
 function Navigation({ user, signOut, logoutStatus }) {
@@ -51,7 +50,12 @@ function Navigation({ user, signOut, logoutStatus }) {
     );
 }
 
-Navigation.propTypes = {};
+Navigation.propTypes = {
+    user: PropTypes.object.isRequired,
+    signOut: PropTypes.func.isRequired,
+    logoutStatus: PropTypes.string,
+
+};
 
 export default memo(Navigation);
 

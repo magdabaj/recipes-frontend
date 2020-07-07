@@ -1,6 +1,5 @@
 import { createSelector } from 'reselect';
 import { initialState } from './reducer';
-import makeSelectUserRecipesContainer from '../UserRecipesContainer/selectors';
 
 /**
  * Direct selector to the recipesFormContainer state domain

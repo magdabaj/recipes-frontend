@@ -6,9 +6,6 @@
 import produce from 'immer';
 import fetchStates from '../../utils/fetchStates';
 import {
-    LOAD_RECIPES,
-    LOAD_RECIPES_ERROR,
-    LOAD_RECIPES_SUCCESS,
     LOAD_TAGS,
     LOAD_TAGS_ERROR,
     LOAD_TAGS_SUCCESS,

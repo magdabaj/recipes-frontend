@@ -5,6 +5,7 @@
  */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import '../../containers/App/index.css';
 
 function TextInput({ label, name, value, placeholder, onChange, error, type }) {
@@ -32,6 +33,14 @@ function TextInput({ label, name, value, placeholder, onChange, error, type }) {
     );
 }
 
-TextInput.propTypes = {};
+TextInput.propTypes = {
+    label: PropTypes.string,
+    name: PropTypes.string,
+    value: PropTypes,
+    onChange: PropTypes.func,
+    error: PropTypes.string,
+    type: PropTypes.string,
+    placeholder: PropTypes.string,
+};
 
 export default TextInput;

@@ -2,7 +2,7 @@
 import React, { memo } from 'react';
 import ReactLoading from 'react-loading';
 import colorStyles from '../../utils/colorStyles';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -33,5 +33,11 @@ const Spinner = ({ color, width, height }) => {
         </Wrapper>
     );
 };
+
+Spinner.propTypes = {
+    color: PropTypes.string,
+    width: PropTypes.string,
+    height: PropTypes.string,
+}
 
 export default memo(Spinner);

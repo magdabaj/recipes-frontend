@@ -37,7 +37,7 @@ function TagComponent({ tags, tagType }) {
             <UlComponent>
                 {tagValuesVisibility
                     ? sortedTags.map(tag => (
-                        <Link to={`/tag/${tag.tagId}`}>
+                        <Link key={tag.tagId} to={`/tag/${tag.tagId}`}>
                             <TagContainer id={tag.tagId}>{tag.tagValue}</TagContainer>
                         </Link>
                     ))

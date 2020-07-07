@@ -7,32 +7,19 @@
 // todo configure prettier, babel, eslint
 
 import React, { memo } from 'react';
+import PropTypes from 'prop-types';
 import '../../containers/HomePage/index.css';
 import { Link } from 'react-router-dom';
 import Pagination from '../Pagination/Loadable';
 import { Tween, Timeline } from 'react-gsap';
 import Spinner from '../Spinner';
-// import Carousel from '../Carousel';
 
 function AllRecipesComponent({ recipes, route, ...props }) {
     return (
         <section className={'latest-recipes'}>
-            {/*<Carousel recipes={recipes} {...props} />*/}
-                <div className={'recipes-header'}>
-                    <p>Najnowsze wpisy</p>
-                </div>
-            {/*<Tween */}
-            {/*  transformOrigin={"50% 50%"} duration={2} rotation={360}*/}
-            {/*       staggerFrom={{*/}
-            {/*         opacity: 0,*/}
-            {/*         cycle: {*/}
-            {/*           rotationX: [-90, 90],*/}
-            {/*           transformOrigin: ['50% top -100', '50% bottom 100']*/}
-            {/*         },*/}
-            {/*       }}*/}
-            {/*>*/}
-            {/*  <h1>Hellloo</h1>*/}
-            {/*</Tween>*/}
+            <div className={'recipes-header'}>
+                <p>Najnowsze wpisy</p>
+            </div>
             <div className={'container'}>
                 <div className={'wrapper'}>
                     {recipes.length > 0 ? (
@@ -65,6 +52,9 @@ function AllRecipesComponent({ recipes, route, ...props }) {
     );
 }
 
-AllRecipesComponent.propTypes = {};
+AllRecipesComponent.propTypes = {
+    recipes: PropTypes.array.isRequired,
+    route: PropTypes.string,
+};
 
 export default memo(AllRecipesComponent);

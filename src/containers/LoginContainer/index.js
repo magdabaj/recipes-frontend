@@ -16,8 +16,6 @@ import Login from '../../components/Login';
 import {Redirect} from "react-router";
 
 export function LoginContainer({ ...props }) {
-
-    console.log("props", props)
     useEffect(() => {
         if (props.user.loggedIn === false) {
             props.authenticate();
@@ -28,9 +26,10 @@ export function LoginContainer({ ...props }) {
 }
 
 LoginContainer.propTypes = {
-    user: PropTypes.object.isRequired,
-    signUp: PropTypes.func.isRequired,
-    signIn: PropTypes.func.isRequired,
+    user: PropTypes.object,
+    signUp: PropTypes.func,
+    signIn: PropTypes.func,
+    authenticate: PropTypes.func,
 };
 
 const mapStateToProps = createStructuredSelector({
@@ -45,7 +44,7 @@ function mapDispatchToProps(dispatch) {
         signUp: ({ email, password }) => dispatch(signUp({ email, password })),
         signIn: ({ email, password }) => dispatch(signIn({ email, password })),
         authenticate: () => dispatch(authenticate()),
-        setError: () => setError(),
+        // setError: () => setError(),
     };
 }
 

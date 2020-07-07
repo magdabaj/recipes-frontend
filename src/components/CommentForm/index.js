@@ -8,16 +8,22 @@ import React, { useState } from 'react';
 import fetchStates from '../../utils/fetchStates';
 import { toast } from 'react-toastify';
 import '../../containers/RecipeContainer/index.css'
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 // import styled from 'styled-components';
 
-function CommentFormComponent({ addComment, recipeId, user, getComments, ...props }) {
+function CommentFormComponent({
+                                  addComment,
+                                  recipeId,
+                                  user,
+                                  // getComments,
+                                  ...props
+}) {
     const [comment, setComment] = useState({
         content: '',
         recipeId: null,
         email: '',
     });
-    const [errors, setErrors] = useState({});
+    const [, setErrors] = useState({});
 
     const handleChange = event => {
         const { name, value } = event.target;
@@ -80,6 +86,13 @@ function CommentFormComponent({ addComment, recipeId, user, getComments, ...prop
     );
 }
 
-CommentFormComponent.propTypes = {};
+CommentFormComponent.propTypes = {
+    addComment: PropTypes.func.isRequired,
+    recipeId: PropTypes.string.isRequired,
+    user: PropTypes.object.isRequired,
+    // getComments: PropTypes.func.isRequired,
+    addCommentStatus: PropTypes.string,
+    addCommentError: PropTypes.string,
+};
 
 export default CommentFormComponent;

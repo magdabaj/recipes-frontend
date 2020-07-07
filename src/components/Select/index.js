@@ -7,10 +7,10 @@
 import React, {memo, useState} from 'react';
 import _ from 'lodash';
 import '../../containers/RecipesFormContainer/index.css';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 // import styled from 'styled-components';
 
-function Select({ tags, tagType, onChange, error }) {
+function Select({ tags, tagType, onChange }) {
     const [tagValues, hideTagValues] = useState(false);
     const changeVisibility = () => hideTagValues(!tagValues);
 
@@ -30,7 +30,7 @@ function Select({ tags, tagType, onChange, error }) {
             </label>
             {tagValues
                 ? sortedTags.map(tag => (
-                    <div>
+                    <div key={tag.tagId}>
                         <input
                             type="radio"
                             id={tag.tagId}
@@ -50,6 +50,10 @@ function Select({ tags, tagType, onChange, error }) {
     );
 }
 
-Select.propTypes = {};
+Select.propTypes = {
+    tags: PropTypes.object,
+    tagType: PropTypes.string,
+    onChange: PropTypes.func,
+};
 
 export default memo(Select);

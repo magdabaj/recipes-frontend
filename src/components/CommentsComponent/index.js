@@ -8,9 +8,7 @@ import React from 'react';
 import '../../containers/RecipeContainer/index.css';
 import CommentForm from '../CommentForm';
 import { Link } from 'react-router-dom';
-import fetchStates from "../../utils/fetchStates";
-import { toast } from "react-toastify";
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 // import styled from 'styled-components';
 
 function CommentsComponent({
@@ -19,7 +17,7 @@ function CommentsComponent({
                                recipeId,
                                user,
                                getComments,
-                               editComment,
+                               // editComment,
                                removeComment,
                                ...props
                            }) {
@@ -40,13 +38,13 @@ function CommentsComponent({
             )}
             <div>
                 {comments.map(comment => (
-                    <ol className={'comments-list'}>
+                    <ol key={comment.commentId} className={'comments-list'}>
                         <li className={'comment-body'}>
                             <article className={'comment-article'}>
                                 <footer className={'comment-title'}>
                                     <div className={'comment-author'}>{comment.email}</div>
                                     <div className={'comment-data'}>
-                                        {comment.addedDate.replace(/\T/, ' o ').replace(/.Z/g, '')}
+                                        {comment.addedDate.replace(/T/, ' o ').replace(/.Z/g, '')}
                                     </div>
                                 </footer>
                                 <div className={'comment-content'}>
@@ -72,6 +70,14 @@ function CommentsComponent({
     );
 }
 
-CommentsComponent.propTypes = {};
+CommentsComponent.propTypes = {
+    comments: PropTypes.array.isRequired,
+    addComment: PropTypes.func.isRequired,
+    recipeId: PropTypes.string.isRequired,
+    user: PropTypes.object.isRequired,
+    getComments: PropTypes.func.isRequired,
+    // editComment: PropTypes.func.isRequired,
+    removeComment: PropTypes.func.isRequired,
+};
 
 export default CommentsComponent;

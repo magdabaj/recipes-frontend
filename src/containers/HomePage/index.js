@@ -38,7 +38,16 @@ export function RecipesHomePage({ status, ...props }) {
     );
 }
 
-RecipesHomePage.propTypes = {};
+RecipesHomePage.propTypes = {
+    status: PropTypes.string,
+    tags: PropTypes.object,
+    loadTags: PropTypes.func,
+    tagId: PropTypes.number,
+    page: PropTypes.number,
+    loadRecipes: PropTypes.func,
+    loadRecipesByTag: PropTypes.func,
+    match: PropTypes.object,
+};
 
 const mapStateToProps = createStructuredSelector({
     recipesHomePage: makeSelectRecipesHomePage(),
@@ -64,9 +73,6 @@ const withConnect = connect(
     mapStateToProps,
     mapDispatchToProps,
 );
-
-// export default (withConnect)(RecipesHomePage)
-
 
 export default compose(
     withConnect,

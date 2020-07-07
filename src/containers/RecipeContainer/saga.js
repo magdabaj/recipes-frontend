@@ -1,4 +1,4 @@
-import { all, call, put, select, takeLatest } from 'redux-saga/effects';
+import { call, put, select, takeLatest } from 'redux-saga/effects';
 
 import { createRating, fetchRecipeRatings } from '../../utils/api/rating';
 import {
@@ -12,7 +12,6 @@ import {
     getCommentsSuccess,
     addCommentError,
     addCommentSuccess,
-    getComments,
     removeCommentSuccess,
     removeCommentError, clearStatus, clearDeleteCommentsStatus, clearSendRatingStatus,
 } from './actions';

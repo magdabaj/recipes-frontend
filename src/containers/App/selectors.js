@@ -29,5 +29,6 @@ const makeSelectTags = () =>
 
 export default makeSelectApp;
 export {
-    makeSelectTags
+    makeSelectTags,
+    selectAppDomain,
 };

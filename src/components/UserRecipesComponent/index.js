@@ -5,6 +5,7 @@
  */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { IconContext } from 'react-icons';
 import { IoIosAddCircle } from 'react-icons/io';
@@ -26,7 +27,7 @@ const UserRecipesComponent = ({ recipes, user, route, ...props }) => {
                         <div className={'wrapper'}>
                             {recipes.length > 0 ? (
                                 recipes.map(recipe => (
-                                    <div className={'recipe-container'}>
+                                    <div key={recipe.recipeId} className={'recipe-container'}>
                                         <Link to={`/recipes/${recipe.id}`}>
                                             <img className={'recipeImg'} src={recipe.image} alt={recipe.title} />
                                         </Link>
@@ -75,6 +76,11 @@ const UserRecipesComponent = ({ recipes, user, route, ...props }) => {
     );
 };
 
-UserRecipesComponent.propTypes = {};
+UserRecipesComponent.propTypes = {
+    recipes: PropTypes.array,
+    deleteRecipe: PropTypes.func,
+    user: PropTypes.object.isRequired,
+    route: PropTypes.string.isRequired,
+};
 
 export default UserRecipesComponent;

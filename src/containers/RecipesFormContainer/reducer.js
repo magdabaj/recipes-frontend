@@ -8,9 +8,7 @@ import {
     ADD_RECIPE_ERROR,
     ADD_RECIPE_SUCCESS,
     ADD_RECIPE,
-    CANCEL,
-    LOAD_TAGS_SUCCESS,
-    LOAD_TAGS_ERROR, CHANGE_STATUS,
+    CHANGE_STATUS,
 } from './constants';
 import fetchStates from '../../utils/fetchStates';
 

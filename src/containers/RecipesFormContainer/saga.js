@@ -1,9 +1,7 @@
-import { take, call, put, select, takeLatest, all } from 'redux-saga/effects';
+import { call, put, takeLatest } from 'redux-saga/effects';
 import { ADD_RECIPE } from './constants';
-import { push } from 'react-router-redux';
 import { editRecipe, storeRecipe } from '../../utils/api/recipe';
 import {addRecipeError, addRecipeSuccess, changeStatus} from './actions';
-import history from "../../utils/history";
 
 export function* addRecipeSaga(action) {
     const { title, url, website, image, tagId, id } = action.recipe.recipe;

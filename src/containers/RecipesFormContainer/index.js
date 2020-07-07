@@ -31,7 +31,13 @@ export function RecipesFormContainer({ ...props }) {
     return props.user.loggedIn ? <RecipesForm {...props} /> : <LoginContainer />;
 }
 
-RecipesFormContainer.propTypes = {};
+RecipesFormContainer.propTypes = {
+    tags: PropTypes.object.isRequired,
+    loadTags: PropTypes.func.isRequired,
+    user: PropTypes.objectOf(PropTypes.shape({
+        loggedIn: PropTypes.bool,
+    }))
+};
 
 const mapStateToProps = createStructuredSelector({
     recipesFormContainer: makeSelectRecipesFormContainer(),

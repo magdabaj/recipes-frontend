@@ -59,7 +59,18 @@ export function RecipeContainer({ status, ...props }) {
     return status === fetchStates.fetching ? <Spinner /> : <RecipeWrapper {...props} />;
 }
 
-RecipeContainer.propTypes = {};
+RecipeContainer.propTypes = {
+    status: PropTypes.string,
+    tags: PropTypes.array.isRequired,
+    loadTags: PropTypes.func.isRequired,
+    recipeId: PropTypes.string.isRequired,
+    ratingsMean: PropTypes.number,
+    getRecipeRatings: PropTypes.func.isRequired,
+    getRecipe: PropTypes.func.isRequired,
+    getComments: PropTypes.func.isRequired,
+    addCommentStatus: PropTypes.string,
+    deleteCommentStatus: PropTypes.string,
+};
 
 const mapStateToProps = createStructuredSelector({
     recipeContainer: makeSelectRecipeContainer(),

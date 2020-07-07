@@ -47,7 +47,15 @@ export function UserRecipesContainer({ status, ...props }) {
         )
 }
 
-UserRecipesContainer.propTypes = {};
+UserRecipesContainer.propTypes = {
+    status: PropTypes.string.isRequired,
+    tags: PropTypes.object.isRequired,
+    loadTags: PropTypes.func.isRequired,
+    user: PropTypes.object.isRequired,
+    loadUserRecipes: PropTypes.func.isRequired,
+    page: PropTypes.number.isRequired,
+    history: PropTypes.object.isRequired,
+};
 
 const mapStateToProps = createStructuredSelector({
     userRecipesContainer: makeSelectUserRecipesContainer(),

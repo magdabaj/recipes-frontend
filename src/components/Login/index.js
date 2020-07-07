@@ -5,6 +5,7 @@
  */
 
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import TextInput from '../TextInput';
 import '../../containers/App/index.css';
 import Button, { ButtonSmall } from './Button';
@@ -12,7 +13,7 @@ import fetchStates from '../../utils/fetchStates'
 import {Redirect} from "react-router";
 import {toast} from "react-toastify";
 
-function Login({ user, signIn, signUp, error, status }) {
+function Login({ signIn, signUp, error, status }) {
     const [userSubmit, setUser] = useState({
         email: '',
         password: '',
@@ -106,6 +107,11 @@ function Login({ user, signIn, signUp, error, status }) {
     );
 }
 
-Login.propTypes = {};
+Login.propTypes = {
+    signIn: PropTypes.func.isRequired,
+    signUp: PropTypes.func.isRequired,
+    error: PropTypes.string,
+    status: PropTypes.string,
+};
 
 export default Login;

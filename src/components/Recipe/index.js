@@ -24,7 +24,7 @@ function Recipes({ recipes, user, sendRating, ratingsMean, commentsNumber }) {
         <RecipeContainer key={recipe.id}>
             <Image>
                 <RecipeTitle>
-                    <a href={recipe.url} target={'_blank'}>
+                    <a href={recipe.url} rel={"noreferrer"} target={'_blank'}>
                         {recipe.title}
                     </a>
                 </RecipeTitle>
@@ -36,13 +36,13 @@ function Recipes({ recipes, user, sendRating, ratingsMean, commentsNumber }) {
                     commentsNumber={commentsNumber}
                 />
                 <div>
-                    <a href={recipe.url} target={'_blank'}>
+                    <a href={recipe.url} rel={"noreferrer"} target={'_blank'}>
                         <Img src={recipe.image} alt={recipe.title} />
                     </a>
                 </div>
                 <div className={'source-website'}> Pobrano z: {recipe.website}</div>
                 <div className={'source-website'}>
-                    <a href={recipe.url} target={'_blank'} className={'source-website--link'}>
+                    <a href={recipe.url} target={'_blank'} rel={"noreferrer"} className={'source-website--link'}>
                         Kliknij zeby zobaczyc przepis
                     </a>
                 </div>
@@ -53,7 +53,7 @@ function Recipes({ recipes, user, sendRating, ratingsMean, commentsNumber }) {
 
 Recipes.propTypes = {
     commentsNumber: PropTypes.number.isRequired,
-    recipe: PropTypes.object.isRequired,
+    recipe: PropTypes.object,
     user: PropTypes.object.isRequired,
     sendRating: PropTypes.func.isRequired,
     ratingsMean: PropTypes.number,

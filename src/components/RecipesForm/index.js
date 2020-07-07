@@ -7,12 +7,12 @@
 // todo return parseInt value in route path selectors
 
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import '../../containers/RecipesFormContainer/index.css';
 import RecipeTextInput from '../RecipeTextInput';
 import tagTypes from '../../utils/tagTypes';
 import Select from '../Select';
 import Button from '../Button';
-// import Button from '../Login/Button'
 import {Redirect} from "react-router";
 import fetchStates from "../../utils/fetchStates";
 import {toast} from "react-toastify";
@@ -30,6 +30,7 @@ const RecipesForm = ({ status, ...props }) => {
 
     useEffect(() => {
         if (props.recipeId) {
+            // todo should be done on server
             const _recipe = props.recipes.find(recipe => recipe.id === parseInt(props.recipeId));
             setRecipe(_recipe);
         }
@@ -112,7 +113,7 @@ const RecipesForm = ({ status, ...props }) => {
                 />
                 <div className={'select-container'}>
                     {tagTypes.map(tagType => (
-                        <Select tags={props.tags} tagType={tagType} onChange={handleChange} />
+                        <Select key={tagType} tags={props.tags} tagType={tagType} onChange={handleChange} />
                     ))}
                     {errors.category && <div className={'error-message'}>{errors.category}</div>}
                 </div>
@@ -142,6 +143,13 @@ const RecipesForm = ({ status, ...props }) => {
     );
 };
 
-RecipesForm.propTypes = {};
+RecipesForm.propTypes = {
+    status: PropTypes.string,
+    recipeId: PropTypes.string,
+    recipes: PropTypes.array.isRequired,
+    userId: PropTypes.number,
+    addRecipe: PropTypes.func.isRequired,
+    tags: PropTypes.array.isRequired,
+};
 
 export default RecipesForm;

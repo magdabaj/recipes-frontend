@@ -1,5 +1,5 @@
 import { call, put, select, takeLatest } from 'redux-saga/effects';
-import { LOAD_USER_RECIPES, DELETE_RECIPE, LOAD_TAGS } from './constants';
+import { LOAD_USER_RECIPES, DELETE_RECIPE } from './constants';
 import { deleteRecipe, fetchUserRecipes } from '../../utils/api/recipe';
 import {
     deleteRecipeError,

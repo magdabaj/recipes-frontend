@@ -8,9 +8,6 @@ import store from "./utils/store";
 import App from './containers/App';
 import {BrowserRouter} from "react-router-dom";
 
-
-console.log(store.getState())
-
 const wrapper = document.getElementById("container");
 wrapper ? ReactDOM.render(
     <Provider store={store}>

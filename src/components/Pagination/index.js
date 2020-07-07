@@ -9,8 +9,7 @@ import { Link } from 'react-router-dom';
 import { matchPath } from "react-router-dom";
 import Container from './Container';
 import './index.css';
-// import PropTypes from 'prop-types';
-// import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 // todo rating
 // todo hover div over icons
@@ -56,6 +55,13 @@ function Pagination({ totalPages, previousPage, nextPage, ...props }) {
     );
 }
 
-Pagination.propTypes = {};
+Pagination.propTypes = {
+    totalPages: PropTypes.number.isRequired,
+    previousPage: PropTypes.object,
+    nextPage: PropTypes.object,
+    location: PropTypes.object,
+    tagId: PropTypes.number,
+
+};
 
 export default Pagination;
