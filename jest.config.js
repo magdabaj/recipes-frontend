@@ -1,6 +1,8 @@
 // For a detailed explanation regarding each configuration property, visit:
 // https://jestjs.io/docs/en/configuration.html
 
+// const path = require('path')
+
 module.exports = {
     // All imported modules in your tests should be mocked automatically
     // automock: false,
@@ -65,7 +67,10 @@ module.exports = {
 
     // An array of directory names to be searched recursively up from the requiring module's location
     // moduleDirectories: [
-    //   "node_modules"
+    //   "node_modules",
+    // resolves modules as node_modules in whole project directory
+    //  path.join(__dirname, 'src'),
+    //  'shared'
     // ],
 
     // An array of file extensions your modules use

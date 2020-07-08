@@ -4,6 +4,7 @@ import { withStoreAndRouter } from "../../../utils/testHelpers";
 import RecipesHomePage from "../index";
 import {describe, expect} from "@jest/globals";
 import {Route} from "react-router";
+import fetchStates from "../../../utils/fetchStates";
 
 describe('<HomePage/>', () => {
     function renderRecipesHomePage(args = {}) {
@@ -23,7 +24,12 @@ describe('<HomePage/>', () => {
     }
 
     it('should render and match snapshot', function () {
-        const { container } = renderRecipesHomePage()
+        const { container } = renderRecipesHomePage({status: fetchStates.success})
+        expect(container.firstChild).toMatchSnapshot()
+    });
+
+    it('should render and match the snapshot', function () {
+        const { container } = renderRecipesHomePage({status: fetchStates.fetching})
         expect(container.firstChild).toMatchSnapshot()
     });
 })
