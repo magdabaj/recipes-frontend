@@ -61,7 +61,7 @@ const RecipeRating = ({ user, sendRating, recipeId, ratingsMean, ...props }) => 
 RecipeRating.propTypes = {
     user: PropTypes.object.isRequired,
     sendRating: PropTypes.func.isRequired,
-    recipeId: PropTypes.string.isRequired,
+    recipeId: PropTypes.number.isRequired,
     ratingsMean: PropTypes.number,
     history: PropTypes.object,
     commentsNumber: PropTypes.number,

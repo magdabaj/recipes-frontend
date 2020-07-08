@@ -60,7 +60,7 @@ Pagination.propTypes = {
     previousPage: PropTypes.object,
     nextPage: PropTypes.object,
     location: PropTypes.object,
-    tagId: PropTypes.number,
+    tagId: PropTypes.string,
 
 };
 

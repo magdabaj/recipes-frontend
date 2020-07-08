@@ -40,9 +40,9 @@ export function RecipesHomePage({ status, ...props }) {
 
 RecipesHomePage.propTypes = {
     status: PropTypes.string,
-    tags: PropTypes.object,
+    tags: PropTypes.array,
     loadTags: PropTypes.func,
-    tagId: PropTypes.number,
+    tagId: PropTypes.string,
     page: PropTypes.number,
     loadRecipes: PropTypes.func,
     loadRecipesByTag: PropTypes.func,
