@@ -6,14 +6,14 @@ import fetchStates from "../../../utils/fetchStates";
 describe('selectAppDomain', () => {
     it('should select app state', () => {
         const appState = {
-            error: null,
-            nextPage: null,
-            page: 1,
-            previousPage: null,
-            recipes: [],
-            status: fetchStates.fetching,
-            tags: [],
-            totalPages: null,
+                error: null,
+                nextPage: null,
+                page: 1,
+                previousPage: null,
+                recipes: [],
+                status: fetchStates.fetching,
+                tags: [],
+                totalPages: null,
         };
         const mockedState = {};
         expect(selectAppDomain(mockedState)).toEqual(appState);
