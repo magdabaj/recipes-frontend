@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Navigation/> should render and match the snapshot 1`] = `
+<div
+  class="navigation-container"
+>
+  <div
+    class="navigation"
+  >
+    <div
+      class="navigation-title"
+    >
+      <a
+        aria-current="page"
+        class="navigation-title--item active"
+        href="/"
+      >
+        Przepisy
+      </a>
+    </div>
+    <div
+      class="navigation-links"
+    >
+      <a
+        aria-current="page"
+        class="navigation-links--item navigation-links--active"
+        href="/"
+      >
+        Strona główna
+      </a>
+      <a
+        class="navigation-links--item"
+        href="/user-recipes"
+      >
+        Twój profil
+      </a>
+    </div>
+    <div
+      class="navigation-login"
+    >
+      <div
+        class="navigation-login--item"
+      >
+        <div
+          class="logout"
+        >
+          Wyloguj
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

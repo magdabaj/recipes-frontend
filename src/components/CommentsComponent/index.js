@@ -1,9 +1,3 @@
-/**
- *
- * CommentsComponent
- *
- */
-
 import React from 'react';
 import '../../containers/RecipeContainer/index.css';
 import CommentForm from '../CommentForm';
@@ -37,6 +31,7 @@ function CommentsComponent({
                 </h3>
             )}
             <div>
+                 {/*todo where do I need key here???*/}
                 {comments.map(comment => (
                     <ol key={comment.commentId} className={'comments-list'}>
                         <li className={'comment-body'}>
@@ -54,6 +49,7 @@ function CommentsComponent({
                                     <div className={'comment-edit'}>
                                         <div className={'comment-edit--button'}>Edytuj</div>
                                         <div
+                                            role={'remove-comment-button'}
                                             className={'comment-edit--button'}
                                             onClick={() => removeComment(comment.id)}
                                         >

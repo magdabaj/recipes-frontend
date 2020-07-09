@@ -61,10 +61,6 @@ function Login({ signIn, signUp, error, status }) {
         }
     }
 
-    // if (error) {
-    //   toast.error(error);
-    //   setError();
-    // }
     return (
         <div className={'form-container'}>
             <form className={'form'} onSubmit={handleSignIn}>
@@ -86,14 +82,14 @@ function Login({ signIn, signUp, error, status }) {
                     error={errors.password}
                     placeholder={"Hasło"}
                 />
-                <Button type={'submit'} onSubmit={handleSignIn}>
+                <Button role={'submit'} type={'submit'} onSubmit={handleSignIn}>
                     {status === fetchStates.fetching
                         ? 'Ladowanie...'
                         : 'Zaloguj się'}
                 </Button>
                 <div className={'sign-up'}>
                     <div>Nie masz jeszcze konta?</div>
-                    <ButtonSmall type={'button'} onClick={handleSave}>
+                    <ButtonSmall role={'register'} type={'button'} onClick={handleSave}>
                         {status === fetchStates.fetching
                             ? 'Ladowanie...'
                             : 'Zarejestruj się'}

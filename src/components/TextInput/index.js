@@ -36,7 +36,6 @@ function TextInput({ label, name, value, placeholder, onChange, error, type }) {
 TextInput.propTypes = {
     label: PropTypes.string,
     name: PropTypes.string,
-    value: PropTypes,
     onChange: PropTypes.func,
     error: PropTypes.string,
     type: PropTypes.string,

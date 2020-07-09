@@ -2,7 +2,7 @@ import React from "react";
 import {render, fireEvent, waitFor} from "@testing-library/react";
 import CommentFormComponent from "../index";
 import {test} from "@jest/globals";
-import { fakeUser, loggedOutUser } from "../../../utils/testHelpers/fixtures/user";
+import { fakeUser } from "../../../utils/testHelpers/fixtures/user";
 import * as jestDOM from '@testing-library/jest-dom';
 import fetchStates from "../../../utils/fetchStates";
 
