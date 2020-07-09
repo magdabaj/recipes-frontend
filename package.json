@@ -12,7 +12,7 @@
     "dev": "nodemon server.js",
     "start:dev": "webpack-dev-server --open --mode development --history-api-fallback",
     "build": "webpack --mode production",
-    "lint": "eslint .",
+    "lint": "eslint .eslintrc.js",
     "lint:fix": "eslint --fix ./src"
   },
   "author": "",

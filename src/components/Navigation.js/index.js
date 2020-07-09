@@ -28,7 +28,7 @@ function Navigation({ user, signOut, logoutStatus }) {
                         Strona główna
                     </NavLink>
                     {user.loggedIn ?
-                        <NavLink to={'/user-recipes'} activeClassName={"navigation-links--active"} className={'navigation-links--item'}>
+                        <NavLink to={'/user-recipes'} role={'your-profile'} activeClassName={"navigation-links--active"} className={'navigation-links--item'}>
                             Twój profil
                         </NavLink> : null}
                 </div>
@@ -36,7 +36,7 @@ function Navigation({ user, signOut, logoutStatus }) {
                 <div className={'navigation-login'}>
                     {user.loggedIn ? (
                         <div className={'navigation-login--item'}>
-                            <div onClick={signOut} className={'logout'}>Wyloguj</div>
+                            <div onClick={signOut} className={'logout'} data-testid={'logout'}>Wyloguj</div>
                         </div>
                     ) : (
                         <NavLink to={'/login'} className={'navigation-login--item'} activeClassName={"navigation-links--active"}>
