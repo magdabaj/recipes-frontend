@@ -29,11 +29,11 @@ module.exports = {
     },
     "overrides": [
         {
-            "files": ['**/tests/**'],
-            "settings": {
+            files: ['**/tests/**'],
+            settings: {
                 'import/resolver': {
-                    "jest": {
-                        "jestConfigFile": path.join(__dirname, './jest.config.js')
+                    jest: {
+                        jestConfigFile: path.join(__dirname, './jest.config.js')
                     }
                 }
             }
