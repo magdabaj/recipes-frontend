@@ -17,7 +17,6 @@ describe('selectAppDomain', () => {
                     totalPages: null,
                 }
         };
-        const mockedState = {};
         expect(selectAppDomain(appState)).toEqual(appState.appReducer);
     })
 })

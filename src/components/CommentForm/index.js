@@ -71,6 +71,7 @@ function CommentFormComponent({
             <form className={'comment-form'} onSubmit={handleSave}>
                 <label className={'comment-label'}>Dodaj komentarz</label>
                 <textarea
+                    role={'textarea'}
                     name={'content'}
                     value={comment.content}
                     placeholder={'Wpisz tresc komentarza'}

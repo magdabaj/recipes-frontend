@@ -23,6 +23,8 @@ describe('<HomePage/>', () => {
             />))
     }
 
+    // todo test useEffect
+
     it('should render and match snapshot', function () {
         const { container } = renderRecipesHomePage({status: fetchStates.success})
         expect(container.firstChild).toMatchSnapshot()

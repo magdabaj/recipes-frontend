@@ -1,8 +1,8 @@
 import React from "react";
-import { render, fireEvent } from "@testing-library/react";
+import {render, fireEvent, waitFor} from "@testing-library/react";
 import CommentFormComponent from "../index";
 import {test} from "@jest/globals";
-import { fakeUser } from "../../../utils/testHelpers/fixtures/user";
+import { fakeUser, loggedOutUser } from "../../../utils/testHelpers/fixtures/user";
 import * as jestDOM from '@testing-library/jest-dom';
 import fetchStates from "../../../utils/fetchStates";
 
@@ -24,4 +24,20 @@ test('shows loading message', () => {
 
     fireEvent.click(addButton)
     expect(addButton.textContent).toBe('Dodawanie...')
+})
+
+test('should get input value and send comment', () => {
+    const { getByRole } = render(<CommentFormComponent user={fakeUser} addComment={mockedAddComment} recipeId={'1'} />)
+    const textArea = getByRole('textarea')
+    const addButton = getByRole('button')
+
+    expect(textArea.value).toBe('')
+    fireEvent.change(textArea, {target: {value: 'test'}})
+    expect(textArea.value).toBe('test')
+    fireEvent.click(addButton)
+
+    waitFor(() => {
+        expect(mockedAddComment).toHaveBeenCalled();
+        expect(textArea.value).toBe('')
+    })
 })
