@@ -1,12 +1,10 @@
 import {loadRecipesSaga} from "../saga";
 import {expect} from "@jest/globals";
-import 'core-js/stable';
-import 'regenerator-runtime/runtime'
+// import 'core-js/stable';
+// import 'regenerator-runtime/runtime'
 import {fakeRecipes} from "../../../utils/testHelpers/fixtures/recipes";
 import {loadRecipesSuccess} from "../actions";
-// import {LOAD_RECIPES} from "../constants";
-// import waitForExpect from 'wait-for-expect'
-// import {waitFor} from "@testing-library/dom";
+import "@babel/polyfill"
 
 describe('HomePage saga', () => {
     let loadRecipesSagaGenerator;
