@@ -1,6 +1,5 @@
 
-import { makeSelectStatus, makeSelectNextPage, makeSelectTotalPages, makeSelectPreviousPage, makeSelectRecipes, selectRecipesHomePageDomain, selectPage, selectTagId
-} from "../selectors";
+import { makeSelectStatus, makeSelectNextPage, makeSelectTotalPages, makeSelectPreviousPage, makeSelectRecipes } from "../selectors";
 import fetchStates from "../../../utils/fetchStates";
 import {fakeNextPage, fakePreviousPage} from "../../../utils/testHelpers/fixtures/page";
 import { fakeRecipes } from "../../../utils/testHelpers/fixtures/recipes";

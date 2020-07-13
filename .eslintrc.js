@@ -27,16 +27,16 @@ module.exports = {
         "no-console": "warn", // warn at the use of console log
         "react/display-name": "warn"
     },
-    "overrides": [
-        {
-            files: ['**/tests/**'],
-            settings: {
-                'import/resolver': {
-                    jest: {
-                        jestConfigFile: path.join(__dirname, './jest.config.js')
-                    }
-                }
-            }
-        }
-    ]
+    // "overrides": [
+    //     {
+    //         "files": ['**/tests/**'],
+    //         "settings": {
+    //             'import/resolver': {
+    //                 "jest": {
+    //                     "jestConfigFile": path.join(__dirname, './jest.config.js')
+    //                 }
+    //             }
+    //         }
+    //     }
+    // ]
 };

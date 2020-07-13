@@ -1,4 +1,4 @@
-import {LOAD_RECIPES, LOAD_RECIPES_ERROR, LOAD_RECIPES_SUCCESS, LOAD_TAGS, LOAD_TAGS_ERROR, LOAD_TAGS_SUCCESS} from "./constants";
+import {LOAD_RECIPES_ERROR, LOAD_TAGS, LOAD_TAGS_ERROR, LOAD_TAGS_SUCCESS} from "./constants";
 
 // export const loadRecipes = page => ({
 //     type: LOAD_RECIPES,

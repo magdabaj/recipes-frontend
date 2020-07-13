@@ -1,5 +1,4 @@
-import { BrowserRouter, Router, browserHistory } from 'react-router-dom'
-import { createStore, Store } from "redux";
+import { Router } from 'react-router-dom'
 import { createMemoryHistory } from "history";
 import store from "../store";
 import {Provider} from "react-redux";
@@ -21,7 +20,6 @@ export const withStoreAndRouter = component =>
 export const renderWithRouter = (
     ui,
     {
-        route = '/',
         history = memoryHistory,
     } = {}
 ) => (

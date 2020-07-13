@@ -41,6 +41,7 @@ function AllRecipesComponent({ recipes, route, ...props }) {
                         </Timeline>
                     ) : (
                         <div>
+                            {/* eslint-disable-next-line react/no-unescaped-entities */}
                             <h2>We're waiting for server response</h2>
                             <Spinner width={'80%'} height={'80%'} />
                         </div>

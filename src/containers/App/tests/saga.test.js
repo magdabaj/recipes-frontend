@@ -1,4 +1,4 @@
-import {call, put, takeLatest} from "redux-saga/effects";
+import {put} from "redux-saga/effects";
 import {loadTagsError, loadTagsSuccess} from "../actions";
 import {loadTagsSaga} from '../saga'
 import {beforeEach, describe, expect} from "@jest/globals";

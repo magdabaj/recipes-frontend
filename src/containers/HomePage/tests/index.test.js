@@ -7,19 +7,17 @@ import {Route} from "react-router";
 import fetchStates from "../../../utils/fetchStates";
 
 describe('<HomePage/>', () => {
-    function renderRecipesHomePage(args = {}) {
+    function renderRecipesHomePage() {
         const defaultProps = {
             loadRecipes: () => {},
             loadRecipesByTag: () => {},
             loadTags: () => {},
         }
 
-        const props = { ...defaultProps, ...args}
-
         return render(withStoreAndRouter(
             <Route
                 path={'/tag/:tagId/page/:page'}
-                render={(props) => <RecipesHomePage {...props} />}
+                render={() => <RecipesHomePage {...defaultProps} />}
             />))
     }
 

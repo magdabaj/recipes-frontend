@@ -1,5 +1,4 @@
 import { selectAppDomain, makeSelectTags } from '../selectors';
-import makeSelectApp from "../selectors";
 import {describe, expect, it} from "@jest/globals";
 import fetchStates from "../../../utils/fetchStates";
 

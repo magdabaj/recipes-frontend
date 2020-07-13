@@ -5,7 +5,7 @@ import * as jestDOM from '@testing-library/jest-dom';
 import CommentsComponent from "../index";
 import {fakeUser, loggedOutUser} from "../../../utils/testHelpers/fixtures/user";
 import {fakeComments} from "../../../utils/testHelpers/fixtures/coments";
-import commonTests from "../../../utils/testHelpers/commonTests";
+// import commonTests from "../../../utils/testHelpers/commonTests";
 
 expect.extend(jestDOM)
 const mockedAddComment = jest.fn()
@@ -43,13 +43,13 @@ test('renders CommentsComponent without comment form', () => {
     expect(queryByRole('textarea')).not.toBeInTheDocument()
 })
 
-const renderCommentsComponent = render(<CommentsComponent
-    user={fakeUser}
-    addComment={mockedAddComment}
-    recipeId={'1'}
-    removeComment={removeCommentMocked}
-    getComments={getCommentsMocked}
-    comments={fakeComments}
-/>)
+// const renderCommentsComponent = render(<CommentsComponent
+//     user={fakeUser}
+//     addComment={mockedAddComment}
+//     recipeId={'1'}
+//     removeComment={removeCommentMocked}
+//     getComments={getCommentsMocked}
+//     comments={fakeComments}
+// />)
 
 // commonTests(renderCommentsComponent)

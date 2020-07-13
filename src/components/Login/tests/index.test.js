@@ -1,5 +1,5 @@
 import React from "react";
-import {render, waitFor, screen} from "@testing-library/react";
+import {render, waitFor} from "@testing-library/react";
 import Login from "../index";
 import * as jestDOM from '@testing-library/jest-dom';
 import fetchStates from "../../../utils/fetchStates";

@@ -5,7 +5,6 @@ import {test} from "@jest/globals";
 import { fakeUser } from "../../../utils/testHelpers/fixtures/user";
 import * as jestDOM from '@testing-library/jest-dom';
 import fetchStates from "../../../utils/fetchStates";
-import CommentsComponent from "../../CommentsComponent";
 import commonTests from "../../../utils/testHelpers/commonTests";
 
 expect.extend(jestDOM)

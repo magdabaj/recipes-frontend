@@ -211,3 +211,5 @@ module.exports = {
     // Whether to use watchman for file crawling
     // watchman: true,
 };
+
+// todo add script after_script: npx codecov@3
