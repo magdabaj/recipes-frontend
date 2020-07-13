@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render and match the snapshot 1`] = `
+<div
+  class="form-container"
+>
+  <form
+    class="form"
+  >
+    <div
+      class="input-data"
+    >
+      <label
+        class="login-label"
+        for="email"
+      >
+        Email
+      </label>
+      <div
+        class="field"
+      >
+        <input
+          class="input"
+          id="email"
+          name="email"
+          placeholder="Email"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      class="input-data"
+    >
+      <label
+        class="login-label"
+        for="password"
+      >
+        Hasło
+      </label>
+      <div
+        class="field"
+      >
+        <input
+          class="input"
+          id="password"
+          name="password"
+          placeholder="Hasło"
+          type="password"
+          value=""
+        />
+      </div>
+    </div>
+    <button
+      class="Button-sc-9ry37c-0 hcJNuE"
+      role="submit"
+      type="submit"
+    >
+      Zaloguj się
+    </button>
+    <div
+      class="sign-up"
+    >
+      <div>
+        Nie masz jeszcze konta?
+      </div>
+      <button
+        class="Button-sc-9ry37c-0 Button__ButtonSmall-sc-9ry37c-1 gunhDf"
+        role="register"
+        type="button"
+      >
+        Zarejestruj się
+      </button>
+    </div>
+  </form>
+</div>
+`;

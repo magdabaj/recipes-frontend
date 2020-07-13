@@ -5,6 +5,8 @@ import {test} from "@jest/globals";
 import { fakeUser } from "../../../utils/testHelpers/fixtures/user";
 import * as jestDOM from '@testing-library/jest-dom';
 import fetchStates from "../../../utils/fetchStates";
+import CommentsComponent from "../../CommentsComponent";
+import commonTests from "../../../utils/testHelpers/commonTests";
 
 expect.extend(jestDOM)
 
@@ -27,7 +29,12 @@ test('shows loading message', () => {
 })
 
 test('should get input value and send comment', () => {
-    const { getByRole } = render(<CommentFormComponent user={fakeUser} addComment={mockedAddComment} recipeId={'1'} />)
+    const { getByRole } = render(
+        <CommentFormComponent
+            user={fakeUser}
+            addComment={mockedAddComment}
+            recipeId={'1'}
+        />)
     const textArea = getByRole('textarea')
     const addButton = getByRole('button')
 
@@ -41,3 +48,12 @@ test('should get input value and send comment', () => {
         expect(textArea.value).toBe('')
     })
 })
+
+const renderCommentForm = () =>
+    render(<CommentFormComponent
+        user={fakeUser}
+        addComment={mockedAddComment}
+        recipeId={'1'}
+        />)
+
+commonTests(renderCommentForm)

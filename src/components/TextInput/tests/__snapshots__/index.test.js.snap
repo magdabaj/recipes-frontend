@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render and match the snapshot 1`] = `
+<div
+  class="input-data"
+>
+  <label
+    class="login-label"
+    for="email"
+  >
+    Email
+  </label>
+  <div
+    class="field"
+  >
+    <input
+      class="input"
+      id="email"
+      name="email"
+      placeholder="Email"
+      type="text"
+      value="test"
+    />
+  </div>
+  
+</div>
+`;

@@ -15,11 +15,12 @@ function TextInput({ label, name, value, placeholder, onChange, error, type }) {
     }
     return (
         <div className={'input-data'}>
-            <label htmlFor={name} className={'login-label'}>
+            <label htmlFor={name} className={'login-label'} /*for={name}*/>
                 {label}
             </label>
             <div className={'field'}>
                 <input
+                    id={name}
                     type={type}
                     name={name}
                     value={value}
@@ -28,7 +29,7 @@ function TextInput({ label, name, value, placeholder, onChange, error, type }) {
                     className={wrapperClass}
                 />
             </div>
-            {error && <div className={'error-message'}>{error}</div>}
+            {error && <div className={'error-message'} data-testid={'error-message'}>{error}</div>}
         </div>
     );
 }

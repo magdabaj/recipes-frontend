@@ -42,7 +42,20 @@ module.exports = {
     // ],
 
     // An object that configures minimum threshold enforcement for coverage results
-    // coverageThreshold: undefined,
+    coverageThreshold: {
+        global: {
+            statements: 80,
+            branches: 80,
+            functions: 80,
+            lines: 80,
+        },
+        './src/components/Login/index.js': {
+            statements: 100,
+            branches: 80,
+            functions: 100,
+            lines: 100,
+        }
+    },
 
     // A path to a custom dependency extractor
     // dependencyExtractor: undefined,
@@ -177,12 +190,13 @@ module.exports = {
 
     // A map from regular expressions to paths to transformers
     transform: {
-        "^.+\\.[t|j]sx?$": "babel-jest"
+        "^.+\\.[t|j]sx?$": "babel-jest",
+        "^.+\\.svg$": "jest-svg-transformer"
     },
 
     // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
     // transformIgnorePatterns: [
-    //   "/node_modules/"
+    //     "node_modules/(?!@ngrx|(?!deck.gl)|ng-dynamic)"
     // ],
 
     // An array of regexp pattern strings that are matched against all modules before the module loader will automatically return a mock for them

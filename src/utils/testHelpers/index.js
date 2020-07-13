@@ -4,26 +4,29 @@ import { createMemoryHistory } from "history";
 import store from "../store";
 import {Provider} from "react-redux";
 import React from "react";
-import rootReducer from "../reducers";
-// import history from "../history";
-import {ConnectedRouter} from "connected-react-router";
-// import {initialState} from "../../containers/App/reducer";
+import { render } from "@testing-library/react";
 
 // const store  = createStore(rootReducer, initialState={})
-const history = createMemoryHistory({
+const memoryHistory = createMemoryHistory({
     initialEntries: ['/'],
 })
 
 export const withStoreAndRouter = component =>
-    <Router history={history}>
+    <Router history={memoryHistory}>
         <Provider store={store}>
             {component}
         </Provider>
     </Router>
-    // <Provider store={store}>
-    //     <ConnectedRouter history={history}>
-    //         <BrowserRouter>
-    //             {component}
-    //         </BrowserRouter>
-    //     </ConnectedRouter>
-    // </Provider>
+
+export const renderWithRouter = (
+    ui,
+    {
+        route = '/',
+        history = memoryHistory,
+    } = {}
+) => (
+    {
+        ...render(<Router history={history}>{ui}</Router>),
+        history,
+    }
+)

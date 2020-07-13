@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render and match the snapshot 1`] = `
+<div
+  class="comment-form-container"
+>
+  <form
+    class="comment-form"
+  >
+    <label
+      class="comment-label"
+    >
+      Dodaj komentarz
+    </label>
+    <textarea
+      class="comment-text-area"
+      maxlength="2000"
+      name="content"
+      placeholder="Wpisz tresc komentarza"
+      role="textarea"
+    />
+    <button
+      class="comment-button"
+      type="submit"
+    >
+      Dodaj komentarz
+    </button>
+  </form>
+</div>
+`;
