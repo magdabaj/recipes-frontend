@@ -4,8 +4,6 @@
  *
  */
 
-// todo configure prettier, babel, eslint
-
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import '../../containers/HomePage/index.css';
@@ -43,7 +41,7 @@ function AllRecipesComponent({ recipes, route, ...props }) {
                         <div>
                             {/* eslint-disable-next-line react/no-unescaped-entities */}
                             <h2>We're waiting for server response</h2>
-                            <Spinner width={'80%'} height={'80%'} />
+                            <Spinner width={'80%'} height={'80%'} data-testid={'spinner'} />
                         </div>
                     )}
                 </div>

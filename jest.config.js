@@ -142,7 +142,7 @@ module.exports = {
     // ],
 
     // Allows you to use a custom runner instead of Jest's default test runner
-    // runner: "jest-runner",
+    runner: "jest-runner-eslint",
 
     // The paths to modules that run some code to configure or set up the testing environment before each test
     // setupFiles: [],
@@ -151,7 +151,7 @@ module.exports = {
     setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
 
     // A list of paths to snapshot serializer modules Jest should use for snapshot testing
-    // snapshotSerializers: [],
+    snapshotSerializers: ['jest-emotion'],
 
     // The test environment that will be used for testing
     testEnvironment: "jsdom",
@@ -195,9 +195,9 @@ module.exports = {
     },
 
     // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
-    // transformIgnorePatterns: [
-    //     "node_modules/(?!@ngrx|(?!deck.gl)|ng-dynamic)"
-    // ],
+    transformIgnorePatterns: [
+        "node_modules/(?!${esModules})"
+    ],
 
     // An array of regexp pattern strings that are matched against all modules before the module loader will automatically return a mock for them
     // unmockedModulePathPatterns: undefined,

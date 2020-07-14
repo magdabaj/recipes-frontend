@@ -9,13 +9,15 @@ import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import RecipeRatingContainer from './RecipeRatingContainer';
 import AddRatingButton from './AddRatingButton';
-import { FaHeart } from 'react-icons/all';
-import { FaRocketchat } from 'react-icons/all';
+import { FaHeart } from 'react-icons/fa';
+import { FaRocketchat } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
 import Icon from './Icon';
 import './index.css';
 
 const RecipeRating = ({ user, sendRating, recipeId, ratingsMean, ...props }) => {
+
+    // todo find out how to test this
     function addRating(value) {
         if (user.loggedIn) {
             sendRating(value, user.userId, recipeId);
@@ -62,6 +64,7 @@ RecipeRating.propTypes = {
     user: PropTypes.object.isRequired,
     sendRating: PropTypes.func.isRequired,
     recipeId: PropTypes.number.isRequired,
+    // recipeId should be string but tests don't pass
     ratingsMean: PropTypes.number,
     history: PropTypes.object,
     commentsNumber: PropTypes.number,
