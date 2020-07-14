@@ -11,3 +11,5 @@ const renderRecipe = () =>
     render(<Recipes user={fakeUser} commentsNumber={5} sendRating={sendRatingMocked} recipes={fakeRecipes}/>)
 
 commonTests(renderRecipe)
+
+test('')
