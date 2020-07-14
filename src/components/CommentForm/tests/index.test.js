@@ -1,11 +1,12 @@
 import React from "react";
-import {render, fireEvent, waitFor} from "@testing-library/react";
+import {render, waitFor} from "@testing-library/react";
 import CommentFormComponent from "../index";
 import {test} from "@jest/globals";
 import { fakeUser } from "../../../utils/testHelpers/fixtures/user";
 import * as jestDOM from '@testing-library/jest-dom';
 import fetchStates from "../../../utils/fetchStates";
 import commonTests from "../../../utils/testHelpers/commonTests";
+import userEvent from '@testing-library/user-event'
 
 expect.extend(jestDOM)
 
@@ -15,7 +16,7 @@ test('renders CommentForm', () => {
     const { getByRole } = render(<CommentFormComponent user={fakeUser} addComment={mockedAddComment} recipeId={'1'}/>)
     const addButton = getByRole('button')
 
-    fireEvent.click(addButton)
+    userEvent.click(addButton)
     expect(addButton.textContent).toBe('Dodaj komentarz')
 })
 
@@ -23,7 +24,7 @@ test('shows loading message', () => {
     const { getByRole } = render(<CommentFormComponent user={fakeUser} addComment={mockedAddComment} recipeId={'1'} addCommentStatus={fetchStates.fetching}/>)
     const addButton = getByRole('button')
 
-    fireEvent.click(addButton)
+    userEvent.click(addButton)
     expect(addButton.textContent).toBe('Dodawanie...')
 })
 
@@ -38,9 +39,10 @@ test('should get input value and send comment', () => {
     const addButton = getByRole('button')
 
     expect(textArea.value).toBe('')
-    fireEvent.change(textArea, {target: {value: 'test'}})
+    // userEvent.change(textArea, {target: {value: 'test'}})
+    userEvent.type(textArea, 'test')
     expect(textArea.value).toBe('test')
-    fireEvent.click(addButton)
+    userEvent.click(addButton)
 
     waitFor(() => {
         expect(mockedAddComment).toHaveBeenCalled();

@@ -11,7 +11,6 @@ import Container from './Container';
 import './index.css';
 import PropTypes from 'prop-types';
 
-// todo rating
 // todo hover div over icons
 
 function Pagination({ totalPages, previousPage, nextPage, ...props }) {

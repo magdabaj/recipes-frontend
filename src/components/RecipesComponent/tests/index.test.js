@@ -9,11 +9,14 @@ const renderRecipesComponent = () =>
 
 commonTests(renderRecipesComponent())
 
+
 test('renders Spinner when there are no recipes', () => {
-    const { getAllByDisplayValue, getByTestId } = renderWithRouter(
+    const { getAllByDisplayValue, getByTestId, debug } = renderWithRouter(
         <AllRecipesComponent
+            recipes={fakeRecipes}
             route={'/'}
         />)
+    debug()
     // eslint-disable-next-line no-console
     expect(getAllByDisplayValue('We\'re waiting for server response')).toBeInTheDocument()
     expect(getByTestId('spinner')).toBeInTheDocument()
@@ -26,6 +29,6 @@ test('renders recipes', () => {
             route={'/'}
         />)
     // eslint-disable-next-line no-console
-    expect(queryAllByDisplayValue('We\'re waiting for server response')).not.toBeInTheDocument()
+    expect(queryAllByDisplayValue(/we're waiting for server response/i)).not.toBeInTheDocument()
     expect(queryByTestId('spinner')).not.toBeInTheDocument()
 })
