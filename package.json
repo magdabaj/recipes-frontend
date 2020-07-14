@@ -83,6 +83,7 @@
     "crypto-js": "^4.0.0",
     "express": "^4.17.1",
     "gsap": "^3.4.0",
+    "jest-axe": "^3.4.0",
     "jest-emotion": "^10.0.32",
     "jest-svg-transformer": "^1.0.0",
     "lodash": "^4.17.19",
