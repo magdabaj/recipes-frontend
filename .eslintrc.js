@@ -7,7 +7,9 @@ module.exports = {
     },
     "extends": [
         "eslint:recommended", // eslint recommended configuration
-        "plugin:react/recommended"
+        "plugin:react/recommended",
+        "plugin:jest-dom/recommended",
+        "plugin:testing-library/recommended",
     ],
     "globals": {
         "Atomics": "readonly",
@@ -21,7 +23,11 @@ module.exports = {
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        // eslint-plugin-jest-dom
+        "jest-dom",
+        // eslint-plugin-testing-library
+        "testing-library"
     ],
     "rules": {
         "no-console": "warn", // warn at the use of console log

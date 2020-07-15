@@ -69,15 +69,16 @@ function CommentFormComponent({
     return (
         <div className={'comment-form-container'}>
             <form className={'comment-form'} onSubmit={handleSave}>
-                <label className={'comment-label'}>Dodaj komentarz</label>
+                <label className={'comment-label'} htmlFor={'comment-area'}>Dodaj komentarz</label>
                 <textarea
-                    role={'textarea'}
+                    id={'comment-area'}
                     name={'content'}
                     value={comment.content}
                     placeholder={'Wpisz tresc komentarza'}
                     maxLength={2000}
                     onChange={handleChange}
                     className={'comment-text-area'}
+                    data-testid={'comment-area'}
                 />
                 <button type={'submit'} onSubmit={handleSave} className={'comment-button'}>
                     {props.addCommentStatus === fetchStates.fetching ? 'Dodawanie...' : 'Dodaj komentarz'}

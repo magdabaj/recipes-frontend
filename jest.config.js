@@ -26,9 +26,9 @@ module.exports = {
     coverageDirectory: "coverage",
 
     // An array of regexp pattern strings used to skip coverage collection
-    // coveragePathIgnorePatterns: [
-    //   "/node_modules/"
-    // ],
+    coveragePathIgnorePatterns: [
+      "/node_modules/"
+    ],
 
     // Indicates which provider should be used to instrument code for coverage
     coverageProvider: "v8",
@@ -142,7 +142,7 @@ module.exports = {
     // ],
 
     // Allows you to use a custom runner instead of Jest's default test runner
-    // runner: "jest-runner-eslint",
+    runner: "jest-runner-eslint",
 
     // The paths to modules that run some code to configure or set up the testing environment before each test
     // setupFiles: [],

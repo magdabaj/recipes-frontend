@@ -9,15 +9,17 @@ exports[`should render and match the snapshot 1`] = `
   >
     <label
       class="comment-label"
+      for="comment-area"
     >
       Dodaj komentarz
     </label>
     <textarea
       class="comment-text-area"
+      data-testid="comment-area"
+      id="comment-area"
       maxlength="2000"
       name="content"
       placeholder="Wpisz tresc komentarza"
-      role="textarea"
     />
     <button
       class="comment-button"

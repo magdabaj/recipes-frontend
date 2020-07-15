@@ -13,7 +13,7 @@ const removeCommentMocked = jest.fn()
 const getCommentsMocked = jest.fn()
 
 test('renders CommentsComponent', () => {
-    const { getByRole } = render(<CommentsComponent
+    const { getByLabelText } = render(<CommentsComponent
         user={fakeUser}
         addComment={mockedAddComment}
         recipeId={'1'}
@@ -21,12 +21,12 @@ test('renders CommentsComponent', () => {
         getComments={getCommentsMocked}
         comments={fakeComments}
     />)
-    const commentForm = getByRole('textarea')
+    const commentForm = getByLabelText(/dodaj komentarz/i)
     expect(commentForm).toBeInTheDocument()
 })
 
 test('renders CommentsComponent without comment form', () => {
-    const { getByRole, queryByRole } = render(<Router>
+    const { queryByLabelText, getByRole } = render(<Router>
             <CommentsComponent
             user={loggedOutUser}
             addComment={mockedAddComment}
@@ -39,10 +39,10 @@ test('renders CommentsComponent without comment form', () => {
     const heading = getByRole('heading')
 
     expect(heading).toBeInTheDocument()
-    expect(heading.textContent).toBe('Musisz sie zalogowac zeby dodac komentarz')
-    expect(queryByRole('textarea')).not.toBeInTheDocument()
+    expect(heading).toHaveTextContent('Musisz sie zalogowac zeby dodac komentarz')
+    expect(queryByLabelText(/dodaj komentarz/i)).not.toBeInTheDocument()
 })
-
+//
 // const renderCommentsComponent = render(<CommentsComponent
 //     user={fakeUser}
 //     addComment={mockedAddComment}
@@ -51,5 +51,5 @@ test('renders CommentsComponent without comment form', () => {
 //     getComments={getCommentsMocked}
 //     comments={fakeComments}
 // />)
-
+//
 // commonTests(renderCommentsComponent)

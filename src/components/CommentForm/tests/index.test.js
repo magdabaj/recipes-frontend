@@ -32,7 +32,7 @@ test('renders CommentForm', () => {
     const addButton = getByRole('button')
 
     userEvent.click(addButton)
-    expect(addButton.textContent).toBe('Dodaj komentarz')
+    expect(addButton).toHaveTextContent('Dodaj komentarz')
 })
 
 test('shows loading message', () => {
@@ -40,29 +40,29 @@ test('shows loading message', () => {
     const addButton = getByRole('button')
 
     userEvent.click(addButton)
-    expect(addButton.textContent).toBe('Dodawanie...')
+    expect(addButton).toHaveTextContent('Dodawanie...')
 })
 
-test('should get input value and send comment', () => {
-    const { getByRole } = render(
+test('should get input value and send comment', async() => {
+    const { getByRole, getByLabelText } = render(
         <CommentFormComponent
             user={fakeUser}
             addComment={mockedAddComment}
             recipeId={'1'}
         />)
-    const textArea = getByRole('textarea')
+    const textArea = getByLabelText(/dodaj komentarz/i)
     const addButton = getByRole('button')
 
     expect(textArea.value).toBe('')
     // userEvent.change(textArea, {target: {value: 'test'}})
-    userEvent.type(textArea, 'test')
+    await userEvent.type(textArea, 'test')
     expect(textArea.value).toBe('test')
     userEvent.click(addButton)
 
-    waitFor(() => {
+    await waitFor(() => {
         expect(mockedAddComment).toHaveBeenCalled();
-        expect(textArea.value).toBe('')
     })
+    expect(textArea.value).toBe('')
 })
 
 const renderCommentForm = () =>
