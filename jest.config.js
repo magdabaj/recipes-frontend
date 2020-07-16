@@ -50,10 +50,10 @@ module.exports = {
             lines: 80,
         },
         './src/components/Login/index.js': {
-            statements: 100,
-            branches: 80,
-            functions: 100,
-            lines: 100,
+            statements: 90,
+            branches: 60,
+            functions: 60,
+            lines: 90,
         }
     },
 

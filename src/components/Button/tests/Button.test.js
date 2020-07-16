@@ -1,4 +1,4 @@
-import "@babel/polyfill"
+import "@babel/polyfill/noConflict"
 import {delay} from "@redux-saga/core/effects";
 
 it("async test", done => {

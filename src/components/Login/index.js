@@ -82,14 +82,14 @@ function Login({ signIn, signUp, error, status }) {
                     error={errors.password}
                     placeholder={"Hasło"}
                 />
-                <Button role={'submit'} type={'submit'} onSubmit={handleSignIn}>
+                <Button type={'submit'} onSubmit={handleSignIn}>
                     {status === fetchStates.fetching
                         ? 'Ladowanie...'
                         : 'Zaloguj się'}
                 </Button>
                 <div className={'sign-up'}>
                     <div>Nie masz jeszcze konta?</div>
-                    <ButtonSmall role={'register'} type={'button'} onClick={handleSave}>
+                    <ButtonSmall type={'button'} onClick={handleSave}>
                         {status === fetchStates.fetching
                             ? 'Ladowanie...'
                             : 'Zarejestruj się'}

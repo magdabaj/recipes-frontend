@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormContainer 1`] = `
+<div
+  className="FormContainer-sc-1xox95j-0 fxVHqF"
+/>
+`;

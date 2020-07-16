@@ -53,7 +53,6 @@ exports[`should render and match the snapshot 1`] = `
     </div>
     <button
       class="Button-sc-9ry37c-0 hcJNuE"
-      role="submit"
       type="submit"
     >
       Zaloguj się
@@ -66,7 +65,6 @@ exports[`should render and match the snapshot 1`] = `
       </div>
       <button
         class="Button-sc-9ry37c-0 Button__ButtonSmall-sc-9ry37c-1 gunhDf"
-        role="register"
         type="button"
       >
         Zarejestruj się
