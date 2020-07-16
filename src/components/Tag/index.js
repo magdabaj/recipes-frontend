@@ -38,7 +38,7 @@ function TagComponent({ tags, tagType }) {
                 {tagValuesVisibility
                     ? sortedTags.map(tag => (
                         <Link key={tag.tagId} to={`/tag/${tag.tagId}`}>
-                            <TagContainer id={tag.tagId}>{tag.tagValue}</TagContainer>
+                            <TagContainer id={tag.tagId} >{tag.tagValue}</TagContainer>
                         </Link>
                     ))
                     : null}

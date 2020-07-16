@@ -1,11 +1,20 @@
 export const fakeRecipes = [
     {
         id: 1,
-        addedDate:"2020-05-21T06:20:50.328Z",
+        addedDate:"test",
         title:"test",
         url:"test",
         image:"test",
         website:"test",
+        userId:1,
+    },
+    {
+        id: 2,
+        addedDate:"test2",
+        title:"test2",
+        url:"test2",
+        image:"test2",
+        website:"test2",
         userId:1,
     }
 ]

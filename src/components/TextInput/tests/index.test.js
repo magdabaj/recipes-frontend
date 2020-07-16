@@ -43,7 +43,7 @@ test('displays error message, when received a parameter', () => {
     const errorMessage = getByTestId('error-message')
     const input = getByLabelText('Email')
     expect(errorMessage).toBeInTheDocument()
-    expect(errorMessage.innerHTML).toBe('some error')
+    expect(errorMessage).toHaveTextContent('some error')
     expect(input).toHaveClass('input input-error')
 })
 

@@ -16,7 +16,18 @@ import fetchStates from "../../utils/fetchStates";
 import {toast} from "react-toastify";
 // import styled from 'styled-components';
 
-function RecipeWrapper({ recipe, user, sendRating, ratingsMean, getRecipeRatings, tags, addCommentStatus, deleteCommentStatus, sendRatingStatus, ...props }) {
+function RecipeWrapper({
+                           recipe,
+                           user,
+                           sendRating,
+                           ratingsMean,
+                           getRecipeRatings,
+                           tags,
+                           addCommentStatus,
+                           deleteCommentStatus,
+                           sendRatingStatus,
+                           ...props
+}) {
     useEffect(() => {
         getRecipeRatings(props.recipeId);
         props.getRecipe(props.recipeId);
@@ -66,7 +77,7 @@ function RecipeWrapper({ recipe, user, sendRating, ratingsMean, getRecipeRatings
 }
 
 RecipeWrapper.propTypes = {
-    recipe: PropTypes.object.isRequired,
+    recipe: PropTypes.array.isRequired,
     user: PropTypes.object,
     sendRating: PropTypes.func.isRequired,
     getRecipeRatings: PropTypes.func.isRequired,

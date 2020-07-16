@@ -11,7 +11,7 @@ import Tag from '../Tag';
 import tagTypes from '../../utils/tagTypes';
 
 function TagsListComponent({ tags }) {
-    return tagTypes.map(tagType => <Tag key={tagType.id} tags={tags} tagType={tagType} />);
+    return tagTypes.map(tagType => <Tag key={tagType} tags={tags} tagType={tagType} />);
 }
 
 TagsListComponent.propTypes = {

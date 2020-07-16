@@ -52,7 +52,7 @@ function Recipes({ recipes, user, sendRating, ratingsMean, commentsNumber }) {
 }
 
 Recipes.propTypes = {
-    commentsNumber: PropTypes.number.isRequired,
+    commentsNumber: PropTypes.number,
     recipe: PropTypes.object,
     user: PropTypes.object.isRequired,
     sendRating: PropTypes.func.isRequired,

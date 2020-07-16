@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render and match the snapshot 1`] = `
+<div
+  class="recipe-input-container"
+>
+  <label
+    class="label"
+    for="test"
+  >
+    test
+  </label>
+  <div
+    class="input-data input-data-recipe"
+  >
+    <input
+      class="input"
+      id="test"
+      name="test"
+      placeholder="test"
+      type="test"
+      value="test"
+    />
+    
+  </div>
+</div>
+`;

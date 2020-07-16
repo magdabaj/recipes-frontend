@@ -27,7 +27,7 @@ function RecipeTextInput({ type, value, name, onChange, placeholder, label, erro
                     onChange={onChange}
                     className={wrapperClass}
                 />
-                {error && <div className={'error-message'}>{error}</div>}
+                {error && <div className={'error-message'} data-testid={'error-message'}>{error}</div>}
             </div>
         </div>
     );

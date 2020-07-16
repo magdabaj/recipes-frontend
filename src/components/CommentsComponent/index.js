@@ -33,7 +33,7 @@ function CommentsComponent({
             <div>
                  {/*todo where do I need key here???*/}
                 {comments.map(comment => (
-                    <ol key={comment.commentId} className={'comments-list'}>
+                    <ol key={comment.id} className={'comments-list'}>
                         <li className={'comment-body'}>
                             <article className={'comment-article'}>
                                 <footer className={'comment-title'}>

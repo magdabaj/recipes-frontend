@@ -43,9 +43,12 @@ test('fires addRecipes actions when form is correct', async () => {
     await userEvent.type(websiteInput, 'test')
     await userEvent.type(urlInput, 'test')
     await userEvent.type(imageInput, 'test')
+    // expect(checkbox).not.toBeInTheDocument()
+
     userEvent.click(tagCheckbox)
 
     const checkbox = screen.getByText(/rum/i)
+    expect(checkbox).toBeInTheDocument()
     fireEvent.click(checkbox, { target: { checked: true } });
     await waitFor(() => userEvent.click(saveButton))
 
@@ -60,6 +63,8 @@ test('shows error message if tag is not chosen',   () => {
     const urlInput = screen.getByLabelText("Url")
     const imageInput = screen.getByLabelText(/Url zdjęcia/i)
     const tagCheckbox = screen.getByTestId('warzywa, grzyby')
+
+    // expect(errorMessage).not.toBeInTheDocument()
 
     const saveButton = screen.getByText(/zapisz przepis/i)
 
