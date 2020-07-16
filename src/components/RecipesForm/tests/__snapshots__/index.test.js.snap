@@ -1,0 +1,264 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render and match the snapshot 1`] = `
+<div
+  class="recipes-form-container"
+>
+  <form
+    class="form"
+  >
+    <div
+      class="recipe-input-container"
+    >
+      <label
+        class="label"
+        for="title"
+      >
+        Tytuł
+      </label>
+      <div
+        class="input-data input-data-recipe"
+      >
+        <input
+          class="input"
+          id="title"
+          name="title"
+          placeholder="Wpisz tytuł przepisu"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      class="recipe-input-container"
+    >
+      <label
+        class="label"
+        for="website"
+      >
+        Strona
+      </label>
+      <div
+        class="input-data input-data-recipe"
+      >
+        <input
+          class="input"
+          id="website"
+          name="website"
+          placeholder="Wpisz stronę źródłową"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      class="recipe-input-container"
+    >
+      <label
+        class="label"
+        for="url"
+      >
+        Url
+      </label>
+      <div
+        class="input-data input-data-recipe"
+      >
+        <input
+          class="input"
+          id="url"
+          name="url"
+          placeholder="Wpisz adres przepisu"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      class="recipe-input-container"
+    >
+      <label
+        class="label"
+        for="image"
+      >
+        Url zdjęcia
+      </label>
+      <div
+        class="input-data input-data-recipe"
+      >
+        <input
+          class="input"
+          id="image"
+          name="image"
+          placeholder="Wpisz url zdjęcia"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      class="select-container"
+    >
+      <div
+        class="select"
+      >
+        <label
+          class="select-tag-type"
+          data-testid="alkohol"
+          for="alkohol"
+        >
+          alkohol
+        </label>
+      </div>
+      <div
+        class="select"
+      >
+        <label
+          class="select-tag-type"
+          data-testid="bakalie"
+          for="bakalie"
+        >
+          bakalie
+        </label>
+      </div>
+      <div
+        class="select"
+      >
+        <label
+          class="select-tag-type"
+          data-testid="czekolada, znane slodycze"
+          for="czekolada, znane slodycze"
+        >
+          czekolada, znane slodycze
+        </label>
+      </div>
+      <div
+        class="select"
+      >
+        <label
+          class="select-tag-type"
+          data-testid="dodatki"
+          for="dodatki"
+        >
+          dodatki
+        </label>
+      </div>
+      <div
+        class="select"
+      >
+        <label
+          class="select-tag-type"
+          data-testid="herbata, kawa"
+          for="herbata, kawa"
+        >
+          herbata, kawa
+        </label>
+      </div>
+      <div
+        class="select"
+      >
+        <label
+          class="select-tag-type"
+          data-testid="maki, platki, ziarna"
+          for="maki, platki, ziarna"
+        >
+          maki, platki, ziarna
+        </label>
+      </div>
+      <div
+        class="select"
+      >
+        <label
+          class="select-tag-type"
+          data-testid="masla, kremy, curdy"
+          for="masla, kremy, curdy"
+        >
+          masla, kremy, curdy
+        </label>
+      </div>
+      <div
+        class="select"
+      >
+        <label
+          class="select-tag-type"
+          data-testid="miody, syropy"
+          for="miody, syropy"
+        >
+          miody, syropy
+        </label>
+      </div>
+      <div
+        class="select"
+      >
+        <label
+          class="select-tag-type"
+          data-testid="owoce"
+          for="owoce"
+        >
+          owoce
+        </label>
+      </div>
+      <div
+        class="select"
+      >
+        <label
+          class="select-tag-type"
+          data-testid="przyprawy, ziola"
+          for="przyprawy, ziola"
+        >
+          przyprawy, ziola
+        </label>
+      </div>
+      <div
+        class="select"
+      >
+        <label
+          class="select-tag-type"
+          data-testid="smietany, jogurty, mleczka"
+          for="smietany, jogurty, mleczka"
+        >
+          smietany, jogurty, mleczka
+        </label>
+      </div>
+      <div
+        class="select"
+      >
+        <label
+          class="select-tag-type"
+          data-testid="twarogi, serki, sery"
+          for="twarogi, serki, sery"
+        >
+          twarogi, serki, sery
+        </label>
+      </div>
+      <div
+        class="select"
+      >
+        <label
+          class="select-tag-type"
+          data-testid="warzywa, grzyby"
+          for="warzywa, grzyby"
+        >
+          warzywa, grzyby
+        </label>
+      </div>
+    </div>
+    <div
+      class="buttons-container"
+    >
+      <button
+        class="Button-sc-1iw2tsm-0 gQWKh"
+        type="submit"
+      >
+        Zapisz
+         Przepis
+      </button>
+      <button
+        class="Button-sc-1iw2tsm-0 gQWKh"
+        type="button"
+      >
+        Cofnij
+      </button>
+    </div>
+  </form>
+</div>
+`;

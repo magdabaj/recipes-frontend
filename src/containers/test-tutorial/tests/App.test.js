@@ -1,4 +1,4 @@
-import "@babel/polyfill"
+import "@babel/polyfill/noConflict"
 it("async test 1", done=>{
     setTimeout(done, 100)
 })

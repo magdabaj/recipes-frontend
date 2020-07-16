@@ -16,9 +16,10 @@ function RecipeTextInput({ type, value, name, onChange, placeholder, label, erro
     }
     return (
         <div className={'recipe-input-container'}>
-            <label className={'label'}>{label}</label>
+            <label className={'label'} htmlFor={name}>{label}</label>
             <div className={'input-data input-data-recipe'}>
                 <input
+                    id={name}
                     type={type}
                     name={name}
                     value={value}

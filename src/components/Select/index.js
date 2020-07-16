@@ -25,7 +25,7 @@ function Select({ tags, tagType, onChange }) {
 
     return (
         <div className={'select'}>
-            <label htmlFor={tagType} onClick={() => changeVisibility()} className={'select-tag-type'}>
+            <label data-testid={tagType} htmlFor={tagType} onClick={() => changeVisibility()} className={'select-tag-type'}>
                 {tagType}
             </label>
             {tagValues
@@ -51,9 +51,10 @@ function Select({ tags, tagType, onChange }) {
 }
 
 Select.propTypes = {
-    tags: PropTypes.object,
+    tags: PropTypes.array.isRequired,
     tagType: PropTypes.string,
     onChange: PropTypes.func,
 };
 
-export default memo(Select);
+export default
+memo(Select);
