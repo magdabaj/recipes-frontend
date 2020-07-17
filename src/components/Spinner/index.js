@@ -21,14 +21,14 @@ const Wrapper = styled.div`
   // }
 `;
 
-const Spinner = ({ color, width, height }) => {
+const Spinner = ({ color = colorStyles.darkPink, width = '50%', height = '50%' }) => {
     return (
         <Wrapper>
             <ReactLoading
-                color={color ? color : colorStyles.darkPink}
+                color={color}
                 type={'spinningBubbles'}
-                height={height ? height : '50%'}
-                width={width ? width : '50%'}
+                height={height}
+                width={width}
             />
         </Wrapper>
     );

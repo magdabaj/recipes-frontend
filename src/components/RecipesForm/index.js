@@ -6,6 +6,8 @@
 
 // todo return parseInt value in route path selectors
 
+// todo display error messages from server
+
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import '../../containers/RecipesFormContainer/index.css';
@@ -131,6 +133,7 @@ const RecipesForm = ({ status, ...props }) => {
                         Cofnij
                     </Button>
                     {cancel && <Redirect to={'/user-recipes'}/>}
+                    {errors.handleSave && <div data-testid={'handleSave-errors'}>{errors.handleSave}</div>}
                 </div>
             </form>
             {status === fetchStates.success ?

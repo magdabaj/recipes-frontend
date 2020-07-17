@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 // import styled from 'styled-components';
 
-function CommentsComponent({
+const CommentsComponent = ({
                                comments,
                                addComment,
                                recipeId,
@@ -14,18 +14,16 @@ function CommentsComponent({
                                // editComment,
                                removeComment,
                                ...props
-                           }) {
-    return (
-        <section className={'comments-container'}>
-            {user.loggedIn ? (
-                <CommentForm
-                    addComment={addComment}
-                    recipeId={recipeId}
-                    user={user}
-                    getComments={getComments}
-                    {...props}
-                />
-            ) : (
+                           }) =>
+    <section className={'comments-container'}>
+        {user.loggedIn ? (
+            <CommentForm
+               addComment={addComment}
+               recipeId={recipeId}
+               user={user}
+               getComments={getComments}
+               {...props}
+            />) : (
                 <h3>
                     <Link to={'/login'} >Musisz sie zalogowac zeby dodac komentarz</Link>
                 </h3>
@@ -61,9 +59,7 @@ function CommentsComponent({
                     </ol>
                 ))}
             </div>
-        </section>
-    );
-}
+    </section>
 
 CommentsComponent.propTypes = {
     comments: PropTypes.array.isRequired,

@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import {render, screen} from "@testing-library/react";
+import {render, screen, waitFor} from "@testing-library/react";
 import * as jestDOM from '@testing-library/jest-dom';
 import CommentsComponent from "../index";
 import {fakeUser, loggedOutUser} from "../../../utils/testHelpers/fixtures/user";
@@ -56,9 +56,12 @@ const renderCommentsComponent = () => renderWithRouter(<CommentsComponent
 
 commonTests(renderCommentsComponent)
 
-test('calls removeComment action when user is logged in', () => {
+test('calls removeComment action when user is logged in', async () => {
     renderCommentsComponent()
+    expect(screen.queryAllByText(/usuń/i)[0]).toBeInTheDocument()
     const removeCommentButton = screen.getAllByText(/usuń/i)
+
     userEvent.click(removeCommentButton[0])
     expect(removeCommentMocked).toHaveBeenCalledTimes(1)
+    expect(removeCommentMocked).toHaveBeenCalledWith(1)
 })

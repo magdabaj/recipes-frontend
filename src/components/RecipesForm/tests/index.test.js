@@ -134,3 +134,41 @@ test('displays different texts when editing recipe', () => {
     const editButton = screen.queryByText(/edytuj przepis/i)
     expect(editButton).toBeInTheDocument()
 })
+//
+// test('shows error message from server', async () => {
+//     renderRecipesForm()
+//
+//     const titleInput = screen.getByLabelText(/Tytuł/i)
+//     const websiteInput = screen.getByLabelText(/Strona/i)
+//     const urlInput = screen.getByLabelText("Url")
+//     const imageInput = screen.getByLabelText(/Url zdjęcia/i)
+//     const tagCheckbox = screen.getByTestId('alkohol')
+//
+//     const saveButton = screen.getByText(/zapisz przepis/i)
+//
+//     await userEvent.type(titleInput, 'test')
+//     await userEvent.type(websiteInput, 'test')
+//     await userEvent.type(urlInput, 'test')
+//     await userEvent.type(imageInput, 'test')
+//     // expect(checkbox).not.toBeInTheDocument()
+//
+//     userEvent.click(tagCheckbox)
+//
+//     const checkbox = screen.getByText(/rum/i)
+//     expect(checkbox).toBeInTheDocument()
+//     fireEvent.click(checkbox, { target: { checked: true } });
+//     await waitFor(() => userEvent.click(saveButton))
+//     addRecipeMocked.mockRejectedValueOnce({error: {message: 'test error'}})
+//
+//     // await waitFor(( ) => debug())
+//     // expect(addRecipeMocked).toHaveBeenCalled()
+//     // expect(addRecipeMocked).toHaveBeenCalledTimes(1)
+//     // expect(addRecipeMocked).toHaveBeenCalledWith({recipe: fakeRecipe, userId: 1})
+//
+//     await waitFor(() =>
+//         expect(renderRecipesForm).toThrow({error: {message: 'test error'}})
+//         // screen.findByTestId('handleSave-errors')
+//     )
+//
+//     // expect(handleSaveErrors).toHaveTextContent('test error')
+// })

@@ -4,6 +4,8 @@ import store from "../store";
 import {Provider} from "react-redux";
 import React from "react";
 import { render } from "@testing-library/react";
+import {createStore} from "redux";
+// import {reducer} from "react-toastify/dist/hooks/toastContainerReducer";
 
 // const store  = createStore(rootReducer, initialState={})
 const memoryHistory = createMemoryHistory({
@@ -28,3 +30,37 @@ export const renderWithRouter = (
         history,
     }
 )
+
+export const renderWithRouterKentCDodds = (
+    ui,
+        {
+            route='/',
+            history = createMemoryHistory({initialEntries: [route]}),
+            ...renderOptions
+        } = {}
+) => {
+    // eslint-disable-next-line react/prop-types
+    function Wrapper({children}) {
+        return <Router history={history}>
+            {children}
+        </Router>
+    }
+
+    return {
+        ...render(ui, {wrapper: Wrapper, ...renderOptions})
+    }
+}
+
+export const renderWithProviderKentCDodds = (
+        ui,
+        reducer,
+        {initialState, store = createStore(reducer, initialState), ...options} = {},
+    ) => {
+    // eslint-disable-next-line react/prop-types
+    function Wrapper({children}) {
+        return <Provider store={store}>
+            {children}
+        </Provider>
+    }
+    return render(ui, {wrapper: Wrapper, ...options})
+}

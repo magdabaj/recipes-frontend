@@ -19,8 +19,8 @@ const Img = styled.img`
     height: auto;
 `;
 
-function Recipes({ recipes, user, sendRating, ratingsMean, commentsNumber }) {
-    return recipes.map(recipe => (
+const Recipes = ({ recipes, user, sendRating, ratingsMean, commentsNumber }) =>
+    recipes.map(recipe => (
         <RecipeContainer key={recipe.id}>
             <Image>
                 <RecipeTitle>
@@ -49,8 +49,7 @@ function Recipes({ recipes, user, sendRating, ratingsMean, commentsNumber }) {
                 </div>
             </Image>
         </RecipeContainer>
-    ));
-}
+    ))
 
 Recipes.propTypes = {
     commentsNumber: PropTypes.number,
