@@ -1,11 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { render } from "@testing-library/react";
+import {render, screen} from "@testing-library/react";
 import * as jestDOM from '@testing-library/jest-dom';
 import CommentsComponent from "../index";
 import {fakeUser, loggedOutUser} from "../../../utils/testHelpers/fixtures/user";
 import {fakeComments} from "../../../utils/testHelpers/fixtures/coments";
-// import commonTests from "../../../utils/testHelpers/commonTests";
+import commonTests from "../../../utils/testHelpers/commonTests";
+import {renderWithRouter} from "../../../utils/testHelpers";
+import userEvent from "@testing-library/user-event";
 
 expect.extend(jestDOM)
 const mockedAddComment = jest.fn()
@@ -13,7 +15,7 @@ const removeCommentMocked = jest.fn()
 const getCommentsMocked = jest.fn()
 
 test('renders CommentsComponent', () => {
-    const { getByLabelText } = render(<CommentsComponent
+    render(<CommentsComponent
         user={fakeUser}
         addComment={mockedAddComment}
         recipeId={'1'}
@@ -21,12 +23,12 @@ test('renders CommentsComponent', () => {
         getComments={getCommentsMocked}
         comments={fakeComments}
     />)
-    const commentForm = getByLabelText(/dodaj komentarz/i)
+    const commentForm = screen.getByLabelText(/dodaj komentarz/i)
     expect(commentForm).toBeInTheDocument()
 })
 
-test('renders CommentsComponent without comment form', () => {
-    const { queryByLabelText, getByRole } = render(<Router>
+test('renders CommentsComponent without comment form', async () => {
+    render(<Router>
             <CommentsComponent
             user={loggedOutUser}
             addComment={mockedAddComment}
@@ -36,20 +38,27 @@ test('renders CommentsComponent without comment form', () => {
             comments={fakeComments}
         />
     </Router>)
-    const heading = getByRole('heading')
+    const heading = screen.getByRole('heading')
 
     expect(heading).toBeInTheDocument()
     expect(heading).toHaveTextContent('Musisz sie zalogowac zeby dodac komentarz')
-    expect(queryByLabelText(/dodaj komentarz/i)).not.toBeInTheDocument()
+    expect(screen.queryByLabelText(/dodaj komentarz/i)).not.toBeInTheDocument()
 })
-//
-// const renderCommentsComponent = render(<CommentsComponent
-//     user={fakeUser}
-//     addComment={mockedAddComment}
-//     recipeId={'1'}
-//     removeComment={removeCommentMocked}
-//     getComments={getCommentsMocked}
-//     comments={fakeComments}
-// />)
-//
-// commonTests(renderCommentsComponent)
+
+const renderCommentsComponent = () => renderWithRouter(<CommentsComponent
+    user={fakeUser}
+    addComment={mockedAddComment}
+    recipeId={'1'}
+    removeComment={removeCommentMocked}
+    getComments={getCommentsMocked}
+    comments={fakeComments}
+/>)
+
+commonTests(renderCommentsComponent)
+
+test('calls removeComment action when user is logged in', () => {
+    renderCommentsComponent()
+    const removeCommentButton = screen.getAllByText(/usuń/i)
+    userEvent.click(removeCommentButton[0])
+    expect(removeCommentMocked).toHaveBeenCalledTimes(1)
+})

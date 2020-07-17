@@ -6,7 +6,7 @@
 
 import React, {memo, useState} from 'react';
 import PropTypes from 'prop-types';
-import {Link, Redirect, withRouter} from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
 import RecipeRatingContainer from './RecipeRatingContainer';
 import AddRatingButton from './AddRatingButton';
 import { FaHeart } from 'react-icons/fa';
@@ -18,8 +18,6 @@ import './index.css';
 const RecipeRating = ({ user, sendRating, recipeId, ratingsMean, ...props }) => {
     const [redirect, setRedirect] = useState(false)
 
-
-    // todo test this
     // todo alert before deleting recipe
     const addRating = value =>
         user.loggedIn ?

@@ -27,11 +27,10 @@ function CommentsComponent({
                 />
             ) : (
                 <h3>
-                    <Link to={'/login'}>Musisz sie zalogowac zeby dodac komentarz</Link>
+                    <Link to={'/login'} >Musisz sie zalogowac zeby dodac komentarz</Link>
                 </h3>
             )}
             <div>
-                 {/*todo where do I need key here???*/}
                 {comments.map(comment => (
                     <ol key={comment.id} className={'comments-list'}>
                         <li className={'comment-body'}>

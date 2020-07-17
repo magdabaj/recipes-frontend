@@ -29,6 +29,7 @@ exports[`should render and match the snapshot 1`] = `
         >
           <svg
             class="heart-icon"
+            data-testid="heart-1"
             fill="currentColor"
             height="16px"
             stroke="currentColor"
