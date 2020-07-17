@@ -1,6 +1,7 @@
-import {renderWithRouter} from "../../../utils/testHelpers";
 import RecipesForm from "../index";
+import { Redirect as MockRedirect } from "react-router";
 import {fireEvent, screen, waitFor} from "@testing-library/dom";
+import { render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import {fakeRecipes} from "../../../utils/testHelpers/fixtures/recipes";
 import {addRecipe as addRecipeMocked} from "../../../containers/RecipesFormContainer/actions";
@@ -10,11 +11,17 @@ import commonTests from "../../../utils/testHelpers/commonTests";
 import {axe} from "jest-axe";
 import {fakeUser} from "../../../utils/testHelpers/fixtures/user";
 import {fakeRecipe} from "../../../utils/testHelpers/fixtures/recipe";
+import fetchStates from "../../../utils/fetchStates";
 
 jest.mock("../../../containers/RecipesFormContainer/actions")
+jest.mock('react-router', () => {
+    return {
+        Redirect: jest.fn(() => null)
+    }
+})
 
 const renderRecipesForm = () =>
-    renderWithRouter(
+    render(
         <RecipesForm
             recipes={fakeRecipes}
             addRecipe={addRecipeMocked}
@@ -31,7 +38,7 @@ test('renders form without violations', async() => {
 })
 
 test('fires addRecipes actions when form is correct', async () => {
-    renderRecipesForm()
+    const { rerender } = renderRecipesForm()
     const titleInput = screen.getByLabelText(/Tytuł/i)
     const websiteInput = screen.getByLabelText(/Strona/i)
     const urlInput = screen.getByLabelText("Url")
@@ -56,6 +63,17 @@ test('fires addRecipes actions when form is correct', async () => {
     expect(addRecipeMocked).toHaveBeenCalled()
     expect(addRecipeMocked).toHaveBeenCalledTimes(1)
     expect(addRecipeMocked).toHaveBeenCalledWith({recipe: fakeRecipe, userId: 1})
+    
+    rerender(
+        <RecipesForm
+            recipes={fakeRecipes}
+            addRecipe={addRecipeMocked}
+            tags={fakeTags}
+            userId={fakeUser.id}
+            status={fetchStates.success}
+        />)
+
+    expect(MockRedirect).toHaveBeenCalledWith({to: '/user-recipes'}, {})
 })
 
 test('shows error message if tag is not chosen',   () => {
@@ -81,13 +99,13 @@ test('shows error message if tag is not chosen',   () => {
 })
 
 test('calls setCancel function on click', async () => {
-    const { history } = renderRecipesForm()
+    renderRecipesForm()
 
     const cancelButton = screen.getByText(/cofnij/i)
     userEvent.click(cancelButton)
 
     await waitFor(() => {
-        expect(history.location.pathname).toEqual('/user-recipes')
+        expect(MockRedirect).toHaveBeenCalledWith({to: '/user-recipes'}, {})
     })
 
 })
@@ -102,8 +120,8 @@ test('doesn\'t call the addRecipe function when inputs are empty', () => {
     expect(addRecipeMocked).not.toHaveBeenCalled()
 })
 
-test('Displays different texts when editing recipe', () => {
-    renderWithRouter(
+test('displays different texts when editing recipe', () => {
+    render(
         <RecipesForm
             recipes={fakeRecipes}
             addRecipe={addRecipeMocked}

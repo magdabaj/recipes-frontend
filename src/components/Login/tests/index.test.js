@@ -1,20 +1,21 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import {Redirect as MockRedirect} from "react-router";
+import {render, screen, waitFor} from "@testing-library/react";
 import Login from "../index";
-import * as jestDOM from '@testing-library/jest-dom';
 import fetchStates from "../../../utils/fetchStates";
-import { renderWithRouter } from "../../../utils/testHelpers";
 import commonTests from "../../../utils/testHelpers/commonTests";
 import {axe} from "jest-axe";
 import userEvent from "@testing-library/user-event";
 
-expect.extend(jestDOM)
 
 const signInMocked = jest.fn()
 const signUpMocked = jest.fn()
 
-
-jest.mock('axios')
+jest.mock('react-router', () => {
+    return {
+        Redirect: jest.fn(() => null)
+    }
+})
 
 const renderLogin = () =>
     render(<Login signIn={signInMocked} signUp={signUpMocked}/>)
@@ -44,16 +45,8 @@ test('renders Login form', () => {
     expect(buttons[0]).toBeInTheDocument()
 })
 
-test('redirects if user logs in successfully', async () => {
-    const redirectUrl = '/user-recipes'
-
-    const { history } = renderWithRouter(<Login signIn={signInMocked} signUp={signUpMocked} status={fetchStates.success}/> )
-
-    expect(history.location.pathname).toEqual(redirectUrl)
-})
-
-test('sends signUp action if form is valid', () => {
-    renderLogin()
+test('sends signUp action if form is valid', async () => {
+    const { rerender } = renderLogin()
     const emailInput = screen.getByLabelText(/email/i)
     const passwordInput = screen.getByLabelText(/hasło/i)
     const signInButton = screen.getByText(/zaloguj się/i)
@@ -67,6 +60,20 @@ test('sends signUp action if form is valid', () => {
         email: 'test',
         password: 'test',
     })
+
+    rerender(
+        <Login
+            signIn={signInMocked}
+            signUp={signUpMocked}
+            status={fetchStates.success}
+        />
+    )
+
+    await waitFor(() =>
+        expect(MockRedirect).toHaveBeenCalledWith(
+            {to: '/user-recipes'},
+            {})
+    )
 })
 
 test('shows error message when trying to submit empty form', () => {

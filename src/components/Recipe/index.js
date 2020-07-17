@@ -30,7 +30,8 @@ function Recipes({ recipes, user, sendRating, ratingsMean, commentsNumber }) {
                 </RecipeTitle>
                 <RecipeRating
                     user={user}
-                    sendRating={user.loggedIn ? sendRating : <Redirect to={'/login'} />}
+                    // sendRating={user.loggedIn ? sendRating : <Redirect to={'/login'} />}
+                    sendRating={sendRating}
                     recipeId={recipe.id}
                     ratingsMean={ratingsMean}
                     commentsNumber={commentsNumber}

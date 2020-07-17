@@ -4,9 +4,9 @@
  *
  */
 
-import React, { memo } from 'react';
+import React, {memo, useState} from 'react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import {Link, Redirect, withRouter} from 'react-router-dom';
 import RecipeRatingContainer from './RecipeRatingContainer';
 import AddRatingButton from './AddRatingButton';
 import { FaHeart } from 'react-icons/fa';
@@ -16,22 +16,23 @@ import Icon from './Icon';
 import './index.css';
 
 const RecipeRating = ({ user, sendRating, recipeId, ratingsMean, ...props }) => {
+    const [redirect, setRedirect] = useState(false)
 
-    // todo find out how to test this
-    function addRating(value) {
-        if (user.loggedIn) {
-            sendRating(value, user.userId, recipeId);
-        } else {
-            props.history.push('/login');
-        }
-    }
+
+    // todo test this
+    // todo alert before deleting recipe
+    const addRating = value =>
+        user.loggedIn ?
+            sendRating(value, user.userId, recipeId)
+            : setRedirect(true)
+
 
     return (
         <RecipeRatingContainer>
             <AddRatingButton>
                 <Icon>
                     <IconContext.Provider value={{ className: 'heart-icon', size: '16px' }}>
-                        <FaHeart onClick={() => addRating(1)} />
+                        <FaHeart onClick={() => addRating(1)} data-testid={'heart-1'}/>
                     </IconContext.Provider>
                     <IconContext.Provider value={{ className: 'heart-icon', size: '16px' }}>
                         <FaHeart onClick={() => addRating(2)} />
@@ -56,6 +57,7 @@ const RecipeRating = ({ user, sendRating, recipeId, ratingsMean, ...props }) => 
                     </IconContext.Provider>
                 </Icon>
             </AddRatingButton>
+            {redirect && <Redirect to={'/login'}/>}
         </RecipeRatingContainer>
     );
 };
@@ -70,4 +72,4 @@ RecipeRating.propTypes = {
     commentsNumber: PropTypes.number,
 };
 
-export default memo(withRouter(RecipeRating));
+export default memo(RecipeRating);
