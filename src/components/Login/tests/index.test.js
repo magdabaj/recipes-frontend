@@ -1,10 +1,9 @@
 import React from "react";
-import { render, waitFor, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import Login from "../index";
 import * as jestDOM from '@testing-library/jest-dom';
 import fetchStates from "../../../utils/fetchStates";
 import { renderWithRouter } from "../../../utils/testHelpers";
-import axios from 'axios'
 import commonTests from "../../../utils/testHelpers/commonTests";
 import {axe} from "jest-axe";
 import userEvent from "@testing-library/user-event";
@@ -64,6 +63,10 @@ test('sends signUp action if form is valid', () => {
     userEvent.click(signInButton)
     expect(signInMocked).toHaveBeenCalled()
     expect(signInMocked).toHaveBeenCalledTimes(1)
+    expect(signInMocked).toHaveBeenCalledWith({
+        email: 'test',
+        password: 'test',
+    })
 })
 
 test('shows error message when trying to submit empty form', () => {

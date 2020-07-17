@@ -9,6 +9,7 @@ import React from "react";
 import commonTests from "../../../utils/testHelpers/commonTests";
 import {axe} from "jest-axe";
 import {fakeUser} from "../../../utils/testHelpers/fixtures/user";
+import {fakeRecipe} from "../../../utils/testHelpers/fixtures/recipe";
 
 jest.mock("../../../containers/RecipesFormContainer/actions")
 
@@ -54,6 +55,7 @@ test('fires addRecipes actions when form is correct', async () => {
 
     expect(addRecipeMocked).toHaveBeenCalled()
     expect(addRecipeMocked).toHaveBeenCalledTimes(1)
+    expect(addRecipeMocked).toHaveBeenCalledWith({recipe: fakeRecipe, userId: 1})
 })
 
 test('shows error message if tag is not chosen',   () => {
